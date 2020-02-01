@@ -1,0 +1,230 @@
+{sample: true}
+# Chapter One
+
+This is an example chapter of a Leanpub book.  To start writing your book, simply replace the contents of this text box with your first chapter.
+
+Chapter 2 has a quick introduction to Markdown. Click on "Chapter 2" on the left to see them.
+
+
+# Chapter Two
+
+Here are some quick Markdown examples to get you started.
+
+To start a new paragraph, hit the return key twice. You want to create a blank line between paragraphs.
+
+To *italicize*, surround a word in asterisks.
+
+To **bold**, use two asterisks.
+
+Here is a [link to the leanpub home-page](https://leanpub.com).
+
+Chapter 3 tells you how to make a preview of your book.
+
+
+# Chapter Three
+
+To make a preview of your book, click on the "Preview" button on the left. We'll show you some links to download your book when the preview is complete.
+
+You can keep writing in the meantime.
+
+That's it for the brief introduction to Leanpub.
+
+
+# Chapter One
+
+This is a paragraph. You just write.
+
+Blank lines separate paragraphs. This is *italic* and **bold**.
+
+* * *
+
+That was a thematic break. "This is in quotes."
+
+# Chapter Two
+
+This is a paragraph in a new chapter
+
+
+
+
+
+# Chapter One
+
+This is *italic* and **bold**.
+
+Here's an image:
+
+{alt: "Denzel Washington on a jet ski in a river"}
+![Washington Crossing the Delaware](delaware.jpg)
+
+## Section One
+
+You can have bulleted and numbered lists, including nested lists:
+
+1. foo
+   a) lorem
+   b) ipsum
+2. bar
+   * stuff
+   * more stuff
+3. baz
+
+### A Sub-Section
+
+You can even have definition lists!
+
+term 1
+: definition 1a
+: definition 1b
+
+term 2
+: definition 2
+
+## Another Section
+
+Tables work too:
+
+| Header 1  | Header 2  |
+| --------- | --------- |
+| Content 1 | Content 2 |
+| Content 3 | Content 4 |
+
+You can have external code samples:
+
+![Hello World in Ruby](hello.rb)
+
+You can also inline code samples:
+
+{caption: "Hello World in Ruby"}
+```ruby
+puts "hello"
+```
+
+You can also include single lines of code like `puts "hello"` in paragraphs.
+
+> Blockquotes are really easy too.
+> --Peter Armstrong, *Markua Spec*
+
+Finally, you can do that with math `d = v_i t + \frac{1}{2} a t^2`$ too.
+
+
+
+
+
+
+Italic
+    To produce italic text, surround it with *one asterisk*.
+Underlined
+    To produce underlined text, surround it with _one underscore_. (You can force all underlines to produce italic text, however. Just go to Author > Books > (your book) > Settings > Generation Settings on Leanpub, and select the Italicize Underlines checkbox.
+Bold
+    To produce bold text, surround it with either **two asterisks** or __two underscores__.
+Bold + Italic
+    To produce bold + italic text, surround it with ***three asterisks***.
+Bold + Underlined
+    To produce bold + underlined text, surround it with ___three underscores___. (Also, go to Author > Books > (your book) > Settings > Generation Settings on Leanpub and ensure that the Italicize Underlines checkbox is not selected.)
+Bold + Italic + Underlined
+    To produce bold + italic + underlined text, surround it with ____four underscores____. (Also, go to Author > Books > (your book) > Settings > Generation Settings on Leanpub and ensure that the Italicize Underlines checkbox is not selected.)
+Strikethrough
+    To produce strikethrough text, surround it with ~~two tildes~~.
+Superscript
+    To produce superscript like the 3 in 53 = 125, surround it with carets like 5^3^ = 125.
+Subscript
+    To produce subscript like the 2 in H2O, surround it with single tildes like H~2~O. 
+	
+	
+	
+	
+# Part #
+
+This is a paragraph.
+
+# Chapter
+
+This is a paragraph.
+
+## Section
+
+This is a paragraph.
+
+### Sub-Section
+
+This is a paragraph.
+
+#### Sub-Sub-Section
+
+This is a paragraph.
+
+##### Sub-Sub-Sub-Section
+
+This is a paragraph.
+
+###### Sub-Sub-Sub-Sub-Section
+
+This is a paragraph.
+
+
+
+
+
+Inserting an image as a figure is...
+
+![A Piece of Cake](http://markua.com/cake.jpg)
+
+Inline code resources are added as spans like this `hello world` or as figures.
+
+```ruby
+puts "hello world"
+```
+
+{format: ruby}
+![Hello, World](hello.rb)
+
+
+The syntax for a local resource or a web resource inserted as a figure is as follows:
+
+{key: value, comma: separated, optional: attribute_list}
+![Optional Figure Caption](resource_path_or_url)
+
+The syntax for an inline resource inserted as a figure is as follows:
+
+{key: value, comma: separated, optional: attribute_list}
+```optional_format
+inline resource content (default format is `guess`)
+
+
+
+Note that you can also insert an inline resource as a figure using tildes as the delimiter. If the only delimiter was backticks, it would be really difficult to write about Markua in Markua. This syntax is as follows:
+
+{key: value, comma: separated, optional: attribute_list}
+~~~optional_format
+inline resource content (default format is `text`)
+~~~
+
+
+
+
+![My Amazing Algorithm](algorithm.rb)
+
+{caption: "My Amazing Algorithm"}
+![](algorithm.rb)
+
+
+
+
+
+
+{alt: "Denzel Washington on a jet ski in a river"}
+![Washington Crossing the Delaware](delaware.jpg)
+
+{alt: "Denzel Washington on a jet ski in a river", caption: "Washington Crossing the Delaware"}
+![](delaware.jpg)
+
+{caption: "Earth From Space (Simplified)", alt: "a blue circle"}
+```svg
+<svg width="20" height="20">
+  <circle cx="10" cy="10" r="9" fill="blue"/>
+</svg>
+```
+
+
+

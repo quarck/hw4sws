@@ -1,0 +1,12 @@
+introduction.txt
+part1_building_blocks.txt
+part2_combination_circuits.txt
+part3_a_bit_of_vhdl.txt
+part4_bistables.txt
+part5_sequential_circuits.txt
+part6_some_practice.txt
+part7_more_formal_vhdl.txt
+part8_fpgas.txt
+part9_simple_cpu.txt
+partA_simple_cpu_testing.txt
+z_appendix_a_mosfet_transistor_operation.txt

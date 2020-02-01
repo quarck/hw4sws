@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="68.238342"
+   height="42.793213"
+   background="#FFFFFF"
+   version="1.1"
+   id="svg229"
+   sodipodi:docname="ch1_gate_or.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   viewBox="0 0 887.09845 556.31177">
+  <metadata
+     id="metadata235">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs233" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview231"
+     showgrid="false"
+     inkscape:zoom="5.0544916"
+     inkscape:cx="24.436105"
+     inkscape:cy="5.9568037"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg229"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="c_0"
+     type="COMPO"
+     transform="translate(-96.593017,-683.20897)" />
+  <g
+     id="g227"
+     type="COMPO"
+     transform="translate(-96.593017,-683.20897)">
+    <path
+       d="M 775.8192,970.09033 C 682.12683,787.3111 485.54514,674.28625 273.29135,698.4451 c 100.0784,164.8448 94.6879,364.4709 1.62905,522.4472 207.54762,34.9196 406.58784,-70.8527 500.8988,-250.80197"
+       path-type="area"
+       id="h_0"
+       rough-pts="775.8192,970.09033 720.8026,884.82574 651.06067,813.05994 569.0158,756.66595 477.0908,717.51666 377.70847,697.4855 273.29135,698.4451 314.62384,783.41205 338.8727,872.05286 346.53235,962.2444 338.0972,1051.8635 325.67593,1103.9355 314.0617,1138.7871 274.9204,1220.8923 377.53976,1226.9357 476.0684,1211.378 567.83356,1176.0671 650.1623,1122.8503 720.3817,1053.5756 "
+       inkscape:connector-curvature="0"
+       style="fill-opacity:0;stroke-linecap:round;stroke-linejoin:round" />
+    <g
+       id="p_0"
+       type="USERG">
+      <g
+         id="c_2"
+         type="COMPO">
+        <line
+           x2="775.81921"
+           x1="971.52057"
+           y2="970.09033"
+           id="n_25"
+           y1="970.09021"
+           style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+      </g>
+      <line
+         x2="325.67593"
+         x1="109.22144"
+         y2="1103.9355"
+         id="n_26"
+         y1="1100.2598"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+      <line
+         x2="108.76392"
+         x1="328.85284"
+         y2="828.79846"
+         id="n_27"
+         y1="827.40576"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+    </g>
+    <path
+       d="m 273.29135,698.4451 c 100.0784,164.8448 94.6879,364.4709 1.62905,522.4472"
+       end-point="274.9204,1220.8923"
+       path-type="circle-arc"
+       middle-point="346.18887,937.04224"
+       id="path222"
+       start-point="273.29135,698.4451"
+       circle-center="-159.21014,961.0198"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 273.29135,698.4451 c 212.25379,-24.15885 408.83548,88.866 502.52785,271.64523"
+       end-point="775.8192,970.09033"
+       path-type="circle-arc"
+       middle-point="563.9508,753.5577"
+       id="c_1"
+       start-point="273.29135,698.4451"
+       circle-center="329.766,1194.6167"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 274.9204,1220.8923 c 207.54762,34.9196 406.58784,-70.8527 500.8988,-250.80197"
+       end-point="775.8192,970.09033"
+       path-type="circle-arc"
+       middle-point="562.71,1179.0"
+       id="path225"
+       start-point="274.9204,1220.8923"
+       circle-center="353.70294,752.6403"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  </g>
+</svg>

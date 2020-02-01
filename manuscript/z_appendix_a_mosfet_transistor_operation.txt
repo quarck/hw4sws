@@ -1,0 +1,14 @@
+
+# Appendix A - MOSFET Operation __TBD__
+
+Schematically structure of MOSFET transistor is shown on figure 6. 
+{alt: "MOSFET transistor", width: "70%"}
+![figure 6 - MOSFET transistor](ch1figure6.svg)
+There are four 'wires' or electrodes connecting to the MOSFET transistor: Source (S), Drain (D), Gate (G) and Base (B). Base is usually just a surface of the whole chip - it is connected to 0 or "ground" all the time. 
+Very approximately, operation of MOSFET transistor could be explained as follows: the space between Source and Drain is a sandwich consisting of several layers of different type semiconductors (called 'n' and 'p' type). And the Gate is on the other hand is insulated by the layer of insulator. When voltage is applied at the Gate, it creates an electric field inside the transistor and such field influences the amount of particles capable of conducting electricity between the Source and the Drain, and that directly correlates with conductivity: less conducting particles - less conductive the area becomes, more particles - better it conducts. 
+This is indeed a very rough explanation, but further details are outside of the scope of this book - if you are eager to learn more about this topic, Wikipedia article on MOSFETs would be a good starting point.
+By "conducting particles" above we mean two separate things: electrons - traditional conductors of the electricity that also work in semiconductors, and "holes" - a kind of meta-particle that can exist in the semiconductor, basically it is a lack of electron in a particular place of material, electrically it is equal to a presence of a positively charged particle in the same place. Holes can move in the same way as electrons, thus they do conduct electricity also.
+
+
+
+**TODO: you have promised references to more detailed explanation materials** 

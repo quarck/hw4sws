@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="73.980049"
+   height="42.793213"
+   background="#FFFFFF"
+   version="1.1"
+   id="svg149"
+   sodipodi:docname="ch1_gate_nor.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   viewBox="0 0 961.74061 556.31177">
+  <metadata
+     id="metadata155">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs153" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview151"
+     showgrid="false"
+     inkscape:zoom="5.0544916"
+     inkscape:cx="-35.608963"
+     inkscape:cy="47.985099"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg149"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     scale-x="10" />
+  <g
+     id="c_0"
+     type="COMPO"
+     transform="translate(-96.335563,-688.2981)" />
+  <g
+     id="p_0"
+     type="USERG"
+     transform="translate(-96.335563,-688.2981)">
+    <path
+       d="M 274.66296,1225.9814 C 482.21057,1260.901 681.2508,1155.1287 775.56177,975.17944 681.8694,792.4002 485.2877,679.37537 273.0339,703.53424 373.1123,868.379 367.7218,1068.0051 274.66296,1225.9814"
+       path-type="area"
+       id="h_1"
+       rough-pts="274.66296,1225.9814 377.28235,1232.0248 475.81097,1216.4672 567.5761,1181.1562 649.90485,1127.9395 720.12427,1058.6647 775.56177,975.17944 720.5452,889.9148 650.8032,818.1491 568.75836,761.7551 476.83334,722.6058 377.45102,702.5745 273.0339,703.53424 314.3664,788.50116 327.36975,832.5026 338.61526,877.14197 346.2749,967.3335 337.83975,1056.9526 324.0241,1109.001 313.80426,1143.8762 "
+       inkscape:connector-curvature="0"
+       style="fill-opacity:0;stroke-linecap:round;stroke-linejoin:round" />
+    <path
+       d="m 875.1907,975.17944 c 0,27.48686 -22.32766,49.81446 -49.8145,49.81446 -27.4868,0 -49.81443,-22.3276 -49.81443,-49.81446 0,-27.48684 22.32763,-49.81444 49.81443,-49.81444 27.48684,0 49.8145,22.3276 49.8145,49.81444"
+       path-type="area"
+       id="h_0"
+       rough-pts="875.1907,975.17944 875.1653,976.78394 873.4095,988.4134 868.384,1000.3106 860.59094,1010.3943 850.50745,1018.18726 838.6102,1023.2127 825.3762,1024.9939 812.14215,1023.2127 800.2449,1018.1871 790.1614,1010.3943 782.3684,1000.31067 777.3429,988.4134 775.56177,975.17944 777.34283,961.94543 782.3684,950.0481 790.1614,939.9647 800.245,932.1717 812.1422,927.1461 825.3762,925.365 838.6102,927.14606 850.5074,932.1716 860.59094,939.9647 868.38403,950.0482 873.4095,961.94543 "
+       inkscape:connector-curvature="0"
+       style="fill-opacity:0;stroke-linecap:round;stroke-linejoin:round" />
+    <g
+       id="g142"
+       type="COMPO">
+      <g
+         id="p_1"
+         type="USERG">
+        <line
+           x2="325.41849"
+           x1="108.96399"
+           y2="1109.0247"
+           id="n_10"
+           y1="1105.3489"
+           style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+        <line
+           x2="108.50647"
+           x1="328.5954"
+           y2="833.88757"
+           id="n_11"
+           y1="832.49487"
+           style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+      </g>
+      <path
+         d="m 273.0339,703.53424 c 100.0784,164.84476 94.6879,364.47086 1.62906,522.44716"
+         end-point="274.66296,1225.9814"
+         path-type="circle-arc"
+         middle-point="345.93143,942.13135"
+         id="path138"
+         start-point="273.0339,703.53424"
+         circle-center="-159.46759,966.1089"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+      <path
+         d="m 273.0339,703.53424 c 212.2538,-24.15887 408.8355,88.86596 502.52787,271.6452"
+         end-point="775.56177,975.17944"
+         path-type="circle-arc"
+         middle-point="563.69336,758.6468"
+         id="c_1"
+         start-point="273.0339,703.53424"
+         circle-center="329.50854,1199.7058"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+      <path
+         d="M 274.66296,1225.9814 C 482.21057,1260.901 681.2508,1155.1287 775.56177,975.17944"
+         end-point="775.56177,975.17944"
+         path-type="circle-arc"
+         middle-point="562.4526,1184.0891"
+         id="c_2"
+         start-point="274.66296,1225.9814"
+         circle-center="353.4455,757.72943"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    </g>
+    <g
+       id="g146"
+       type="COMPO">
+      <circle
+         cy="975.17944"
+         sc="0.0,-49.814434"
+         cx="825.37622"
+         average="825.3762,975.17944"
+         pc="49.814434,0.0"
+         id="b_0"
+         r="49.814434"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+      <line
+         x2="1045.9053"
+         x1="875.16779"
+         y2="976.68927"
+         id="n_12"
+         y1="976.68927"
+         style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
