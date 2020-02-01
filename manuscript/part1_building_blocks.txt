@@ -25,7 +25,7 @@ Third important characteristics of circuits and/or individual components is *res
 In strict terms, resistance voltage and current are related by the Ohm's Law: `V = I R`$ or `I = \frac{V}{R}`$. Thus, 1 Ohm is a such value of resistance that would allow a current of 1 Amp at 1 Volt of voltage applied.  
 
 Let us now look at second circuit example - see figure 1.2.
-{alt: "Basic electric circuit with intersections"}
+{alt: "Basic electric circuit with intersections", width: "90%"}
 ![figure 1.2 - basic circuit with intersections](ch1_circuit_with_intersections.svg)
 
 There we have same building blocks: power source, switches and light bulbs. But now there are some intersections between the lines representing the wires. The rule to read the intersections is simple: if there is a black dot - intersection means connection between intersecting wires, if three is no dot - no connection: one wire is simply passing over another. One exception from this rule is "T-junction", there connecting dot sometimes might be omitted while it would still means connection as no other physical configuration is possible for T-junction.
@@ -52,20 +52,20 @@ Particular voltage levels for encoding logical 0 and 1 do vary depending on tech
 For this sub-chapter, imagine yourself as a contractor fitting an X-Ray room in the hospital with some signalling equipment. 
 Doctors in particular want to install a light outside the room indicating that X-Ray machine is in use and no one is allowed to enter. That should be operated manually by the switch inside the room. Can we make it? Sure we can, we just need to take a circuit from figure 1.1 and make longer the wires to the lamp L1, see figure 1.4 below: 
 
-{alt: "Basic electric circuit as signalling system"}
+{alt: "Basic electric circuit as signalling system", width: "90%"}
 ![figure 1.4 - X-Ray indicator circuit](ch1_primitive_telegraph.svg)
 
 So whoever is operating the X-Ray machine has to use switch S1 to turn the remote light L1 on or off. What we did is a basic information transmission device that can transmit one bit of information at a time. 
 
 The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of "L1" to be equal to "S1 or S2". We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.5 below. 
-{alt: "Basic 'OR' logic"}
+{alt: "Basic 'OR' logic", width: "90%"}
 ![figure 1.5 - basic OR logic](ch1_primitive_or_logic.svg)
 
 Easy and elegant! If any/both of the switches S1 or S2 is "connected" (known as "closed" in a switching term), then current would flow through the circuit and the warning light would be turned on. 
 
 As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signalling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation, so warning light should only be on if both operators have turned it on. Thus we would have again indicator switches S1 and S2 and output should be equal to "S1 and S2". 
 This functionality also can be achieved easily by using the circuit on the figure 1.6. 
-{alt: "Basic 'AND' logic"}
+{alt: "Basic 'AND' logic", width: "90%"}
 ![figure 1.6 - basic AND logic](ch1_primitive_and_logic.svg)
 
 Again, super easy. If any of the switches is not connected - circuit is broken - there would be no current, light L1 is off, and only if both are connected - light would be on. 
@@ -78,7 +78,7 @@ We've just seen how manually controlled mechanical switches could be arranged to
 
 In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option. 
 Transistors do exist in many different shapes and forms. Main two types of transistors are Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). Modern day electronics is almost entirely built from specific sub-type of field effect transistor called MOSFET - stands for "Metal–Oxide–Semiconductor Field-Effect Transistor". MOSFETs themselves came in two variants: nMOS and pMOS, graphical symbols for both are shown on the figure 1.7.
-{alt: "MOSFET Symbols"}
+{alt: "MOSFET Symbols", width: "90%"}
 ![figure 1.7 - MOSFET Symbols](ch1_mosfets.svg)
 
 Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G). 
