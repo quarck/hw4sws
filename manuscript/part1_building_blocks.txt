@@ -84,6 +84,11 @@ The above examples of implementation of "AND" and "OR" functions using manually 
 
 ## Transistors
 
+
+*** TODO: NOTE ON TERMINILOGY ON / OFF****
+
+
+
 We've just seen how manually controlled mechanical switches could be arranged to implement some logical functions. But mechanical switch can only be operated manually, so the only input to that logical circuit is a person's intention materialized in a physical action. If we want to build logical functions that take input in form of electric signal and output output in form of electric signal, we need some switching mechanism that can be controlled by electricity. 
 
 In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option. 
