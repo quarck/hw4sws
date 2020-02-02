@@ -1,38 +1,48 @@
 # Chapter One - Building Blocks 
 
-## A brief introduction into electricity and circuits 
+## A very brief introduction into electricity 
 
-__TBD__
+As much as possible, while writing this book I've tried avoiding going into low-level details, instead focusing on the main ideas and concepts. But some theoretical knowledge of electricity is still necessary for understanding the books material. If you feel comfortable about basic electrical concepts like current, voltage, resistance, etc., and can read simple electric circuits - you can skip the following few pages. 
+
+As we know, every physical object is made of atoms. Atom itself consists of a smaller building blocks: protons, neutrons and electrons. Protons and neutrons are packed into a tiny nucleus in the centre of the atom and electrons are 'orbiting' around it ('orbiting' is a very simplified description of it). 
+Neutrons are electrically neutral while both electrons and protons have an *electric charge*. *Electric charge* is a property of a particle (and matter): particles with electric charge do interact with electric field and particles without electric charge don't. Electric charge of electron and proton is equal by the absolute value but opposite by its sign: protons are positively charged and electrons are negatively charged. An absolute value of a charge of electron (or proton) is called the *elementary charge*. If we combine `6.2415090744 × 10^18`$ of elementary charges together, we would get a total charge equal to a physical unit called  *Coulomb*. 
+
+Particles with the same electric charge do repeal from each other, and particles with the opposite charge do attract to each other. To be a bit more precise, every charged particle creates an electric field around itself and another particle do react to that field. Let's do a small imaginary experiment: take two metal spheres, fix them at some distance and move some electrons from one sphere to another. Sphere where we took electrons would became positively charged as it would have more protons than electrons overall, and sphere where we've added electrons gets a negative charge as it has received electrons. Now, in the middle between these two spheres we put a single electron. If we ignore gravity, electron would only experience a combined electric field from two spheres that would make it accelerating away fro negatively charged sphere towards positively charged sphere. See figure 1.1.
+See figure 1.1. 
+{alt: "Experiment setup", width: "90%"}
+![figure 1.1 - Experiment setup](ch1_experiment1.svg)
+
+In metals, electrons 'orbiting' on the outer 'orbits' don't have very strong bound with nucleus, thus when many atoms are combined into a piece of metal, these outer electrons can roam inside the metal relatively freely. So what would happen if we take a piece of metal wire and attach one end to negatively charged sphere from figure 1.1, and another piece to a positively charged sphere? Freely roaming electrons inside the metal would experience the same force as stand-alone electron from our previous experiment, and thus electrons would start moving in the direction form negatively charged into positively charged sphere, this movement would only stop when charges of both spheres would get equal. What we've just created is an electric circuit with the *electric current*. Electric current is physical quantity, it is measured in *Coulombs per second* that was given its own name - *Ampere* or *Amp* for short. In formulas and equations, electric current is denoted by the letter *I*. 
+
+In our experiment with spheres, by moving electrons from one to another not only created an electric field, but we have stored some energy in these spheres and there is a special physical unit for measuring it: it is measured in *joule of energy per coulomb of charge*, and that also has its own name - *Volt* and the quantity itself - *electric potential difference* or *Voltage*. In formulas and equations, voltage is denoted by the letter *V*. 
+
+We further keep playing with the spheres and wires, and this time we pick a very-very thin metal wire, we if have precise measurement tools we might notice that this time it takes longer for electrons to move from one sphere to another. That's because conductance of a thin wire is worse, or in physical terms it has greater *resistance*, denoted as *R*. Resistance is measured in *Ohms* and one Ohm is such a resistance that would allow a current of 1 Amp at 1 Volt of voltage applied. Resistance, Current and Voltage are all interconnected by the *Ohm's law* 
+`V = I R`$ 
+ - or - 
+`I = \frac{V}{R}`$
 
 
 ## Basic circuits 
 
-
-
-To establish some solid ground, let us cover just briefly the graphical language used by the electric and electronic circuits to describe the schematics. 
-Physically every circuit consists of some amount of components and wires connecting components together. On diagrams circuits are represented as graphs with some standard symbols indicating particular components and lines showing connections between components. 
-Example of a very basic circuit is on the figure 1.1 below. This circuit consists of three components: V1 - voltage (power) source, S1 - switch, L1 - lamp, and obviously there are connections between these components.
-{alt: "Basic electric circuit", width: "70%"}
-![figure 1.1 - basic circuit](ch1_primitive_circuit.svg)
-
-Operation of this circuit is very simple: when switch is connected (known as 'closed') - there is electric flow going through the circuit and the lamp is on, when switch is disconnected (known as 'open') - there is no wire and light is off. 
-
-In the physical terms, electric flow is called *current* and measured in Amperes or Amps for short. Current is usually denoted by the letter *I*. It is defined as amount of charge (coulomb) per unit of time (second) going through the wire.
+Let us now cover just briefly the graphical language used by the electric and electronic circuits to describe the schematics.
  
-Another value we would see often is a *voltage*. Voltage is a measure of the "power" of the power supply. As name suggests, the unit of measure is Volt, is defined as unit of energy (joule) per unit of charge (coulomb again). Voltage usually denoted by the letter *V*. The higher the voltage, the greater current (in amps) it can push through the circuit. 
+Physically every circuit consists of some amount of components and wires connecting components together. On diagrams circuits are represented as graphs with some standard symbols indicating particular components and lines showing connections between components. 
+Example of a very basic circuit is on the figure 1.2 below. This circuit consists of three components: V1 - voltage (power) source, S1 - switch, L1 - lamp, and obviously there are connections between these components.
+{alt: "Basic electric circuit", width: "70%"}
+![figure 1.2 - basic circuit](ch1_primitive_circuit.svg)
 
-Third important characteristics of circuits and/or individual components is *resistance*, it is measured in Ohms and denoted by letter *R*. Higher the resistance - less current flows through the component with the same voltage applied. 
-In strict terms, resistance voltage and current are related by the Ohm's Law: `V = I R`$ or `I = \frac{V}{R}`$. Thus, 1 Ohm is a such value of resistance that would allow a current of 1 Amp at 1 Volt of voltage applied.  
+Operation of this circuit is very simple: when switch is connected (known as 'closed') - there is an electric current going through the circuit and the lamp is on, when switch is disconnected (known as 'open') - there is no wire and light is off. 
+Conventionally, if direction of the electric current is shown on the circuit, it is shown in the direction from positive terminal to the negative terminal of the voltage source. We known that in fact electrons in metals travel from negative to positive terminals, but this conventional direction is only a convenience. If we change the direction of the flow - we only need to change the sign in front of *I* in the formulas to make it right. 
 
-Let us now look at second circuit example - see figure 1.2.
+Let us now look at second circuit example - see figure 1.3.
 {alt: "Basic electric circuit with intersections", width: "90%"}
-![figure 1.2 - basic circuit with intersections](ch1_circuit_with_intersections.svg)
+![figure 1.3 - basic circuit with intersections](ch1_circuit_with_intersections.svg)
 
 There we have same building blocks: power source, switches and light bulbs. But now there are some intersections between the lines representing the wires. The rule to read the intersections is simple: if there is a black dot - intersection means connection between intersecting wires, if three is no dot - no connection: one wire is simply passing over another. One exception from this rule is "T-junction", there connecting dot sometimes might be omitted while it would still means connection as no other physical configuration is possible for T-junction.
 
-Quite often you would see the "ground" symbol on the circuit digrams, see figure 1.3 below for as an example. It is the same physical circuit as on figure 1.1, but represented in a different way. Both diagrams 1.1 and 1.3 would have the exact same physical implementation. 
-{alt: "Basic electric circuit", width: "70%"}
-![figure 1.3 - basic circuit with ground symbols](ch1_primitive_circuit_with_gnd.svg)
+Quite often you would see the "ground" symbol on the circuit digrams, see figure 1.4 below for as an example. It is the same physical circuit as on figure 1.2, but represented in a different way. Both diagrams 1.2 and 1.4 would have the exact same physical implementation. 
+{alt: "Basic electric circuit", width: "60%"}
+![figure 1.4 - basic circuit with ground symbols](ch1_primitive_circuit_with_gnd.svg)
 You could think of the "ground" as a implicitly assumed wire that reaches everywhere and any "ground" symbol is a connection to that wire. The "ground" usually assumed to be at zero volts, and it is usually connected to the "-" of the power supply in case of DC-powered circuit. Benefit of using this symbol instead of showing explicit connection is reduced amount of lines on the diagram, that obviously improves readability in case of complex circuits. 
  
 
@@ -50,23 +60,23 @@ Particular voltage levels for encoding logical 0 and 1 do vary depending on tech
 ## Primitive Logic  
 
 For this sub-chapter, imagine yourself as a contractor fitting an X-Ray room in the hospital with some signalling equipment. 
-Doctors in particular want to install a light outside the room indicating that X-Ray machine is in use and no one is allowed to enter. That should be operated manually by the switch inside the room. Can we make it? Sure we can, we just need to take a circuit from figure 1.1 and make longer the wires to the lamp L1, see figure 1.4 below: 
+Doctors in particular want to install a light outside the room indicating that X-Ray machine is in use and no one is allowed to enter. That should be operated manually by the switch inside the room. Can we make it? Sure we can, we just need to take a circuit from figure 1.2 and make longer the wires to the lamp L1, see figure 1.5 below: 
 
 {alt: "Basic electric circuit as signalling system", width: "90%"}
-![figure 1.4 - X-Ray indicator circuit](ch1_primitive_telegraph.svg)
+![figure 1.5 - X-Ray indicator circuit](ch1_primitive_telegraph.svg)
 
 So whoever is operating the X-Ray machine has to use switch S1 to turn the remote light L1 on or off. What we did is a basic information transmission device that can transmit one bit of information at a time. 
 
-The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of "L1" to be equal to "S1 or S2". We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.5 below. 
+The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of "L1" to be equal to "S1 or S2". We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
 {alt: "Basic 'OR' logic", width: "90%"}
-![figure 1.5 - basic OR logic](ch1_primitive_or_logic.svg)
+![figure 1.6 - basic OR logic](ch1_primitive_or_logic.svg)
 
 Easy and elegant! If any/both of the switches S1 or S2 is "connected" (known as "closed" in a switching term), then current would flow through the circuit and the warning light would be turned on. 
 
 As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signalling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation, so warning light should only be on if both operators have turned it on. Thus we would have again indicator switches S1 and S2 and output should be equal to "S1 and S2". 
-This functionality also can be achieved easily by using the circuit on the figure 1.6. 
+This functionality also can be achieved easily by using the circuit on the figure 1.7. 
 {alt: "Basic 'AND' logic", width: "90%"}
-![figure 1.6 - basic AND logic](ch1_primitive_and_logic.svg)
+![figure 1.7 - basic AND logic](ch1_primitive_and_logic.svg)
 
 Again, super easy. If any of the switches is not connected - circuit is broken - there would be no current, light L1 is off, and only if both are connected - light would be on. 
 
@@ -77,25 +87,25 @@ The above examples of implementation of "AND" and "OR" functions using manually 
 We've just seen how manually controlled mechanical switches could be arranged to implement some logical functions. But mechanical switch can only be operated manually, so the only input to that logical circuit is a person's intention materialized in a physical action. If we want to build logical functions that take input in form of electric signal and output output in form of electric signal, we need some switching mechanism that can be controlled by electricity. 
 
 In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option. 
-Transistors do exist in many different shapes and forms. Main two types of transistors are Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). Modern day electronics is almost entirely built from specific sub-type of field effect transistor called MOSFET - stands for "Metal–Oxide–Semiconductor Field-Effect Transistor". MOSFETs themselves came in two variants: nMOS and pMOS, graphical symbols for both are shown on the figure 1.7.
-{alt: "MOSFET Symbols", width: "90%"}
-![figure 1.7 - MOSFET Symbols](ch1_mosfets.svg)
+Transistors do exist in many different shapes and forms. Main two types of transistors are Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). Modern day electronics is almost entirely built from specific sub-type of field effect transistor called MOSFET - stands for "Metal–Oxide–Semiconductor Field-Effect Transistor". MOSFETs themselves came in two variants: nMOS and pMOS, graphical symbols for both are shown on the figure 1.8.
+{alt: "MOSFET Symbols", width: "70%"}
+![figure 1.8 - MOSFET Symbols](ch1_mosfets.svg)
 
 Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G). 
 Operation of the MOSFET transistor is fairly simple: the resistance of the path between *Source* and *Drain* is directly affected by the voltage applied at *Gate*, and would vary from just a few Ohms (or even less), so basically conducting as good as a metal wire, to tens of MegaOhms, the latter is equivalent of no conduction at all. 
 Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. How can it control the transistor then? Voltage applied at *Gate* would influence the electric field inside the transistor body and that is what turns transistor on or off - thus "field effect" in the MOSFET abbreviation. Because *Gate* is insulated, there can be no current flowing between *Gate* and any other electrode - that is what makes MOSFETs more power efficient when building large digital circuits over older technology stacks based on BJTs. 
 
-The exact effect of high / low voltage at *Gate* is different between nMOS and pMOS transistors. When voltage applied to the "Gate" electrode is low (less than 0.8V in case of CMOS), pMOS transistors would have low resistance / good conductivity (between *Source* and *Drain*) and nMOS on the other hand - high resistance / no conductivity. When voltage at "Gate" is high (above 2 volts in case of CMOS) the situation is inverse: pMOS transistor would have high resistance / no conductivity and nMOS - low resistance / good conductivity. Basically we can say that pMOS transistor is a closed switch when input is logical 0 and open when input is logical 1, and nMOS is an open switch when input is logical 0 and closed switch when input is logical 1 - see figure 1.8. 
+The exact effect of high / low voltage at *Gate* is different between nMOS and pMOS transistors. When voltage applied to the "Gate" electrode is low (less than 0.8V in case of CMOS), pMOS transistors would have low resistance / good conductivity (between *Source* and *Drain*) and nMOS on the other hand - high resistance / no conductivity. When voltage at "Gate" is high (above 2 volts in case of CMOS) the situation is inverse: pMOS transistor would have high resistance / no conductivity and nMOS - low resistance / good conductivity. Basically we can say that pMOS transistor is a closed switch when input is logical 0 and open when input is logical 1, and nMOS is an open switch when input is logical 0 and closed switch when input is logical 1 - see figure 1.9. 
    
-{alt: "pMOS and nMOS", width: "70%"}
-![figure 1.8 - pMOS and nMOS transistors](ch1_transistor_operation.svg )
+{alt: "pMOS and nMOS", width: "80%"}
+![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg )
 
 To be more precise, there is a very non-linear curve that describes dependency between internal resistance of the transistor and voltage at "Gate", but below / above CMOS thresholds we can treat them as fully on / off. Other MOSFETs that are designed to be used in analogue circuits would normally have a region where resistance is relatively linearly depends on the *Gate* voltage, and that region is commonly used for signal amplification. 
 
 
 ## Logical Gates 
 
-The next level up in the hierarchy of digital building blocks would be logical gates. These are primitive components implementing basic logic functions like *AND* or *OR*. Output signal of the gate only depends on the present value of the input signal(s) and nothing else. Let's denote letters A, B, C... (or a, b, c...) for the values of the inputs signals, and F as the function of the gate. Table below lists all the common logical gates along with definition of its functions. 
+The next level up in the hierarchy of digital building blocks would be logical gates. These are primitive components implementing basic logic functions like *AND* or *OR*. Output signal of the gate only depends on the present value of the input signal(s) and nothing else. Let's denote letters A, B for the values of the inputs signals, and F as the function of the gate. Table below lists all the common logical gates along with definition of its functions.
 
 | Gate | Function | Symbol | 
 |------|----------|--------|
@@ -103,17 +113,19 @@ The next level up in the hierarchy of digital building blocks would be logical g
 |------|----------|--------|
 | NOT | F = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
 |------|----------|--------|
-| AND | F = A **and** B **and** ... | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
+| AND | F = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
 |------|----------|--------|
-| OR | F = A **or** B **or** .. | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
+| OR | F = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
 |------|----------|--------|
-| XOR | F = A **xor** B **xor** .. | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
+| XOR | F = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
 |------|----------|--------|
-| NAND | F = **not** (A **and** B **and** ...) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
+| NAND | F = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
 |------|----------|--------|
-| NOR |  F = **not** (A **or** B **or** .. ) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
+| NOR |  F = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
 |------|----------|--------|
-| XNOR | F = **not** (A **xor** B **xor** ..) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+| XNOR | F = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+
+All two-input gates shown in the table above also do exist in a configuration with more than just two inputs. 
 
 It should be noted that there are some special gate types that are not listed in the table above, but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
 
@@ -122,52 +134,34 @@ Each gate's output can only drive a number of inputs to other gates and if more 
 
 ## Logical Gates Implementations with Transistors 
 
-Lets now see how can we implement logical gates with MOSFET transistors. We already did see a sort of logical gates implemented on mechanical switches, and here idea is in principle the same, but there is also a difference. Let's try a naive implementation of the AND gate, it would be something like, see figure 1.9: 
+Lets now see how can we implement logical gates with MOSFET transistors. We already did see a sort of logical gates implemented on mechanical switches, and here idea is in principle the same, but there is also a difference. Let's try a naive implementation of the AND gate, it would be something like, see figure 1.10: 
 {alt: "Naive AND gate implementation", width: "70%"}
-![figure 1.9 - Naive AND gate - wont work!](ch1_naive_and_gate.svg)
+![figure 1.10 - Naive AND gate - wont work!](ch1_naive_and_gate.svg)
 What we have here are two inputs A and B, voltage source V1, and the output "O". Unfortunately this circuit is only guaranteed to work correctly if both A and B are logical HIGH and thus both transistors are ON and conducting, making output to be connected to the voltage source. 
 Usually there is a network of logical gates, thus output of this gate would be most likely fed into input of another gate - so it would be connected to "Gate" of another MOSFET somewhere else in the circuit. What would happen if now we switch one of the transistors off? That wire connecting output of this gate and input of the next gate in the network becomes completely insulated: one or both transistors  - it is disconnected from power here and "Gate" in the next logical gate is also insulated. If there was any static charge built up on the wire - it would sit there for quite a while due to parasitic capacitance that every wire has, and even worse - it would affect the operation of the next gate as it would be an equivalent for logical HIGH (at best) or could be value somewhere in the middle between LOW and HIGH. Where the static charge comes from? From the previous time when gate was producing logical HIGH. 
 
-We need to find a way to get away from that static charge in the naive "AND" gate implementation. The easiest approach is to connect the output "O" of the logical gate via some resistor to the ground. Resistor is basically a poorly conducting wire - it allows some current but not a big one. It would be still very sufficient to ensure no static charge builts up on the wire when transistors are off. See figure 1.10 below: 
+We need to find a way to get away from that static charge in the naive "AND" gate implementation. The easiest approach is to connect the output "O" of the logical gate via some resistor to the ground. Resistor is basically a poorly conducting wire - it allows some current but not a big one. It would be still very sufficient to ensure no static charge builts up on the wire when transistors are off. See figure 1.11 below: 
 {alt: "pMOS AND gate", width: "70%"}
-![figure 1.10 - pMOS AND](ch1_naive_and_gate_fixed.svg)
+![figure 1.11 - pMOS AND](ch1_naive_and_gate_fixed.svg)
 What we've got in result is in fact a variant of implementation of 'pMOS AND' gate.  It is called 'pMOS' because it is implemented on pMOS transistors. nMOS implementation is also possible and then it would be called 'nMOS AND'. 
 
 The resistor that we've introduced into the circuit is called "pull-down" resistor since it pulls signal down to the ground if there is no other driver to that signal. The golder rule of the electronics design is to have ___no dangling inputs, ever___. Any signal should be either directly driver by something or pulled up or down. 
 
------ from here--- 
-
-
-Both nMOS and pMOS gates would work but not ideal: there are at least two problems with nMOS/pMOS technology. 
-Problem number one is a power consumption: that resistor in the circuit would constantly conduct and that means it would constantly drain some power from the power supply, regardless of how frequently particular gate switches. That power drain might be OK for small circuit, but would be a huge limiting factor for a complex one. 
-Second problem is size. While transistors can be made small relatively easily, so millions of them could be packed on a surface of a single chip. But resistors on the other hand aren't that easy to minimize: in order to have some resistance, resistor needs some bulk area. The solution for these limiting factors came in combination of pMOS and nMOS into a more advanced technology - CMOS. 
-
-
-
-
+Resistor we've introduced into pMOS/nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when gate is producing logical 1, there is a power drain through the resistor. On top of that - it is really hard to make resistors small for packing millions of gates on the single chip - unlike transistors, resistor needs to have some bulk mass to resist. 
 
 ### CMOS 
 
-The next step in the logical gates design is a Complementary-MOS or CMOS. CMOS technology uses a combination of pMOS and nMOS transistors that work together in a combination so that at any stage at least one transistor in the circuit is open and connects output to some defined value, thus not leaving output floating in the air. 
-
-First, lets examine the CMOS "NOT" gate implementation, see figure 1.11. 
-
-... 
-
-
-It combines pMOS and nMOS in order to get rid of resistors in the implementation. Instead of u implementing the whole thing by pure transistors. Let us first take a look at basic "NOT" gate implemented in CMOS, see figure 1.11, where wire 'A' is the input of the gate, 'Q' is the output, and "Vdd" / "Vss" are pair of cables connected to the power supply (bottom one is 0v, top is +3.3v).  
+Luckily we can get rid of the resistor in the gate implementation if we combine pMOS and nMOS transistors in the same gate, by complementing their operation: when one transistor is open another is closed and vice-versa. This technology is called *CMOS* - *Complementary metal–oxide–semiconductor*. Lets have a look how CMOS "NOT" is implemented, see figure 1.12. 
 {alt: "CMOS NOT gate", width: "70%"}
-![figure 1.11 - CMOS NOT](ch1_cmos_not_gate_2.svg)
-
-Lets see how it is working: if input is logical zero, meaning input voltage is close to 0v - top pMOS transistor is open and bottom nMOS transistor is closed, as result the whole output Q is connected to power supply voltage, the whole circuit becomes an equivalent of figure 1.12 below.
-
+![figure 1.12 - CMOS NOT](ch1_cmos_not_gate_2.svg)
+Lets see how it is working: if input is logical zero, the top pMOS transistor is on (conducting) and bottom nMOS transistor is off (not conducting), as result the whole output Q is connected to power supply voltage, the whole circuit becomes an equivalent of figure 1.13 below.
 {alt: "CMOS NOT gate operation", width: "50%"}
-![figure 1.12 - CMOS NOT with input equals to LOW](ch1_cmos_not_input_low.svg)
-
-Now, if input would be logical 1, meaning voltage is close to 3.3v, then situation is inverted and button transistor is open and top is closed, output is connected to bottom line that is at 0v level, meaning logical zero.
-The whole circuit becomes an equivalent of figure 1.13 below.
- 
+![figure 1.13 - CMOS NOT with input equals to LOW](ch1_cmos_not_input_low.svg)
+Now, if input would be logical 1, meaning voltage is close to 3.3v, then situation is inverted and button transistor is on and top is off, output is connected to bottom line that is at 0v level, meaning logical zero. The whole circuit becomes an equivalent of figure 1.14 below.
 {alt: "CMOS NOT gate operation", width: "50%"}
-![figure 1.13 - CMOS NOT with input equals to HIGH](ch1_cmos_not_input_high.svg)
+![figure 1.14 - CMOS NOT with input equals to HIGH](ch1_cmos_not_input_high.svg)
+What's important is a CMOS NOT gate implementation is that output is always driven explicitly: either top or bottom transistor is always on. 
 
+Lets now have a loop and examine how NAND gate is implemented, see figure 1.15 below: 
 
+--- here would be figure 1.15 ---
