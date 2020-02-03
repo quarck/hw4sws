@@ -2,25 +2,49 @@
 
 ## A very brief introduction into electricity 
 
-As much as possible, while writing this book I've tried avoiding going into low-level details, instead focusing on the main ideas and concepts. But some theoretical knowledge of electricity is still necessary for understanding of the material in this book. If you feel comfortable about basic electrical concepts like current, voltage, resistance, and can read electric circuits diagram - feel free to skip the following few pages.
+We would start from a very brief dive into a theory of electricity. This knowledge would be beneficial for better understanding of the further material. 
 
-As we know, every physical object is made of atoms. Atom itself consists of a smaller building blocks: protons, neutrons and electrons. Protons and neutrons are packed into a tiny nucleus in the centre of the atom and electrons are 'orbiting' around it ('orbiting' is a very simplified description of it). 
+### Elementary charge 
+As everybody knows, conventional matter is made of atoms. Atom itself consists of a smaller building blocks: protons, neutrons and electrons. Protons and neutrons are packed into a tiny nucleus in the centre of the atom and electrons are 'orbiting' around it ('orbiting' is a very simplified description of it). 
 Neutrons are electrically neutral while both electrons and protons have an *electric charge*. *Electric charge* is a property of a particle (and matter): particles with electric charge do interact with electric field and particles without electric charge don't. 
-Electric charges of electron and proton are equal by the absolute value but opposite by their signs: protons are positively charged and electrons are negatively charged. An absolute value of a charge of an electron (or proton) is called the *elementary charge*. If we combine `6.2415090744 × 10^18`$ of elementary charges together, we would get a total charge equal to a physical unit called  *Coulomb*. 
-Particles with the same electric charge do repeal from each other, and particles with the opposite charge do attract to each other. To be a bit more precise, every charged particle creates an electric field around itself and another particle do react to that field. 
-Let's do a small imaginary experiment: we take two metal spheres, fix them at some distance and move some electrons from one sphere to another. Sphere where we took electrons would became positively charged as it would have more protons than electrons overall, and sphere where we've added electrons gets a negative charge as it has received electrons. Now, in the middle between these two spheres we put a single electron. If we ignore gravity, electron would only experience a combined electric field from two spheres that would make it accelerating away fro negatively charged sphere towards positively charged sphere. See figure 1.1.
+Electric charges of electron and proton are equal by the absolute value and opposite by their signs: protons are positively charged and electrons are negatively charged. 
+An absolute value of a charge of an electron is called the *elementary charge*, it is a smallest possible charge. Electric charge is quantized, thus any charge is a multiple of elementary charge. (To be absolutely correct, elementary particles called *quarks* can have charges of 1/2 or 2/3 of elementary charge, but quarks can only exist in combinations with the total charge that is multiple of elementary charge). 
+
+### Electric charge
+If we combine `6.2415090744 × 10^18`$ of elementary charges together, we would get a total charge equal to a physical unit called  *Coulomb*. You might wander why such arbitrary number? In earlier days of physics *Coulomb* was defined another way - it was a derived unit. But later this definition was changed to be a defined as a multiple of elementary charges as this is the most reliable possible definition: charge of the electron is a physical constant, thus N times physical constant is also a constant. 
+Every charged particle has an *electric field* around itself, and other charged particles interact with this field. The net effect of this interaction is that particles with the same charge do repeal from each other and particles with the opposite charges do attract. 
+On the larger scale, physical objects can be charged positively or negatively by removing or adding some electrons from/to the object. Charged physical objects do produce electric field that is a combined field of all the elementary charges it has. 
+
+### Conducting materials 
+In metals electrons 'orbiting' on the outer 'orbits' don't have very strong bound with nucleus, thus when many atoms are combined into a piece of metal, these outer electrons can roam inside the metal relatively freely. Materials that have such properties do conduct electricity. 
+Electron is not the only possible conductor of the electricity: water and salt solution would be also very conductive, but instead of electrons there would be negatively and positively charged ions. Ion is an atom that has either lost an electron or has got an extra electron. 
+
+### Electric current 
+Let's do a small imaginary experiment: we take two metal spheres, put them into a vacuum, fix them at some distance and charge one sphere negatively and another positively. In the middle between these two spheres we put a single electron. If we ignore gravity, electron would only experience a combined electric field from two spheres that would make it accelerating away from negatively charged sphere towards positively charged sphere. See figure 1.1.
 {alt: "Experiment setup", width: "90%"}
 ![figure 1.1 - Experiment setup](ch1_experiment1.svg)
 
-In metals, electrons 'orbiting' on the outer 'orbits' don't have very strong bound with nucleus, thus when many atoms are combined into a piece of metal, these outer electrons can roam inside the metal relatively freely. So what would happen if we take a piece of metal wire and attach one end to negatively charged sphere from figure 1.1, and another piece to a positively charged sphere? Freely roaming electrons inside the metal would experience the same force as stand-alone electron from our previous experiment, and thus electrons would start moving in the direction form negatively charged into positively charged sphere, this movement would only stop when charges of both spheres would get equal. What we've just created is an electric circuit with the *electric current*. Electric current is physical quantity, it is measured in *Coulombs per second* that was given its own name - *Ampere* or *Amp* for short. In formulas and equations, electric current is denoted by the letter *I*. 
+Next thing we try in the experiment, we take a metal wire and attach one end to negatively charged sphere and another piece to a positively charged one. As we know, metals have some amount of relatively freely moving electrons inside. Similar to electron from the vacuum, free-roaming electrons in the metal would experience force from the electric field and would start moving in the direction from negatively charged sphere towards positively charged, this process would only stop when electric charge of both spheres gets equal. 
+What we've just created is an electric circuit with the *electric current*. Electric current is a physical quantity, it is measured in *Coulombs per second* that was given its own name - *Ampere* or *Amp* for short. In circuits and equations it is denoted by the letter *I*. 
 
-In our experiment with spheres, by moving electrons from one to another not only created an electric field, but we have stored some energy in these spheres and there is a special physical unit for measuring it: it is measured in *joule of energy per coulomb of charge*, and that also has its own name - *Volt* and the quantity itself - *electric potential difference* or *Voltage*. In formulas and equations, voltage is denoted by the letter *V*. 
+### Voltage 
+In the previous experiment, by charging the spheres we not only created an electric field but also stored some energy in this system. There is a special unit for measuring 'density' of this energy - *electric potential difference*. It is measured in *joule of energy per coulomb of charge* and this unit has its own name - *Volt*, and the electric potential difference is also known as *Voltage*. 
+
+### Resistance 
 
 We further keep playing with the spheres and wires, and this time we pick a very-very thin metal wire, we if have precise measurement tools we might notice that this time it takes longer for electrons to move from one sphere to another. That's because conductance of a thin wire is worse, or in physical terms it has greater *resistance*, denoted as *R*. Resistance is measured in *Ohms* and one Ohm is such a resistance that would allow a current of 1 Amp at 1 Volt of voltage applied. Resistance, Current and Voltage are all interconnected by the *Ohm's law* 
-`V = I R`$ 
- - or - 
-`I = \frac{V}{R}`$
 
+{format: latex}
+```
+V \eq I R
+```
+ - or -
+ 
+``$
+{format: latex}
+```
+I \eq \frac{V}{R}
+```
 
 ## Basic circuits 
 
@@ -84,11 +108,6 @@ The above examples of implementation of "AND" and "OR" functions using manually 
 
 ## Transistors
 
-
-*** TODO: NOTE ON TERMINILOGY ON / OFF****
-
-
-
 We've just seen how manually controlled mechanical switches could be arranged to implement some logical functions. But mechanical switch can only be operated manually, so the only input to that logical circuit is a person's intention materialized in a physical action. If we want to build logical functions that take input in form of electric signal and output output in form of electric signal, we need some switching mechanism that can be controlled by electricity. 
 
 In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option. 
@@ -99,6 +118,12 @@ Transistors do exist in many different shapes and forms. Main two types of trans
 Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G). 
 Operation of the MOSFET transistor is fairly simple: the resistance of the path between *Source* and *Drain* is directly affected by the voltage applied at *Gate*, and would vary from just a few Ohms (or even less), so basically conducting as good as a metal wire, to tens of MegaOhms, the latter is equivalent of no conduction at all. 
 Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. How can it control the transistor then? Voltage applied at *Gate* would influence the electric field inside the transistor body and that is what turns transistor on or off - thus "field effect" in the MOSFET abbreviation. Because *Gate* is insulated, there can be no current flowing between *Gate* and any other electrode - that is what makes MOSFETs more power efficient when building large digital circuits over older technology stacks based on BJTs. 
+
+
+*** TODO: NOTE ON TERMINILOGY ON / OFF****
+
+
+
 
 The exact effect of high / low voltage at *Gate* is different between nMOS and pMOS transistors. When voltage applied to the "Gate" electrode is low (less than 0.8V in case of CMOS), pMOS transistors would have low resistance / good conductivity (between *Source* and *Drain*) and nMOS on the other hand - high resistance / no conductivity. When voltage at "Gate" is high (above 2 volts in case of CMOS) the situation is inverse: pMOS transistor would have high resistance / no conductivity and nMOS - low resistance / good conductivity. Basically we can say that pMOS transistor is a closed switch when input is logical 0 and open when input is logical 1, and nMOS is an open switch when input is logical 0 and closed switch when input is logical 1 - see figure 1.9. 
    
