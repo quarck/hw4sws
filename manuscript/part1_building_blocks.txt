@@ -107,7 +107,7 @@ The above examples of implementation of logical *AND* and *OR* functions using m
 
 We've just seen how manually controlled mechanical switches could be arranged to implement some logical functions. But mechanical switch can only be operated manually, so the only input to that logical circuit is a person's intention materialized in a physical action. If we want to build logical functions that take input in form of electric signal and output output in form of electric signal, we need some switching mechanism that can be controlled by electricity. 
 
-In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option.
+In fact there are many-many types of such electrically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option.
 
 Transistors do exist in many different shapes and forms. Main two types of transistors are Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). Modern day electronics is almost entirely built from specific sub-type of field effect transistor called MOSFET - stands for "Metal–Oxide–Semiconductor Field-Effect Transistor". MOSFETs themselves came in two variants: nMOS and pMOS, graphical symbols for both are shown on the figure 1.8.
 {alt: "MOSFET Symbols", width: "70%"}
@@ -115,15 +115,19 @@ Transistors do exist in many different shapes and forms. Main two types of trans
 
 Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G).
 
-The resistance of the path between *Source* and *Drain* (often referred as *channel*) in the MOSFET transistor is directly affected by the voltage applied at the *Gate*. Let's denote latter as *VG*. 
-For pMOS transistors, gate voltage *VG* below 0.8V would result in a very low channel resistance, and gate voltage *VG* above 2.0 would result in a very high channel resistance - over tens of MegaOhms. When gate voltage *VG* is between 0.8V and 2V, the channel resistance is somewhat between and changing very rapidly - the dependency is non-linear (here and further in this chapter we assume CMOS 3.3V voltage levels). 
-For nMOS transistors the situation is inverse: gate voltage *VG* below 0.8V would result in a very high channel resistance - over tens of MegaOhms, and gate voltage above 2V would result in a very low channel resistance, and again - anything in between would have neither-fully-conducting-nor-fully-insulating effect. 
-In a digital circuits voltage levels between 0.8V are 2V are not supposed to be used, thus MOSFET transistor can be considered as a simple ON/OFF switch. The switch analogy would help us with better understanding of transistor based circuits operation, see figure 1.9 for equivalent switches confiurations: 
+The resistance of the path between *Source* and *Drain* (often referred as *channel*) in the MOSFET transistor is directly affected by the voltage applied at the *Gate*. Let's this voltage as *VG*.
+ 
+For pMOS transistors, gate voltage *VG* below 0.8V would result in a very low channel resistance, and gate voltage *VG* above 2.0 would result in a very high channel resistance - over tens of MegaOhms, this is basically the same as no conductivity at all - Source and Drain become disconnected. When gate voltage *VG* is between 0.8V and 2V, the channel resistance is somewhat between and changing very rapidly - the dependency is non-linear (here and further in this chapter we assume transistors designed to work with CMOS 3.3V voltage levels).
+ 
+For nMOS transistors the situation is inverse: gate voltage *VG* below 0.8V would result in a very high channel resistance - over tens of MegaOhms (Source and Drain are disconnected), and gate voltage above 2V would result in a very low channel resistance, and again - anything in between would have neither-fully-conducting-nor-fully-insulating effect. 
+In a digital circuits voltage levels between 0.8V are 2V are not supposed to be used, thus MOSFET transistor can be considered as a simple ON/OFF switch, see figure 1.9. This switch analogy could be helpful in understanding transistor circuits operation in the following chapters. 
 
 {alt: "pMOS and nMOS", width: "80%"}
 ![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg)
 
-Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. How can it control the transistor then? Voltage applied at *Gate* would influence the electric field inside the transistor body and that is what turns transistor on or off - thus "field effect" in the MOSFET abbreviation. Because *Gate* is insulated, there can be no current flowing between *Gate* and any other electrode - that is what makes MOSFETs more power efficient when building large digital circuits over older technology stacks based on BJTs. 
+Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body, so there is no current between *Gate* and *Source* or between *Gate* and *Drain*, as result it cost nothing in terms of power consumption to hold transistor in particular desired state (but act of switching between OFF and ON states consumes some amount of energy) - that is what makes MOSFETs more power efficient in digital applications compared to BJT-based circuits. 
+
+You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). For more details on what's going on inside MOSFET transistor and how it is working - please go to Appendix A. 
 
 
 ## Logical Gates 
