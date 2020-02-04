@@ -29,6 +29,7 @@ What we've just created is an electric circuit with the *electric current*. Elec
 
 ### Voltage 
 In the previous experiment, by charging the spheres we not only created an electric field but also stored some energy in this system. There is a special unit for measuring 'density' of this energy - *electric potential difference*. It is measured in *joule of energy per coulomb of charge* and this unit has its own name - *Volt*, and the electric potential difference is also known as *Voltage*. 
+Electric potential difference can be only measured between two points, it doesn't exist on its own. In our setup we measure it between two charged spheres. 
 
 ### Resistance 
 
@@ -87,49 +88,42 @@ Doctors in particular want to install a light outside the room indicating that X
 
 So whoever is operating the X-Ray machine has to use switch S1 to turn the remote light L1 on or off. What we did is a basic information transmission device that can transmit one bit of information at a time. 
 
-The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of "L1" to be equal to "S1 or S2". We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
+The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of *L1* to be equal to *S1* **or** *S2*. We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
 {alt: "Basic 'OR' logic", width: "90%"}
 ![figure 1.6 - basic OR logic](ch1_primitive_or_logic.svg)
 
-Easy and elegant! If any/both of the switches S1 or S2 is "connected" (known as "closed" in a switching term), then current would flow through the circuit and the warning light would be turned on. 
+Easy and elegant! If any/both of the switches S1 or S2 is on, then current would flow through the circuit and the warning light would be turned on. 
 
-As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signalling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation, so warning light should only be on if both operators have turned it on. Thus we would have again indicator switches S1 and S2 and output should be equal to "S1 and S2". 
+As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signalling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation. Thus, we would have again indicator switches S1 and S2 and output *L1* should be equal to *S1* **and** *S2* - i.e. light should only be on if both operator set it into on. 
 This functionality also can be achieved easily by using the circuit on the figure 1.7. 
 {alt: "Basic 'AND' logic", width: "90%"}
 ![figure 1.7 - basic AND logic](ch1_primitive_and_logic.svg)
 
 Again, super easy. If any of the switches is not connected - circuit is broken - there would be no current, light L1 is off, and only if both are connected - light would be on. 
 
-The above examples of implementation of "AND" and "OR" functions using manually controlled switches are fairly primitive but they demonstrate how boolean logic could be implemented in principle. 
+The above examples of implementation of logical *AND* and *OR* functions using manually controlled switches are fairly primitive but they demonstrate how boolean logic could be implemented in principle. 
 
 ## Transistors
 
 We've just seen how manually controlled mechanical switches could be arranged to implement some logical functions. But mechanical switch can only be operated manually, so the only input to that logical circuit is a person's intention materialized in a physical action. If we want to build logical functions that take input in form of electric signal and output output in form of electric signal, we need some switching mechanism that can be controlled by electricity. 
 
-In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option. 
+In fact there are many-many types of such electrically/electronically controlled switches in existence, the most commonly known are: vacuum tubes, mechanical relays, and finally - semiconductor-based devices, transistors in particular. These days digital circuits are built almost entirely from components based on transistors, thus we are not going to details of vacuum tubes or relays, but it is good to know that transistor is not the only option.
+
 Transistors do exist in many different shapes and forms. Main two types of transistors are Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). Modern day electronics is almost entirely built from specific sub-type of field effect transistor called MOSFET - stands for "Metal–Oxide–Semiconductor Field-Effect Transistor". MOSFETs themselves came in two variants: nMOS and pMOS, graphical symbols for both are shown on the figure 1.8.
 {alt: "MOSFET Symbols", width: "70%"}
 ![figure 1.8 - MOSFET Symbols](ch1_mosfets.svg)
 
-Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G). 
-Operation of the MOSFET transistor is fairly simple: the resistance of the path between *Source* and *Drain* is directly affected by the voltage applied at *Gate*, and would vary from just a few Ohms (or even less), so basically conducting as good as a metal wire, to tens of MegaOhms, the latter is equivalent of no conduction at all. 
-Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. How can it control the transistor then? Voltage applied at *Gate* would influence the electric field inside the transistor body and that is what turns transistor on or off - thus "field effect" in the MOSFET abbreviation. Because *Gate* is insulated, there can be no current flowing between *Gate* and any other electrode - that is what makes MOSFETs more power efficient when building large digital circuits over older technology stacks based on BJTs. 
+Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G).
 
+The resistance of the path between *Source* and *Drain* (often referred as *channel*) in the MOSFET transistor is directly affected by the voltage applied at the *Gate*. Let's denote latter as *VG*. 
+For pMOS transistors, gate voltage *VG* below 0.8V would result in a very low channel resistance, and gate voltage *VG* above 2.0 would result in a very high channel resistance - over tens of MegaOhms. When gate voltage *VG* is between 0.8V and 2V, the channel resistance is somewhat between and changing very rapidly - the dependency is non-linear (here and further in this chapter we assume CMOS 3.3V voltage levels). 
+For nMOS transistors the situation is inverse: gate voltage *VG* below 0.8V would result in a very high channel resistance - over tens of MegaOhms, and gate voltage above 2V would result in a very low channel resistance, and again - anything in between would have neither-fully-conducting-nor-fully-insulating effect. 
+In a digital circuits voltage levels between 0.8V are 2V are not supposed to be used, thus MOSFET transistor can be considered as a simple ON/OFF switch. The switch analogy would help us with better understanding of transistor based circuits operation, see figure 1.9 for equivalent switches confiurations: 
 
-*** TODO: NOTE ON TERMINILOGY ON / OFF****
-
-
-
-
-The exact effect of high / low voltage at *Gate* is different between nMOS and pMOS transistors. When voltage applied to the "Gate" electrode is low (less than 0.8V in case of CMOS), pMOS transistors would have low resistance / good conductivity (between *Source* and *Drain*) and nMOS on the other hand - high resistance / no conductivity. When voltage at "Gate" is high (above 2 volts in case of CMOS) the situation is inverse: pMOS transistor would have high resistance / no conductivity and nMOS - low resistance / good conductivity. Basically we can say that pMOS transistor is a closed switch when input is logical LOW and open when input is logical HIGH, and nMOS is an open switch when input is logical 0 and closed switch when input is logical 1 - see figure 1.9. 
-
-*** TODO: nMOS/pMOS doesn't care above logical ^^^ -- change *** 
-
-   
 {alt: "pMOS and nMOS", width: "80%"}
 ![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg)
 
-To be more precise, there is a very non-linear curve that describes dependency between internal resistance of the transistor and voltage at "Gate", but below / above CMOS thresholds we can treat them as fully on / off. Other MOSFETs that are designed to be used in analogue circuits would normally have a region where resistance is relatively linearly depends on the *Gate* voltage, and that region is commonly used for signal amplification. 
+Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. How can it control the transistor then? Voltage applied at *Gate* would influence the electric field inside the transistor body and that is what turns transistor on or off - thus "field effect" in the MOSFET abbreviation. Because *Gate* is insulated, there can be no current flowing between *Gate* and any other electrode - that is what makes MOSFETs more power efficient when building large digital circuits over older technology stacks based on BJTs. 
 
 
 ## Logical Gates 
