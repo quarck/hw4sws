@@ -43,6 +43,18 @@ V \eq I R
 I \eq \frac{V}{R}
 ```
 
+
+Here's a paragraph before the figure.
+
+```$
+\left|\sum_{i=1}^n a_ib_i\right|
+\le
+\left(\sum_{i=1}^n a_i^2\right)^{1/2}
+\left(\sum_{i=1}^n b_i^2\right)^{1/2}
+```
+
+Here's a paragraph after the figure.
+
 ## Basic circuits 
 
 Let us now cover just briefly the graphical language used by the electric and electronic circuits to describe the schematics.
