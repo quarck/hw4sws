@@ -41,9 +41,9 @@
      inkscape:window-height="1001"
      id="namedview11170"
      showgrid="false"
-     inkscape:zoom="0.97773472"
-     inkscape:cx="184.60185"
-     inkscape:cy="184.70004"
+     inkscape:zoom="1.9554694"
+     inkscape:cx="49.407103"
+     inkscape:cy="25.174014"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -269,66 +269,54 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        x="35">A=HIGH</text>
   </g>
   <g
-     c_rotation="0"
+     c_partid="part_annotation"
+     id="gge1484"
      c_shapetype="group"
-     locked="0"
-     id="gge1482"
-     c_origin="225,-235"
-     c_etype="pinpart"
-     c_partid="part_netLabel_gnD"
      transform="translate(-45.152344,-378.9)">
-    <circle
-       style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
-       id="circle10728"
-       r="2"
-       cy="-235"
-       cx="225"
-       class="pindot"
-       c_pindot="true" />
-    <g
-       c_shapetype="group"
-       id="gge1484"
-       c_partid="part_annotation">
-      <text
-         style="font-size:12px;font-family:'Times New Roman';text-anchor:start;display:none;fill:#000000"
-         id="text10730"
-         display="none"
-         c_note="note_netflag"
-         font-size="9pt"
-         y="-209"
-         x="212">GND</text>
-    </g>
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1486"
-       points="225 -225 225 -235" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1487"
-       points="216 -225 234 -225" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1488"
-       points="219 -223 231 -223" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1489"
-       points="222 -221 228 -221" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1490"
-       points="224 -219 226 -219" />
+    <text
+       x="212"
+       y="-209"
+       font-size="9pt"
+       c_note="note_netflag"
+       display="none"
+       id="text10730"
+       style="font-size:12px;font-family:'Times New Roman';text-anchor:start;display:none;fill:#000000">GND</text>
   </g>
+  <polyline
+     points="225 -225 225 -235"
+     id="gge1486"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="216 -225 234 -225"
+     id="gge1487"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="219 -223 231 -223"
+     id="gge1488"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="222 -221 228 -221"
+     id="gge1489"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="224 -219 226 -219"
+     id="gge1490"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -338,245 +326,169 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_etype="wire"
      transform="translate(-45.152344,-378.9)" />
   <g
-     c_rotation="0"
+     c_partid="part_annotation"
+     id="gge1494"
      c_shapetype="group"
-     locked="0"
-     id="gge1492"
-     c_origin="95,-390"
-     c_etype="pinpart"
-     c_partid="part_netLabel_gnD"
      transform="translate(-45.152344,-378.9)">
-    <circle
-       style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
-       id="circle10740"
-       r="2"
-       cy="-390"
-       cx="95"
-       class="pindot"
-       c_pindot="true" />
-    <g
-       c_shapetype="group"
-       id="gge1494"
-       c_partid="part_annotation">
-      <text
-         style="font-size:12px;font-family:'Times New Roman';text-anchor:start;display:none;fill:#000000"
-         id="text10742"
-         display="none"
-         c_note="note_netflag"
-         font-size="9pt"
-         y="-364"
-         x="82">GND</text>
-    </g>
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1496"
-       points="95 -380 95 -390" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1497"
-       points="86 -380 104 -380" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1498"
-       points="89 -378 101 -378" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1499"
-       points="92 -376 98 -376" />
-    <polyline
-       style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       fill="transparent"
-       locked="0"
-       id="gge1500"
-       points="94 -374 96 -374" />
-  </g>
-  <g
-     add_into_bom="yes"
-     convert_to_pcb="yes"
-     bind_pcb_id="65ba46b041f8449d"
-     uuid="13fbe66358ac415f8f844f8a7a60755f"
-     puuid="05ca98c924be4d7f9936cfbc00888d3a"
-     c_etype="pinpart"
-     c_shapetype="group"
-     locked="0"
-     id="gge1501"
-     c_partid="part_lib_gge1501"
-     c_para="package`HDR1X2`nameAlias`Value`BOM_Supplier Part``BOM_Supplier``Contributor`EasyEDA`BOM_Manufacturer Part``spicePre`V`spiceSymbolName`VDC`"
-     c_origin="95,-415"
-     transform="translate(-45.152344,-378.9)">
-    <g
-       style="display:none"
-       c_shapetype="group"
+    <text
+       x="82"
+       y="-364"
+       font-size="9pt"
+       c_note="note_netflag"
        display="none"
-       id="gge1503"
-       c_partid="part_annotation">
-      <text
-         style="font-size:9.33333302px;font-family:Arial;text-anchor:start;fill:#000000"
-         id="text10751"
-         dominant-baseline=""
-         font-style=""
-         font-weight=""
-         font-size="7pt"
-         y="-402.85938"
-         x="106.70312"
-         c_note="note_name">1</text>
-    </g>
-    <g
-       c_shapetype="group"
-       id="gge1505"
-       c_partid="part_annotation">
-      <text
-         style="font-size:9.33333302px;font-family:Arial;text-anchor:start;fill:#000000"
-         id="text10754"
-         dominant-baseline=""
-         font-style=""
-         font-weight=""
-         font-size="7pt"
-         y="-411.92969"
-         x="107"
-         c_note="note_pre">V2</text>
-    </g>
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
-       r="10"
-       locked="0"
-       id="gge1507"
-       cy="-415"
-       cx="95" />
-    <g
-       c_rotation="90"
-       locked="0"
-       id="gge1508"
-       c_origin="95,-435"
-       c_spicepin="1"
-       c_elec="0"
-       c_show="show"
-       c_etype="pinpart"
-       c_partid="part_pin">
-      <text
-         style="font-size:9.33333302px;font-family:Verdana;text-anchor:end;display:none;fill:#000000"
-         id="text10758"
-         transform="rotate(-90,95,-423)"
-         display="none"
-         c_pinname="1"
-         font-size="7pt"
-         y="-423"
-         x="95">1</text>
-      <text
-         style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
-         id="text10760"
-         transform="rotate(-90,91,-429)"
-         display="none"
-         c_pinnumber="1"
-         font-size="7pt"
-         y="-429"
-         x="91">1</text>
-      <circle
-         style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
-         id="circle10762"
-         r="2"
-         cy="-435"
-         cx="95"
-         class="pindot"
-         c_pindot="true" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
-         inkscape:connector-curvature="0"
-         id="path10764"
-         d="m 95,-425 v -10" />
-      <circle
-         style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
-         id="circle10766"
-         display="none"
-         r="3"
-         cy="-448"
-         cx="95" />
-      <path
-         style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
-         inkscape:connector-curvature="0"
-         id="path10768"
-         display="none"
-         d="m 92,-445 3,3 3,-3" />
-    </g>
-    <polyline
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       locked="0"
-       id="gge1515"
-       points="93 -421 97 -421" />
-    <polyline
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       locked="0"
-       id="gge1516"
-       points="95 -423 95 -419" />
-    <g
-       c_rotation="270"
-       locked="0"
-       id="gge1517"
-       c_origin="95,-395"
-       c_spicepin="2"
-       c_elec="0"
-       c_show="show"
-       c_etype="pinpart"
-       c_partid="part_pin">
-      <text
-         style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
-         id="text10773"
-         transform="rotate(-90,95,-409)"
-         display="none"
-         c_pinname="2"
-         font-size="7pt"
-         y="-409"
-         x="95">2</text>
-      <text
-         style="font-size:9.33333302px;font-family:Verdana;text-anchor:end;display:none;fill:#000000"
-         id="text10775"
-         transform="rotate(-90,91,-401)"
-         display="none"
-         c_pinnumber="2"
-         font-size="7pt"
-         y="-401"
-         x="91">2</text>
-      <circle
-         style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
-         id="circle10777"
-         r="2"
-         cy="-395"
-         cx="95"
-         class="pindot"
-         c_pindot="true" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
-         inkscape:connector-curvature="0"
-         id="path10779"
-         d="m 95,-405 v 10" />
-      <circle
-         style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
-         id="circle10781"
-         display="none"
-         r="3"
-         cy="-382"
-         cx="95" />
-      <path
-         style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
-         inkscape:connector-curvature="0"
-         id="path10783"
-         display="none"
-         d="m 98,-385 -3,-3 -3,3" />
-    </g>
-    <polyline
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-       locked="0"
-       id="gge1524"
-       points="97 -409 93 -409" />
+       id="text10742"
+       style="font-size:12px;font-family:'Times New Roman';text-anchor:start;display:none;fill:#000000">GND</text>
   </g>
+  <polyline
+     points="95 -380 95 -390"
+     id="gge1496"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="86 -380 104 -380"
+     id="gge1497"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="89 -378 101 -378"
+     id="gge1498"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="92 -376 98 -376"
+     id="gge1499"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="94 -374 96 -374"
+     id="gge1500"
+     locked="0"
+     fill="transparent"
+     style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <g
+     c_partid="part_annotation"
+     id="gge1503"
+     display="none"
+     c_shapetype="group"
+     style="display:none"
+     transform="translate(-45.152344,-378.9)">
+    <text
+       c_note="note_name"
+       x="106.70312"
+       y="-402.85938"
+       font-size="7pt"
+       font-weight=""
+       font-style=""
+       dominant-baseline=""
+       id="text10751"
+       style="font-size:9.33333302px;font-family:Arial;text-anchor:start;fill:#000000">1</text>
+  </g>
+  <circle
+     cx="49.847656"
+     cy="-793.90002"
+     id="gge1507"
+     locked="0"
+     r="10"
+     style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges" />
+  <text
+     style="font-size:9.33333302px;font-family:Verdana;text-anchor:end;display:none;fill:#000000"
+     id="text10758"
+     transform="rotate(-90)"
+     display="none"
+     c_pinname="1"
+     font-size="7pt"
+     y="49.84766"
+     x="801.90002">1</text>
+  <text
+     style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
+     id="text10760"
+     transform="rotate(-90)"
+     display="none"
+     c_pinnumber="1"
+     font-size="7pt"
+     y="45.84766"
+     x="807.90002">1</text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
+     inkscape:connector-curvature="0"
+     id="path10764"
+     d="m 49.847656,-803.9 v -10" />
+  <circle
+     style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
+     id="circle10766"
+     display="none"
+     r="3"
+     cy="-826.90002"
+     cx="49.847656" />
+  <path
+     style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
+     inkscape:connector-curvature="0"
+     id="path10768"
+     display="none"
+     d="m 46.847656,-823.9 3,3 3,-3" />
+  <polyline
+     points="93 -421 97 -421"
+     id="gge1515"
+     locked="0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <polyline
+     points="95 -423 95 -419"
+     id="gge1516"
+     locked="0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
+  <text
+     style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
+     id="text10773"
+     transform="rotate(-90)"
+     display="none"
+     c_pinname="2"
+     font-size="7pt"
+     y="49.84766"
+     x="787.90002">2</text>
+  <text
+     style="font-size:9.33333302px;font-family:Verdana;text-anchor:end;display:none;fill:#000000"
+     id="text10775"
+     transform="rotate(-90)"
+     display="none"
+     c_pinnumber="2"
+     font-size="7pt"
+     y="45.84766"
+     x="779.90002">2</text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
+     inkscape:connector-curvature="0"
+     id="path10779"
+     d="m 49.847656,-783.9 v 10" />
+  <circle
+     style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
+     id="circle10781"
+     display="none"
+     r="3"
+     cy="-760.90002"
+     cx="49.847656" />
+  <path
+     style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
+     inkscape:connector-curvature="0"
+     id="path10783"
+     display="none"
+     d="m 52.847656,-763.9 -3,-3 -3,3" />
+  <polyline
+     points="97 -409 93 -409"
+     id="gge1524"
+     locked="0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
+     transform="translate(-45.152344,-378.9)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
