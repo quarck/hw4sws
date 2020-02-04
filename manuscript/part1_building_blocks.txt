@@ -34,12 +34,12 @@ In the previous experiment, by charging the spheres we not only created an elect
 
 We further keep playing with the spheres and wires, and this time we pick a very-very thin metal wire, we if have precise measurement tools we might notice that this time it takes longer for electrons to move from one sphere to another. That's because conductance of a thin wire is worse, or in physical terms it has greater *resistance*, denoted as *R*. Resistance is measured in *Ohms* and one Ohm is such a resistance that would allow a current of 1 Amp at 1 Volt of voltage applied. Resistance, Current and Voltage are all interconnected by the *Ohm's law* 
 
-```$
+```latex
 V \eq I R
 ```
  - or -
  
-```$
+```latex
 I \eq \frac{V}{R}
 ```
 
