@@ -37,8 +37,7 @@ We further keep playing with the spheres and wires, and this time we pick a very
 ```$
 V = I R
 ```
- - or -
-
+Or equally: 
 ```$
 I = \frac{V}{R}
 ```
