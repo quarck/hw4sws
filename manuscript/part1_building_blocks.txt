@@ -127,7 +127,7 @@ The exact effect of high / low voltage at *Gate* is different between nMOS and p
 
    
 {alt: "pMOS and nMOS", width: "80%"}
-![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg )
+![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg)
 
 To be more precise, there is a very non-linear curve that describes dependency between internal resistance of the transistor and voltage at "Gate", but below / above CMOS thresholds we can treat them as fully on / off. Other MOSFETs that are designed to be used in analogue circuits would normally have a region where resistance is relatively linearly depends on the *Gate* voltage, and that region is commonly used for signal amplification. 
 
@@ -194,4 +194,21 @@ What's important is a CMOS NOT gate implementation is that output is always driv
 
 Lets now have a loop and examine how NAND gate is implemented, see figure 1.15 below: 
 
---- here would be figure 1.15 ---
+{alt: "CMOS NAND", width: "80%"}
+![figure 1.15 - CMOS NAND gate](ch1_cmos_nand.svg)
+
+Here gonna be text 
+{alt: "CMOS NAND Operation", width: "80%"}
+![figure 1.16 - CMOS NAND gate Operation](ch1_nand_low_low.svg )
+
+Here gonna be text 
+{alt: "CMOS NAND Operation", width: "80%"}
+![figure 1.17 - CMOS NAND gate Operation](ch1_nand_low_high.svg )
+
+Here gonna be text 
+{alt: "CMOS NAND Operation", width: "80%"}
+![figure 1.18 - CMOS NAND gate Operation](ch1_nand_high_low.svg )
+
+Here gonna be text 
+{alt: "CMOS NAND Operation", width: "80%"}
+![figure 1.19 - CMOS NAND gate Operation](ch1_nand_high_high.svg )
