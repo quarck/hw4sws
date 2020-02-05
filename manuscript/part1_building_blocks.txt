@@ -80,28 +80,28 @@ Particular voltage levels for encoding logical LOW and HIGH do vary depending on
 
 ## Primitive Logic  
 
-For this sub-chapter, imagine yourself as a contractor fitting an X-Ray room in the hospital with some signalling equipment. 
+For this sub-chapter, imagine yourself as a contractor fitting an X-Ray room in the hospital with some signaling equipment. 
 Doctors in particular want to install a light outside the room indicating that X-Ray machine is in use and no one is allowed to enter. That should be operated manually by the switch inside the room. Can we make it? Sure we can, we just need to take a circuit from figure 1.2 and make longer the wires to the lamp L1, see figure 1.5 below: 
 
-{alt: "Basic electric circuit as signalling system", width: "90%"}
+{alt: "Basic electric circuit as signaling system", width: "90%"}
 ![figure 1.5 - X-Ray indicator circuit](ch1_primitive_telegraph.svg)
 
 So whoever is operating the X-Ray machine has to use switch S1 to turn the remote light L1 on or off. What we did is a basic information transmission device that can transmit one bit of information at a time. 
 
-The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signalling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of *L1* to be equal to *S1* **or** *S2*. We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
+The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signaling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of *L1* to be equal to *S1* **or** *S2*. We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
 {alt: "Basic 'OR' logic", width: "90%"}
 ![figure 1.6 - basic OR logic](ch1_primitive_or_logic.svg)
 
 Easy and elegant! If any/both of the switches S1 or S2 is on, then current would flow through the circuit and the warning light would be turned on. 
 
-As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signalling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation. Thus, we would have again indicator switches S1 and S2 and output *L1* should be equal to *S1* **and** *S2* - i.e. light should only be on if both operator set it into on. 
+As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signaling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation. Thus, we would have again indicator switches S1 and S2 and output *L1* should be equal to *S1* **and** *S2* - i.e. light should only be on if both operator set it into on. 
 This functionality also can be achieved easily by using the circuit on the figure 1.7. 
 {alt: "Basic 'AND' logic", width: "90%"}
 ![figure 1.7 - basic AND logic](ch1_primitive_and_logic.svg)
 
 Again, super easy. If any of the switches is not connected - circuit is broken - there would be no current, light L1 is off, and only if both are connected - light would be on. 
 
-The above examples of implementation of logical *AND* and *OR* functions using manually controlled switches are fairly primitive but they demonstrate how boolean logic could be implemented in principle. 
+The above examples of implementation of logical *AND* and *OR* functions using manually controlled switches are fairly primitive but they demonstrate how boolean logic could be implemented in principle: parallel switches produce logical *OR*, sequential switches produce logical *AND*. 
 
 ## Transistors
 
@@ -132,8 +132,46 @@ Important property of MOSFET is that *Gate* itself is electrically insulated fro
 You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
 
+## Implementing Logical Functions using MOSFET Transistors 
+
+Let's know take a look how we can implement some logic functions using MOSFET transistors, let say we want a device that takes two logical inputs A and B, and produces output that must be equal to *A AND B*, in other words we need to implement a *logical gate* that implements boolean *AND* function.
+
+We already know that *AND* with two inputs requires sequential circuit of two switches, thus our first approach would be something like on the figure 1.10 below:
+
+{alt: "Naive AND gate implementation", width: "70%"}
+![figure 1.10 - Naive AND gate - wont work!](ch1_naive_and_gate.svg)
+
+What we have here are two inputs A and B, voltage source V1, and the output O. 
+
+Unfortunately this circuit is only going to provide reliable output if both A and B inputs are set to logical HIGH - in this case both transistors would be ON and output would be effectively connected to the voltage source. To understand what's wrong with this circuit, let's examine a bit more complex circuit consisting of two gates, see figure 1.11. 
+
+{alt: "Naive gate implementations", width: "70%"}
+![figure 1.11 - Naive AND + OR gates - wont work either!](ch1_naive_and_plus_or_gates.svg)
+
+On that circuit we have the same naive *AND* gate implemented using transistors M1 and M2, that has power source, inputs A and B and some output. Output of this gate is connected to another gate made of transistors M3 and M4, the second gate as you might have guessed supposed to implement logical *OR*. The naive goal of this circuit is to produce signal equal to *(A AND B) OR C*. 
+Let's start from the situation when we've just powered the device on, all inputs are logical LOW, output is also logical LOW, so far so good. Then for a short moment we set both inputs A and B into logical HIGH, this would turn transistors M1 and M2 into ON state, as result output of the *AND* gate is effectively connected to the voltage source - it produces logical HIGH. Since output of *AND* gate is connected into transistor M3, and *Gate* of MOSFET is electrically insulated, this would actually have a side effect that piece of wire between transistors M2 and M3 gets a tiny positive electric charge - any wire has some parasitic *capacitance* (ability to store the charge). 
+If we now turn one of the inputs A or B into logical LOW (or both), output of *AND* gate gets cut from the voltage source, but that tiny electric charge on the wire between M2 and M3 could stay for a significant time, effectively keeping M3 transistor ON. We would get an effect that gate must be producing logical LOW, but in fact it is producing logical HIGH. Even worse - the result is in fact unpredictable and can vary from run to run. 
+
+To fix this problem we need to ensure that parasitic static charge is removed when gate is supposed to be producing logical LOW. The easiest approach is to connect the output of the logical gate via some resistor to the ground. 
+Resistor is simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts like a regular wire, but resistance limits the current through the device. 
+So if we connect the resistor as shown on the figure 1.12, this resistor would be sufficient to get rid of parasitic electric charge when gate is suppose to be producing logical LOW. But if gate is suppose to be producing logical HIGH, output would not be significantly impacted by the introduction of such resistor - it would act like a parallel load on the output, slightly dropping the output voltage. The *OR* gate implementation can be fixed exactly the same way. 
+
+{alt: "pMOS AND gate", width: "70%"}
+![figure 1.12 - pMOS AND](ch1_naive_and_gate_fixed.svg)
+
+What we've got in result is in fact a variant of implementation of *pMOS AND* gate.  It is called pMOS because it is implemented on pMOS transistors. nMOS implementation is also possible and then it would be called *nMOS AND*. 
+
+The resistor that we've introduced into the circuit is called "pull-down" resistor since it pulls signal down to the ground if there is no other driver to that signal. The golden rule of the electronics design is to have ___no dangling inputs, ever___. Any signal should be either directly driven or pulled up or down. 
+
+
 ## Logical Gates 
 
+The logical devices producing *AND* and *OR* functions we've just made, as we already learned, are called *logical gates*. 
+Logical gates are building blocks of any digital circuits
+
++++++ continue from here ++++++ 
+
+The two devices 
 The next level up in the hierarchy of digital building blocks would be logical gates. These are primitive components implementing basic logic functions like *AND* or *OR*. Output signal of the gate only depends on the present value of the input signal(s) and nothing else. Let's denote letters A, B for the values of the inputs signals, and F as the function of the gate. Table below lists all the common logical gates along with definition of its functions.
 
 | Gate | Function | Symbol | 
@@ -154,6 +192,11 @@ The next level up in the hierarchy of digital building blocks would be logical g
 |------|----------|--------|
 | XNOR | F = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
 
+
+
+** __TODO:: NOTE ABOUT POWER BEING NOTE DISPLAYED ON THESE SYMBOLS ** 
+
+
 All two-input gates shown in the table above also do exist in a configuration with more than just two inputs. 
 
 It should be noted that there are some special gate types that are not listed in the table above, but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
@@ -163,23 +206,11 @@ Each gate's output can only drive a number of inputs to other gates and if more 
 
 ## Logical Gates Implementations with Transistors 
 
-Lets now see how can we implement logical gates with MOSFET transistors. We already did see a sort of logical gates implemented on mechanical switches, and here idea is in principle the same, but there is also a difference. Let's try a naive implementation of the AND gate, it would be something like, see figure 1.10: 
-{alt: "Naive AND gate implementation", width: "70%"}
-![figure 1.10 - Naive AND gate - wont work!](ch1_naive_and_gate.svg)
-What we have here are two inputs A and B, voltage source V1, and the output O. 
-Unfortunately this circuit is only guaranteed to work correctly if both A and B are logical HIGH and thus both transistors are ON and conducting, making output to be connected to the voltage source. 
-Usually there is a network of logical gates, thus output of this gate would be most likely fed into input of another gate - so it would be connected to *Gate* of another MOSFET somewhere else in the circuit. What would happen if now we switch one of the transistors off? That wire connecting output of this gate and input of the next gate in the network becomes completely insulated: one or both transistors  - it is disconnected from power here and *Gate* in the next logical gate is also insulated. If there was any static charge built up on the wire - it would sit there for quite a while due to parasitic capacitance that every wire has, and even worse - it would affect the operation of the next gate as it would be an equivalent for logical HIGH (at best) or could be value somewhere in the middle between LOW and HIGH. Where the static charge comes from? From the previous time when gate was producing logical HIGH. 
-
-We need to find a way to get away from that static charge in the naive *AND* gate implementation. The easiest approach is to connect the output *O* of the logical gate via some resistor to the ground. Resistor is basically a poorly conducting wire - the one that has some significant resistance.  It would be still very sufficient conductivity to ensure no static charge builds up on the wire when transistors are off. See figure 1.11 below: 
-{alt: "pMOS AND gate", width: "70%"}
-![figure 1.11 - pMOS AND](ch1_naive_and_gate_fixed.svg)
-What we've got in result is in fact a variant of implementation of *pMOS AND* gate.  It is called pMOS because it is implemented on pMOS transistors. nMOS implementation is also possible and then it would be called *nMOS AND*. 
-
-The resistor that we've introduced into the circuit is called "pull-down" resistor since it pulls signal down to the ground if there is no other driver to that signal. The golder rule of the electronics design is to have ___no dangling inputs, ever___. Any signal should be either directly driver by something or pulled up or down. 
-
-Resistor we've introduced into pMOS/nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when gate is producing logical 1, there is a power drain through the resistor. On top of that - it is really hard to make resistors small for packing millions of gates on the single chip - unlike transistors, resistor needs to have some bulk mass to resist. 
 
 ### CMOS 
+
+
+Resistor we've introduced into pMOS/nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when gate is producing logical HIGH, there is a small amount of power drain through the resistor, but if we build a large circuit that drain could get significant. On top of that - it is really hard to make resistors small for packing millions of gates on the single chip - unlike transistors, resistor needs to have some bulk mass to resist. 
 
 Luckily we can get rid of the resistor in the gate implementation if we combine pMOS and nMOS transistors in the same gate, by complementing their operation: when one transistor is ON another is OFF and vice-versa. This technology is called *CMOS* - *Complementary metal–oxide–semiconductor*. Lets have a look how CMOS "NOT" is implemented, see figure 1.12. 
 {alt: "CMOS NOT gate", width: "70%"}
