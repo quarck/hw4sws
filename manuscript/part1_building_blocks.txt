@@ -52,7 +52,7 @@ Example of a very basic circuit is on the figure 1.2 below. This circuit consist
 {alt: "Basic electric circuit", width: "70%"}
 ![figure 1.2 - basic circuit](ch1_primitive_circuit.svg)
 
-Operation of this circuit is very simple: when switch is connected (known as 'closed') - there is an electric current going through the circuit and the lamp is on, when switch is disconnected (known as 'open') - there is no wire and light is off. 
+Operation of this circuit is very simple: when switch is ON - there is an electric current going through the circuit and the lamp is on, when switch is OFF - there is no wire and light is off. 
 Conventionally, if direction of the electric current is shown on the circuit, it is shown in the direction from positive terminal to the negative terminal of the voltage source. We known that in fact electrons in metals travel from negative to positive terminals, but this conventional direction is only a convenience. If we change the direction of the flow - we only need to change the sign in front of *I* in the formulas to make it right. 
 
 Let us now look at second circuit example - see figure 1.3.
@@ -115,19 +115,21 @@ Transistors do exist in many different shapes and forms. Main two types of trans
 
 Both nMOS and pMOS have three main electrodes: *Drain* (D), *Source* (S) and *Gate* (G).
 
-The resistance of the path between *Source* and *Drain* (often referred as *channel*) in the MOSFET transistor is directly affected by the voltage applied at the *Gate*. Let's this voltage as *VG*.
+The resistance of the path between *Source* and *Drain* (often referred as *channel*) in the MOSFET transistor is directly affected by the voltage applied at the *Gate*. Let's call this voltage *Vg*.
  
-For pMOS transistors, gate voltage *VG* below 0.8V would result in a very low channel resistance, and gate voltage *VG* above 2.0 would result in a very high channel resistance - over tens of MegaOhms, this is basically the same as no conductivity at all - Source and Drain become disconnected. When gate voltage *VG* is between 0.8V and 2V, the channel resistance is somewhat between and changing very rapidly - the dependency is non-linear (here and further in this chapter we assume transistors designed to work with CMOS 3.3V voltage levels).
+For pMOS transistors, gate voltage *Vg* below 0.8V would result in a very low channel resistance, and gate voltage *Vg* above 2.0 would result in a very high channel resistance - over tens of MegaOhms, this is basically the same as no conductivity at all - Source and Drain become disconnected. When gate voltage *Vg* is between 0.8V and 2V, the channel resistance is somewhat between and changing very rapidly - the dependency is non-linear (here and further in this chapter we assume that transistors we are talking about are designed to work with CMOS 3.3V voltage levels).
  
-For nMOS transistors the situation is inverse: gate voltage *VG* below 0.8V would result in a very high channel resistance - over tens of MegaOhms (Source and Drain are disconnected), and gate voltage above 2V would result in a very low channel resistance, and again - anything in between would have neither-fully-conducting-nor-fully-insulating effect. 
+For nMOS transistors the situation is inverse: gate voltage *Vg* below 0.8V would result in a very high channel resistance - over tens of MegaOhms (Source and Drain are disconnected), and gate voltage above 2V would result in a very low channel resistance, and again - anything in between would have neither-fully-conducting-nor-fully-disconnected effect. 
 In a digital circuits voltage levels between 0.8V are 2V are not supposed to be used, thus MOSFET transistor can be considered as a simple ON/OFF switch, see figure 1.9. This switch analogy could be helpful in understanding transistor circuits operation in the following chapters. 
 
 {alt: "pMOS and nMOS", width: "80%"}
 ![figure 1.9 - pMOS and nMOS transistors](ch1_transistor_operation.svg)
 
+As we remember from previous chapter, voltage level between 0V and 0.8V represents logical LOW (or zero) in CMOS 3.3v standard, and voltage level between 2V and 3.3V represents logical HIGH (or one). 
+
 Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body, so there is no current between *Gate* and *Source* or between *Gate* and *Drain*, as result it cost nothing in terms of power consumption to hold transistor in particular desired state (but act of switching between OFF and ON states consumes some amount of energy) - that is what makes MOSFETs more power efficient in digital applications compared to BJT-based circuits. 
 
-You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). For more details on what's going on inside MOSFET transistor and how it is working - please go to Appendix A. 
+You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
 
 ## Logical Gates 
@@ -179,16 +181,19 @@ Resistor we've introduced into pMOS/nMOS gate implementations solves the problem
 
 ### CMOS 
 
-Luckily we can get rid of the resistor in the gate implementation if we combine pMOS and nMOS transistors in the same gate, by complementing their operation: when one transistor is open another is closed and vice-versa. This technology is called *CMOS* - *Complementary metal–oxide–semiconductor*. Lets have a look how CMOS "NOT" is implemented, see figure 1.12. 
+Luckily we can get rid of the resistor in the gate implementation if we combine pMOS and nMOS transistors in the same gate, by complementing their operation: when one transistor is ON another is OFF and vice-versa. This technology is called *CMOS* - *Complementary metal–oxide–semiconductor*. Lets have a look how CMOS "NOT" is implemented, see figure 1.12. 
 {alt: "CMOS NOT gate", width: "70%"}
 ![figure 1.12 - CMOS NOT](ch1_cmos_not_gate_2.svg)
-Lets see how it is working: if input is logical zero, the top pMOS transistor is on (conducting) and bottom nMOS transistor is off (not conducting), as result the whole output Q is connected to power supply voltage, the whole circuit becomes an equivalent of figure 1.13 below.
+Lets see how it is working: if input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the resistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
 {alt: "CMOS NOT gate operation", width: "50%"}
 ![figure 1.13 - CMOS NOT with input equals to LOW](ch1_cmos_not_input_low.svg)
 Now, if input would be logical 1, meaning voltage is close to 3.3v, then situation is inverted and button transistor is on and top is off, output is connected to bottom line that is at 0v level, meaning logical zero. The whole circuit becomes an equivalent of figure 1.14 below.
 {alt: "CMOS NOT gate operation", width: "50%"}
 ![figure 1.14 - CMOS NOT with input equals to HIGH](ch1_cmos_not_input_high.svg)
-What's important is a CMOS NOT gate implementation is that output is always driven explicitly: either top or bottom transistor is always on. 
+What's important is a CMOS NOT gate implementation is that output is always driven explicitly: one transistor is always ON while the other is OFF. 
+
+--- Here it is a good time to speak about gate switching and currents --- 
+ 
 
 Lets now have a loop and examine how NAND gate is implemented, see figure 1.15 below: 
 
