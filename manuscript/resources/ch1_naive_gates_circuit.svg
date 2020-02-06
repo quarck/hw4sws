@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="431.17383"
-   height="174.91406"
-   viewBox="554.2 -767.5 431.17383 174.91407"
+   width="415.34766"
+   height="178.45602"
+   viewBox="554.2 -767.5 415.34766 178.45603"
    version="1.1"
    id="svg5518"
    sodipodi:docname="ch1_naive_gates_circuit.svg"
@@ -42,8 +42,8 @@
      id="namedview5520"
      showgrid="false"
      inkscape:zoom="1.6423519"
-     inkscape:cx="175.01117"
-     inkscape:cy="56.689276"
+     inkscape:cx="91.594212"
+     inkscape:cy="60.231245"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -337,7 +337,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge436"
-       points="846.55,-642.1 851,-645.6 846.55,-649 " />
+       points="846.55,-649 846.55,-642.1 851,-645.6 " />
   </g>
   <g
      c_etype="pinpart"
@@ -594,7 +594,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge479"
-       points="783.45,-642.1 779,-645.6 783.45,-649 " />
+       points="783.45,-649 783.45,-642.1 779,-645.6 " />
   </g>
   <g
      c_etype="pinpart"
@@ -620,7 +620,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="955,-585"
      id="gge484"
      c_partid="part_annotation"
-     transform="translate(-10.952344,-10)">
+     transform="translate(-14.605641,-6.3467026)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text5316"
@@ -944,7 +944,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge545"
-       points="658.45,-702.1 654,-705.6 658.45,-709 " />
+       points="658.45,-709 658.45,-702.1 654,-705.6 " />
   </g>
   <g
      c_etype="pinpart"
@@ -1201,7 +1201,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge588"
-       points="658.45,-652.1 654,-655.6 658.45,-659 " />
+       points="658.45,-659 658.45,-652.1 654,-655.6 " />
   </g>
   <g
      c_rotation="0"

@@ -169,14 +169,14 @@ Both NAND and NOR gates implemented with pull-up would have almost no visible vo
 Circuits on the figure 1.13 are in fact standard implementations of NAND and NOR gates using nMOS technology - exactly how they are implemented on the nMOS-based microchips. 
 It should be obvious how we can implement a nMOS *NOT* function now, see figure 1.14: 
 
-{alt: "nMOS NOT", width: "70%"}
+{alt: "nMOS NOT", width: "60%"}
 ![figure 1.14 - nMOS NOT gate](ch1_nmos_not.svg)
 
 Again, functionality of nMOS NOT gate is very simple: logical LOW on input turns transistor OFF, output is pulled up to the voltage source. Logical HIGH on input turns transistor ON and it drives signal to the ground producing logical LOW. 
 
 Finally, the *AND* and *OR* gates in nMOS technology are implemented as simple combinations of NAND + NOT and NOR + NOT, see figure 1.15. 
 
-{alt: "nMOS NOT", width: "70%"}
+{alt: "nMOS NOT", width: "90%"}
 ![figure 1.15 - nMOS NOT gate](ch1_nmos_and_or.svg)
 
 nMOS technology obviously got its name since it is implemented using nMOS transistors. pMOS-based logical gates are also possible, they are fairly similar nMOS, we would not go into details of pMOS. 
@@ -191,7 +191,7 @@ Second problem with resistors is a physical size: when packing multiple gates in
 Fortunately there is a way to get rid of resistors in gate implementations completely. Idea is to combine pMOS and nMOS transistors in the same circuit and make them work in a collaboration: when one transistor is ON another is OFF and vice-versa. Technology implemented this approach is called *CMOS* - *Complementary Metal–Oxide–Semiconductor*. 
 
 Figure 1.12 below illustrates implementation of *NOT* gate using CMOS technology.  
-{alt: "CMOS NOT gate", width: "70%"}
+{alt: "CMOS NOT gate", width: "60%"}
 ![figure 1.12 - CMOS NOT](ch1_cmos_not_gate_2.svg)
 
 Functionality of the CMOS NOT gate is fairly straightforward. If the input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the resistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
@@ -239,7 +239,7 @@ Table below shows the list of all common logical gates along with the definition
 
 | Gate | Function | Symbol | 
 |------|----------|--------|
-| Buffer | Q = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
+| Buffer | ```$ Q = A``` | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
 |------|----------|--------|
 | NOT | Q = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
 |------|----------|--------|
