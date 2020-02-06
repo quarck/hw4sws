@@ -132,23 +132,23 @@ Important property of MOSFET is that *Gate* itself is electrically insulated fro
 You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
 
-## Logical Functions using MOSFET Transistors 
+## Implementing Logical Functions with Transistors
 
 Lets now try combining knowledge about transistors with the knowledge about implementation of *AND* and *OR* logical functions and try implementing  *AND* and *OR* functions using MOSFET transistors. In other words, lets try implementing *logical gates* that perform boolean *AND* and *OR* functions (two different gates).
-We already know that *AND* function requires switches to be aligned in sequence and *OR* funtion requires switches to be aligned in parallel. Thus our first naive attempt would probably be something like on the figure 1.10 below:
+We already know that *AND* function requires switches to be aligned in sequence and *OR* function requires switches to be aligned in parallel. Thus our first naive attempt would probably be something like on the figure 1.10 below:
 
 {alt: "Naive AND/OR gates implementation - wont work", width: "70%"}
 ![figure 1.10 - Naive AND and OR gates - wont work!](ch1_naive_and_or_gates.svg )
 
 Each gate above has two inputs: A and B and has output O, plus each has some power source. 
 
-Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets examine another circuit that attempts to combine two gates to produce *O=(A AND B) or C* function, see figure 1.11. 
+Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets try combining two gates together in order to implement function *O=(A AND B) or C* and see what's happens. Circuit on the figure 1.11 attempts to implement such function using our naive gates. 
 
 {alt: "Naive gate implementations - wont work", width: "70%"}
 ![figure 1.11 - Naive AND + OR gates combined - wont work either!](ch1_naive_gates_circuit.svg)
 
 On that circuit we have the same naive *AND* and *OR* gates aligned in a configuration where output of the first gate is fed into one of the inputs of the second. The "AND" gate is implemented with transistors M1 and M2, and the "OR" gate is implemented on transistors M3 and M4 on the circuit. 
-Let's start from the situation when we've just powered the device on, all inputs are logical LOW, output is also logical LOW, so far so good. Then for a short moment we set both inputs A and B into logical HIGH, this would turn transistors M1 and M2 into ON state, as result output of the *AND* gate is effectively connected to the voltage source - it produces logical HIGH. Since output of *AND* gate is connected into transistor M3, and *Gate* of MOSFET is electrically insulated, this would actually have a side effect that piece of wire between transistors M2 and M3 gets a tiny positive electric charge, any real-world wire has some parasitic *capacitance* - ability to store an electric charge. 
+Assume that we've just turned the circuit on, all inputs are logical LOW, output is also logical LOW, so far so good. Then for a short moment we set both inputs A and B into logical HIGH, this would turn transistors M1 and M2 into ON state, as result output of the *AND* gate is effectively connected to the voltage source - it produces logical HIGH. Since output of *AND* gate is connected into transistor M3, and *Gate* of MOSFET is electrically insulated, this would actually have a side effect that piece of wire between transistors M2 and M3 gets a tiny positive electric charge, any real-world wire has some parasitic *capacitance* - ability to store an electric charge. 
 If we now turn one of the inputs A or B into logical LOW (or both), output of *AND* gate gets cut from the voltage source, but that tiny electric charge on the wire between M2 and M3 could stay for a significant time, effectively keeping M3 transistor ON. We would get an effect that gate must be producing logical LOW, but in fact it is producing logical HIGH. Even worse - the result is in fact unpredictable and can vary from run to run. 
 
 To fix this problem we need to ensure that parasitic static charge is removed when gate is supposed to be producing logical LOW. We can try adding what's called a *pull down* resistor into each gate, see figure 1.12.  
@@ -156,17 +156,16 @@ To fix this problem we need to ensure that parasitic static charge is removed wh
 {alt: "Better gate implementations with pull-down", width: "70%"}
 ![figure 1.12 - Better AND and OR gates with pull-down resistor](ch1_naive_and_or_gates_fixed.svg)
 
-Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. If we pick right value for the pull-down resistor, it would be enough to get rid of any parasitic charge when gate is suppose to be producing logical LOW and would not drop the output voltage much if gate is supposed to be producing logical HIGH.
-
-Second time unfortunately in this chapter, if we try to make MOSFET transistors smaller to pack millions of them on the same chip, the MOSFET's ON state resistance would inevitably increase - it could reach values of hundreds of Ohms. In these conditions it would be hard to pick the right value for the pull-down that would not cause significant voltage drop (and even harder to fit such resistor in millions into the chip). 
-
-A better approach is to use a pull-up resistor that pulls signal up and use MOSFET to "drop it" when gate needs to produce logical LOW. Figure 1.13 below shows example of *NOT-OR* (known as *NOR*) and *NOT-AND* (known as *NAND*) gates implementation using pull-up resistor. These are basically the same as *OR* and *AND* gates but with output logically inverted.
+Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. 
+By carefully picking the resistor value we could get somewhat approximately acceptable gate operation, but inevitable side effect of pulling signal down is that logical HIGH level produced by the gate would drop a little bit.  
+A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *O = NOT (A OR B)* and *NAND* gate function is *O = NOT (A AND B)*".
 
 {alt: "nMOS NAND and NOR", width: "70%"}
 ![figure 1.13 - nMOS NAND and NOR gates](ch1_nmos_nand_nor.svg)
 
-For instance let us  examine briefly the NOR gate operation. When both transistors are OFF - both inputs are logical LOW, output is logical HIGH as output is connected via pull up to the voltage source. If any of the transistors is ON - it would drive the output to the ground, producing logical LOW. 
+Let us  examine briefly the NOR gate operation. When both inputs are logical LOW, both nMOS transistors would be OFF, as result output is connected via the resistor to the power source and produces logical HIGH. Now if any of the inputs turns into logical LOW, this would turn the corresponding transistor ON and that transistor would drive output to the signal ground - to the logical LOW. 
 Both NAND and NOR gates implemented with pull-up would have almost no visible voltage drop for logical HIGH output. But as a consequence of pulling up, logical LOW would have output voltage slightly greater than just zero volts. For various design reasons it is more acceptable to have a bit raised logical LOW as an opposite to dropped logical HIGH.
+
 Circuits on the figure 1.13 are in fact standard implementations of NAND and NOR gates using nMOS technology - exactly how they are implemented on the nMOS-based microchips. 
 It should be obvious how we can implement a nMOS *NOT* function now, see figure 1.14: 
 
@@ -186,44 +185,52 @@ It is worth noting separately, the golden rule of the electronics design is to h
 
 ### CMOS 
 
+Resistor we've introduced into nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when increased power consumption ((same applies to pMOS). When nMOS gate is producing logical LOW - there is a transistor driving signal to the ground, but what it means is there is a current from the voltage source through the pull-up resistor, then transistor(s) and into the ground, that circFor example if nMOS NOR gate is currently producing logical low. If we combine multiple nMOS gates together, that power consumption could get fairly significant. 
+Second problem with resistor is a physical size: when packing multiple gates into a microchip, it is problematic to make pull-up resistors small on the chip surface when attempting to fit more elements on a chip. 
 
-Resistor we've introduced into pMOS/nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when gate is producing logical HIGH, there is a small amount of power drain through the resistor, but if we build a large circuit that drain could get significant. On top of that - it is really hard to make resistors small for packing millions of gates on the single chip - unlike transistors, resistor needs to have some bulk mass to resist. 
+Fortunately there is a way to get rid of resistors in gate implementations completely. Idea is to combine pMOS and nMOS transistors in the same circuit and make them work in a collaboration: when one transistor is ON another is OFF and vice-versa. Technology implemented this approach is called *CMOS* - *Complementary Metal–Oxide–Semiconductor*. 
 
-Luckily we can get rid of the resistor in the gate implementation if we combine pMOS and nMOS transistors in the same gate, by complementing their operation: when one transistor is ON another is OFF and vice-versa. This technology is called *CMOS* - *Complementary metal–oxide–semiconductor*. Lets have a look how CMOS "NOT" is implemented, see figure 1.12. 
+Figure 1.12 below illustrates implementation of *NOT* gate using CMOS technology.  
 {alt: "CMOS NOT gate", width: "70%"}
 ![figure 1.12 - CMOS NOT](ch1_cmos_not_gate_2.svg)
-Lets see how it is working: if input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the resistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
+
+Functionality of the CMOS NOT gate is fairly straightforward. If the input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the resistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
+
 {alt: "CMOS NOT gate operation", width: "50%"}
 ![figure 1.13 - CMOS NOT with input equals to LOW](ch1_cmos_not_input_low.svg)
-Now, if input would be logical 1, meaning voltage is close to 3.3v, then situation is inverted and button transistor is on and top is off, output is connected to bottom line that is at 0v level, meaning logical zero. The whole circuit becomes an equivalent of figure 1.14 below.
+
+Now, if input would be logical HIGH, then situation is inverted and the bottom transistor M1 is ON and the top M2 is OFF, output is connected to bottom line that is at logical LOW level. The whole circuit becomes an equivalent of figure 1.14 below.
+
 {alt: "CMOS NOT gate operation", width: "50%"}
 ![figure 1.14 - CMOS NOT with input equals to HIGH](ch1_cmos_not_input_high.svg)
+
 What's important is a CMOS NOT gate implementation is that output is always driven explicitly: one transistor is always ON while the other is OFF. 
 
---- Here it is a good time to speak about gate switching and currents --- 
- 
-
-Lets now have a loop and examine how NAND gate is implemented, see figure 1.15 below: 
+If we now focus our attention on the NAND gate implementation using CMOS technology, it might look a bit complicated at first, see figure 1.15.
 
 {alt: "CMOS NAND", width: "80%"}
 ![figure 1.15 - CMOS NAND gate](ch1_cmos_nand.svg)
 
-Here gonna be text 
-{alt: "CMOS NAND Operation", width: "80%"}
-![figure 1.16 - CMOS NAND gate Operation](ch1_nand_low_low.svg )
+The bottom two transistors M1 and M2 are similar to such transistors in nMOS variant, but the pull-up resistor is here replaced with two other transistors connected in parallel: M3 and M4, these are pMOS transistors that conduct when input is logical LOW. 
+As result, the bottom half of the circuit (consisting of transistors M1 and M2) would drive output to the ground when both inputs A and B are logical HIGH, in any other combination the bottom is inactive. The top part (transistors M3 and M4) would drive output to logical HIGH if any of the inputs is logical LOW, but if both inputs are logical HIGH - top half is inactive. Working together, bottom and top halves would cover all the possible input combinations, thus at any moment there is at least one transistor driving output to some defined value. 
 
-Here gonna be text 
-{alt: "CMOS NAND Operation", width: "80%"}
-![figure 1.17 - CMOS NAND gate Operation](ch1_nand_low_high.svg )
+To conclude with CMOS NAND gate, let's bring our transistor as a switch analogy and draw the corresponding switches equivalents for all possible combination of the inputs, see figures 1.16 - 1.19, these should be self-explanatory.  
 
-Here gonna be text 
-{alt: "CMOS NAND Operation", width: "80%"}
-![figure 1.18 - CMOS NAND gate Operation](ch1_nand_high_low.svg )
+{alt: "CMOS NAND equivalent for A=B=LOW", width: "60%"}
+![figure 1.16 - CMOS NAND gate for A=B=LOW](ch1_nand_low_low.svg )
 
-Here gonna be text 
-{alt: "CMOS NAND Operation", width: "80%"}
-![figure 1.19 - CMOS NAND gate Operation](ch1_nand_high_high.svg )
+{alt: "CMOS NAND equivalent for A=LOW, B=HIGH", width: "60%"}
+![figure 1.17 - CMOS NAND gate for A=LOW, B=HIGH](ch1_nand_low_high.svg )
 
+{alt: "CMOS NAND equivalent for A=HIGH, B=LOW", width: "60%"}
+![figure 1.18 - CMOS NAND gate for A=HIGH, B=LOW](ch1_nand_high_low.svg )
+
+{alt: "CMOS NAND equivalent for A=B=HIGH", width: "60%"}
+![figure 1.19 - CMOS NAND gate for A=B=HIGH](ch1_nand_high_high.svg )
+
+
+--- Here it is a good time to speak about gate switching and currents --- 
+ 
 
 ## Logical Gates 
 
