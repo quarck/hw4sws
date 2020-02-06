@@ -132,80 +132,57 @@ Important property of MOSFET is that *Gate* itself is electrically insulated fro
 You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
 
-## Implementing Logical Functions using MOSFET Transistors 
+## Logical Functions using MOSFET Transistors 
 
-Let's know take a look how we can implement some logic functions using MOSFET transistors, let say we want a device that takes two logical inputs A and B, and produces output that must be equal to *A AND B*, in other words we need to implement a *logical gate* that implements boolean *AND* function.
+Lets now try combining knowledge about transistors with the knowledge about implementation of *AND* and *OR* logical functions and try implementing  *AND* and *OR* functions using MOSFET transistors. In other words, lets try implementing *logical gates* that perform boolean *AND* and *OR* functions (two different gates).
+We already know that *AND* function requires switches to be aligned in sequence and *OR* funtion requires switches to be aligned in parallel. Thus our first naive attempt would probably be something like on the figure 1.10 below:
 
-We already know that *AND* with two inputs requires sequential circuit of two switches, thus our first approach would be something like on the figure 1.10 below:
+{alt: "Naive AND/OR gates implementation - wont work", width: "70%"}
+![figure 1.10 - Naive AND and OR gates - wont work!](ch1_naive_and_or_gates.svg )
 
-{alt: "Naive AND gate implementation", width: "70%"}
-![figure 1.10 - Naive AND gate - wont work!](ch1_naive_and_gate.svg)
+Each gate above has two inputs: A and B and has output O, plus each has some power source. 
 
-What we have here are two inputs A and B, voltage source V1, and the output O. 
+Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets examine another circuit that attempts to combine two gates to produce *O=(A AND B) or C* function, see figure 1.11. 
 
-Unfortunately this circuit is only going to provide reliable output if both A and B inputs are set to logical HIGH - in this case both transistors would be ON and output would be effectively connected to the voltage source. To understand what's wrong with this circuit, let's examine a bit more complex circuit consisting of two gates, see figure 1.11. 
+{alt: "Naive gate implementations - wont work", width: "70%"}
+![figure 1.11 - Naive AND + OR gates combined - wont work either!](ch1_naive_gates_circuit.svg)
 
-{alt: "Naive gate implementations", width: "70%"}
-![figure 1.11 - Naive AND + OR gates - wont work either!](ch1_naive_and_plus_or_gates.svg)
-
-On that circuit we have the same naive *AND* gate implemented using transistors M1 and M2, that has power source, inputs A and B and some output. Output of this gate is connected to another gate made of transistors M3 and M4, the second gate as you might have guessed supposed to implement logical *OR*. The naive goal of this circuit is to produce signal equal to *(A AND B) OR C*. 
-Let's start from the situation when we've just powered the device on, all inputs are logical LOW, output is also logical LOW, so far so good. Then for a short moment we set both inputs A and B into logical HIGH, this would turn transistors M1 and M2 into ON state, as result output of the *AND* gate is effectively connected to the voltage source - it produces logical HIGH. Since output of *AND* gate is connected into transistor M3, and *Gate* of MOSFET is electrically insulated, this would actually have a side effect that piece of wire between transistors M2 and M3 gets a tiny positive electric charge - any wire has some parasitic *capacitance* (ability to store the charge). 
+On that circuit we have the same naive *AND* and *OR* gates aligned in a configuration where output of the first gate is fed into one of the inputs of the second. The "AND" gate is implemented with transistors M1 and M2, and the "OR" gate is implemented on transistors M3 and M4 on the circuit. 
+Let's start from the situation when we've just powered the device on, all inputs are logical LOW, output is also logical LOW, so far so good. Then for a short moment we set both inputs A and B into logical HIGH, this would turn transistors M1 and M2 into ON state, as result output of the *AND* gate is effectively connected to the voltage source - it produces logical HIGH. Since output of *AND* gate is connected into transistor M3, and *Gate* of MOSFET is electrically insulated, this would actually have a side effect that piece of wire between transistors M2 and M3 gets a tiny positive electric charge, any real-world wire has some parasitic *capacitance* - ability to store an electric charge. 
 If we now turn one of the inputs A or B into logical LOW (or both), output of *AND* gate gets cut from the voltage source, but that tiny electric charge on the wire between M2 and M3 could stay for a significant time, effectively keeping M3 transistor ON. We would get an effect that gate must be producing logical LOW, but in fact it is producing logical HIGH. Even worse - the result is in fact unpredictable and can vary from run to run. 
 
-To fix this problem we need to ensure that parasitic static charge is removed when gate is supposed to be producing logical LOW. The easiest approach is to connect the output of the logical gate via some resistor to the ground. 
-Resistor is simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts like a regular wire, but resistance limits the current through the device. 
-So if we connect the resistor as shown on the figure 1.12, this resistor would be sufficient to get rid of parasitic electric charge when gate is suppose to be producing logical LOW. But if gate is suppose to be producing logical HIGH, output would not be significantly impacted by the introduction of such resistor - it would act like a parallel load on the output, slightly dropping the output voltage. The *OR* gate implementation can be fixed exactly the same way. 
+To fix this problem we need to ensure that parasitic static charge is removed when gate is supposed to be producing logical LOW. We can try adding what's called a *pull down* resistor into each gate, see figure 1.12.  
 
-{alt: "pMOS AND gate", width: "70%"}
-![figure 1.12 - pMOS AND](ch1_naive_and_gate_fixed.svg)
+{alt: "Better gate implementations with pull-down", width: "70%"}
+![figure 1.12 - Better AND and OR gates with pull-down resistor](ch1_naive_and_or_gates_fixed.svg)
 
-What we've got in result is in fact a variant of implementation of *pMOS AND* gate.  It is called pMOS because it is implemented on pMOS transistors. nMOS implementation is also possible and then it would be called *nMOS AND*. 
+Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. If we pick right value for the pull-down resistor, it would be enough to get rid of any parasitic charge when gate is suppose to be producing logical LOW and would not drop the output voltage much if gate is supposed to be producing logical HIGH.
 
-The resistor that we've introduced into the circuit is called "pull-down" resistor since it pulls signal down to the ground if there is no other driver to that signal. The golden rule of the electronics design is to have ___no dangling inputs, ever___. Any signal should be either directly driven or pulled up or down. 
+Second time unfortunately in this chapter, if we try to make MOSFET transistors smaller to pack millions of them on the same chip, the MOSFET's ON state resistance would inevitably increase - it could reach values of hundreds of Ohms. In these conditions it would be hard to pick the right value for the pull-down that would not cause significant voltage drop (and even harder to fit such resistor in millions into the chip). 
 
+A better approach is to use a pull-up resistor that pulls signal up and use MOSFET to "drop it" when gate needs to produce logical LOW. Figure 1.13 below shows example of *NOT-OR* (known as *NOR*) and *NOT-AND* (known as *NAND*) gates implementation using pull-up resistor. These are basically the same as *OR* and *AND* gates but with output logically inverted.
 
-## Logical Gates 
+{alt: "nMOS NAND and NOR", width: "70%"}
+![figure 1.13 - nMOS NAND and NOR gates](ch1_nmos_nand_nor.svg)
 
-The logical devices producing *AND* and *OR* functions we've just made, as we already learned, are called *logical gates*. 
-Logical gates are building blocks of any digital circuits
+For instance let us  examine briefly the NOR gate operation. When both transistors are OFF - both inputs are logical LOW, output is logical HIGH as output is connected via pull up to the voltage source. If any of the transistors is ON - it would drive the output to the ground, producing logical LOW. 
+Both NAND and NOR gates implemented with pull-up would have almost no visible voltage drop for logical HIGH output. But as a consequence of pulling up, logical LOW would have output voltage slightly greater than just zero volts. For various design reasons it is more acceptable to have a bit raised logical LOW as an opposite to dropped logical HIGH.
+Circuits on the figure 1.13 are in fact standard implementations of NAND and NOR gates using nMOS technology - exactly how they are implemented on the nMOS-based microchips. 
+It should be obvious how we can implement a nMOS *NOT* function now, see figure 1.14: 
 
-+++++ continue from here ++++++ 
+{alt: "nMOS NOT", width: "70%"}
+![figure 1.14 - nMOS NOT gate](ch1_nmos_not.svg)
 
-The two devices 
-The next level up in the hierarchy of digital building blocks would be logical gates. These are primitive components implementing basic logic functions like *AND* or *OR*. Output signal of the gate only depends on the present value of the input signal(s) and nothing else. Let's denote letters A, B for the values of the inputs signals, and F as the function of the gate. Table below lists all the common logical gates along with definition of its functions.
+Again, functionality of nMOS NOT gate is very simple: logical LOW on input turns transistor OFF, output is pulled up to the voltage source. Logical HIGH on input turns transistor ON and it drives signal to the ground producing logical LOW. 
 
-| Gate | Function | Symbol | 
-|------|----------|--------|
-| Buffer | F = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
-|------|----------|--------|
-| NOT | F = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
-|------|----------|--------|
-| AND | F = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
-|------|----------|--------|
-| OR | F = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
-|------|----------|--------|
-| XOR | F = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
-|------|----------|--------|
-| NAND | F = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
-|------|----------|--------|
-| NOR |  F = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
-|------|----------|--------|
-| XNOR | F = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+Finally, the *AND* and *OR* gates in nMOS technology are implemented as simple combinations of NAND + NOT and NOR + NOT, see figure 1.15. 
 
+{alt: "nMOS NOT", width: "70%"}
+![figure 1.15 - nMOS NOT gate](ch1_nmos_and_or.svg)
 
+nMOS technology obviously got its name since it is implemented using nMOS transistors. pMOS-based logical gates are also possible, they are fairly similar nMOS, we would not go into details of pMOS. 
 
-** __TODO:: NOTE ABOUT POWER BEING NOTE DISPLAYED ON THESE SYMBOLS ** 
-
-
-All two-input gates shown in the table above also do exist in a configuration with more than just two inputs. 
-
-It should be noted that there are some special gate types that are not listed in the table above, but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
-
-You might ask what is the use for *Buffer* gate as it just outputs the same value as it has on the input. In short - it can be useful as a signal repeater. 
-Each gate's output can only drive a number of inputs to other gates and if more is required - it is possible to 'enforce' signal by using one or several buffers. Another use is to get rid of any possible noise after signal is transmitted over the long line, and 'long' sometimes could mean from one side of the big microchip to another side of the same microchip. 
-
-## Logical Gates Implementations with Transistors 
-
+It is worth noting separately, the golden rule of the electronics design is to have ___no dangling inputs, ever___. Any signal should be either directly driven or pulled up or down. 
 
 ### CMOS 
 
@@ -246,3 +223,37 @@ Here gonna be text
 Here gonna be text 
 {alt: "CMOS NAND Operation", width: "80%"}
 ![figure 1.19 - CMOS NAND gate Operation](ch1_nand_high_high.svg )
+
+
+## Logical Gates 
+
+We've just implemented a number of various logic gates using nMOS and CMOS technology. In digital circuits, these logic gates are considered as a standard building blocks, so there is no need to show the internals of the gate when drawing the circuit diagram. 
+Table below shows the list of all common logical gates along with the definition of its function and shows the special symbol used in the circuit to represent such gate. For two-input gates we assume inputs called A and B, and the function or the gate would be denoted as F. 
+
+
+| Gate | Function | Symbol | 
+|------|----------|--------|
+| Buffer | F = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
+|------|----------|--------|
+| NOT | F = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
+|------|----------|--------|
+| AND | F = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
+|------|----------|--------|
+| OR | F = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
+|------|----------|--------|
+| XOR | F = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
+|------|----------|--------|
+| NAND | F = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
+|------|----------|--------|
+| NOR |  F = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
+|------|----------|--------|
+| XNOR | F = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+
+You might notice there is no mention of power supply to the gate on its symbol: all gates are assumed to be powered by the common power source, so power connections are never shown when drawing diagram consisting of logical gates. 
+
+All two-input gates shown in the table above also do exist in a configuration with more than just two inputs. 
+
+It should be noted that there are some special gate types that are not listed in the table above, but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
+
+You might also ask what is the use for *Buffer* gate as it just outputs the same value as it has on the input. In short - it can be useful as a signal repeater. Each gate's output can only drive a number of inputs to other gates and if more is required - it is possible to 'enforce' signal by using one or several buffers. Another use is to get rid of any possible noise after signal is transmitted over the long line, and 'long' sometimes could mean from one side of the big microchip to another side of the same microchip. 
+
