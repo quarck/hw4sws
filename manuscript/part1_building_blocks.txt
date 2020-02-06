@@ -185,8 +185,8 @@ It is worth noting separately, the golden rule of the electronics design is to h
 
 ### CMOS 
 
-Resistor we've introduced into nMOS gate implementations solves the problem of dangling input, but creates another undesired side effect: when increased power consumption ((same applies to pMOS). When nMOS gate is producing logical LOW - there is a transistor driving signal to the ground, but what it means is there is a current from the voltage source through the pull-up resistor, then transistor(s) and into the ground, that circFor example if nMOS NOR gate is currently producing logical low. If we combine multiple nMOS gates together, that power consumption could get fairly significant. 
-Second problem with resistor is a physical size: when packing multiple gates into a microchip, it is problematic to make pull-up resistors small on the chip surface when attempting to fit more elements on a chip. 
+Unfortunately, the pull-up resistor in nMOS/pMOS logic creates undesired side effect: increased power consumption. For instance, when nMOS gate is at logical LOW, electric current would be flowing through the pull-up resistor, then one or several transistors and into the ground. This current would be draining power every time nMOS gate is at its logical LOW. 
+Second problem with resistors is a physical size: when packing multiple gates into a microchip, it is problematic to make pull-up resistors small on the chip surface - resistor needs some size to resist. 
 
 Fortunately there is a way to get rid of resistors in gate implementations completely. Idea is to combine pMOS and nMOS transistors in the same circuit and make them work in a collaboration: when one transistor is ON another is OFF and vice-versa. Technology implemented this approach is called *CMOS* - *Complementary Metal–Oxide–Semiconductor*. 
 
