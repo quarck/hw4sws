@@ -239,7 +239,7 @@ Table below shows the list of all common logical gates along with the definition
 
 | Gate | Function | Symbol | 
 |------|----------|--------|
-| Buffer | ```$ Q = A``` | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
+| Buffer | Q = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
 |------|----------|--------|
 | NOT | Q = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
 |------|----------|--------|

@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="25.048868mm"
-   height="11.934425mm"
+   width="25.048866mm"
+   height="16.252396mm"
    background="#FFFFFF"
    version="1.1"
    id="svg53"
    sodipodi:docname="ch1_gate_buffer.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   viewBox="0 0 1230.7475 586.38438">
+   viewBox="0 0 1230.7474 798.54292">
   <metadata
      id="metadata59">
     <rdf:RDF>
@@ -43,8 +43,8 @@
      id="namedview55"
      showgrid="false"
      inkscape:zoom="7.1481306"
-     inkscape:cx="66.411603"
-     inkscape:cy="8.9769732"
+     inkscape:cx="47.245751"
+     inkscape:cy="9.7823252"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -60,66 +60,66 @@
      rough-pts="330.2489,1241.713 822.4378,961.971 330.249,679.6706 330.24896,960.6919 "
      id="h_0"
      path-type="area"
-     d="m 353.37931,574.21332 492.18891,-279.742 -492.1888,-282.300404 -5e-5,562.042504" />
+     d="m 353.3793,786.37187 492.18891,-279.742 -492.1888,-282.3004 -5e-5,562.0425" />
   <line
      style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1"
-     y1="12.17091"
+     y1="224.32947"
      id="n_5"
-     y2="574.21344"
+     y2="786.37201"
      x1="353.37939"
      x2="353.37936" />
   <line
      style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1"
-     y1="12.170849"
+     y1="224.32941"
      id="n_6"
-     y2="294.47125"
+     y2="506.62982"
      x1="353.37933"
-     x2="845.56818" />
+     x2="845.56812" />
   <line
      style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1"
-     y1="574.21332"
+     y1="786.37189"
      id="n_7"
-     y2="294.47125"
+     y2="506.62982"
      x1="353.3793"
-     x2="845.5683" />
+     x2="845.56824" />
   <line
      style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1"
-     y1="294.47131"
+     y1="506.62988"
      id="n_8"
-     y2="294.47137"
-     x1="845.56348"
+     y2="506.62994"
+     x1="845.56342"
      x2="1028.808" />
   <line
      style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-opacity:1"
-     y1="293.19214"
+     y1="505.35071"
      id="n_9"
-     y2="294.47125"
+     y2="506.62982"
      x1="353.40057"
-     x2="174.19061" />
+     x2="174.1906" />
   <g
      id="c_0"
      type="COMPO"
-     transform="translate(67.551566,-837.98395)" />
+     transform="translate(67.551559,-625.8254)" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
      x="-2.4205728"
-     y="368.92346"
+     y="581.08203"
      id="text393"><tspan
        sodipodi:role="line"
        id="tspan391"
        x="-2.4205728"
-       y="368.92346"
+       y="581.08203"
        style="font-size:190.66665649px;stroke-width:12.99999905">A</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
      x="1088.4923"
-     y="367.62863"
+     y="579.78717"
      id="text401"><tspan
        sodipodi:role="line"
        id="tspan399"
        x="1088.4923"
-       y="367.62863"
+       y="579.78717"
        style="font-size:190.66665649px;stroke-width:12.99999905">Q</tspan></text>
 </svg>
