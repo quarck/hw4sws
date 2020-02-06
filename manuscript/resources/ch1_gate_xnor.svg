@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="73.980049"
+   width="99.675674"
    height="42.793213"
    background="#FFFFFF"
    version="1.1"
    id="svg313"
    sodipodi:docname="ch1_gate_xnor.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   viewBox="0 0 961.74061 556.31177">
+   viewBox="0 0 1295.7837 556.31177">
   <metadata
      id="metadata319">
     <rdf:RDF>
@@ -42,9 +42,9 @@
      inkscape:window-height="1001"
      id="namedview315"
      showgrid="false"
-     inkscape:zoom="2.5272458"
-     inkscape:cx="-115.56785"
-     inkscape:cy="-102.36147"
+     inkscape:zoom="10.108983"
+     inkscape:cx="34.120212"
+     inkscape:cy="16.703536"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -57,11 +57,11 @@
   <g
      id="c_0"
      type="COMPO"
-     transform="translate(-59.052363,-670.01685)" />
+     transform="translate(105.34603,-670.01685)" />
   <g
      id="g311"
      type="COMPO"
-     transform="translate(-59.052363,-670.01685)">
+     transform="translate(105.34603,-670.01685)">
     <path
        d="M 738.27856,956.8982 C 644.5862,774.11896 448.0045,661.0941 235.7507,685.253 c 100.0784,164.8448 94.6879,364.4709 1.62906,522.4472 207.54761,34.9196 406.58784,-70.8528 500.8988,-250.802"
        path-type="area"
@@ -158,4 +158,41 @@
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
   </g>
+  <g
+     id="c_0-3"
+     type="COMPO"
+     transform="translate(100.82618,-813.49681)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-2.4205728"
+     y="186.82472"
+     id="text393"><tspan
+       sodipodi:role="line"
+       id="tspan391"
+       x="-2.4205728"
+       y="186.82472"
+       style="font-size:190.66665649px;stroke-width:12.99999905">A</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-6.9503274"
+     y="494.84686"
+     id="text397"><tspan
+       sodipodi:role="line"
+       id="tspan395"
+       x="-6.9503274"
+       y="494.84686"
+       style="font-size:190.66665649px;stroke-width:12.99999905">B</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="1156.3215"
+     y="361.19858"
+     id="text401"><tspan
+       sodipodi:role="line"
+       id="tspan399"
+       x="1156.3215"
+       y="361.19858"
+       style="font-size:190.66665649px;stroke-width:12.99999905">O</tspan></text>
 </svg>

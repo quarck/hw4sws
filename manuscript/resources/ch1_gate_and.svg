@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="18.054728mm"
+   width="25.399181mm"
    height="11.729249mm"
    background="#FFFFFF"
    version="1.1"
    id="svg23"
    sodipodi:docname="ch1_gate_and.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   viewBox="0 0 887.09839 576.30324">
+   viewBox="0 0 1247.9597 576.30324">
   <metadata
      id="metadata29">
     <rdf:RDF>
@@ -42,9 +42,9 @@
      inkscape:window-height="1001"
      id="namedview25"
      showgrid="false"
-     inkscape:zoom="1.0146711"
-     inkscape:cx="465.78122"
-     inkscape:cy="17.704913"
+     inkscape:zoom="11.479693"
+     inkscape:cx="35.532916"
+     inkscape:cy="15.854299"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -58,11 +58,11 @@
   <g
      id="c_0"
      type="COMPO"
-     transform="translate(-97.148151,-857.64867)" />
+     transform="translate(74.826174,-857.64867)" />
   <g
      id="p_0"
      type="USERG"
-     transform="translate(-97.148151,-857.64867)">
+     transform="translate(74.826174,-857.64867)">
     <path
        d="M 501.41333,1421.781 H 305.71204 L 304.7813,869.8196 h 195.7013 c 152.2822,-0.001 275.9822,123.6976 275.9831,275.9797 9e-4,151.9558 -123.16815,275.452 -275.05237,275.9817"
        path-type="area"
@@ -131,4 +131,37 @@
          style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
     </g>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-2.4205728"
+     y="194.67284"
+     id="text393"><tspan
+       sodipodi:role="line"
+       id="tspan391"
+       x="-2.4205728"
+       y="194.67284"
+       style="font-size:190.66665649px;stroke-width:12.99999905">A</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-6.9503274"
+     y="502.69498"
+     id="text397"><tspan
+       sodipodi:role="line"
+       id="tspan395"
+       x="-6.9503274"
+       y="502.69498"
+       style="font-size:190.66665649px;stroke-width:12.99999905">B</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="1096.0408"
+     y="358.87582"
+     id="text401"><tspan
+       sodipodi:role="line"
+       id="tspan399"
+       x="1096.0408"
+       y="358.87582"
+       style="font-size:190.66665649px;stroke-width:12.99999905">O</tspan></text>
 </svg>

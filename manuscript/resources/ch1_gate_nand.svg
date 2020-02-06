@@ -43,8 +43,8 @@
      id="namedview101"
      showgrid="false"
      inkscape:zoom="5.0544916"
-     inkscape:cx="-9.0694304"
-     inkscape:cy="11.526793"
+     inkscape:cx="43.754873"
+     inkscape:cy="4.0087273"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -146,4 +146,41 @@
          style="fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
     </g>
   </g>
+  <g
+     id="c_0-6"
+     type="COMPO"
+     transform="translate(-96.487012,-847.84714)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-173.73376"
+     y="204.47444"
+     id="text393"><tspan
+       sodipodi:role="line"
+       id="tspan391"
+       x="-173.73376"
+       y="204.47444"
+       style="font-size:190.66665649px;stroke-width:12.99999905">A</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="-178.26352"
+     y="512.49658"
+     id="text397"><tspan
+       sodipodi:role="line"
+       id="tspan395"
+       x="-178.26352"
+       y="512.49658"
+       style="font-size:190.66665649px;stroke-width:12.99999905">B</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:277.33331299px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.99999905"
+     x="929.46851"
+     y="358.38953"
+     id="text401"><tspan
+       sodipodi:role="line"
+       id="tspan399"
+       x="929.46851"
+       y="358.38953"
+       style="font-size:190.66665649px;stroke-width:12.99999905">O</tspan></text>
 </svg>
