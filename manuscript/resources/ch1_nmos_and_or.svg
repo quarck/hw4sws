@@ -290,7 +290,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6158"
-         style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000">O</text>
+         style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000">Q</text>
     </g>
     <g
        c_origin="330,-580"
@@ -2835,7 +2835,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6748"
-         style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000">O</text>
+         style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000">Q</text>
     </g>
     <polyline
        c_etype="wire"

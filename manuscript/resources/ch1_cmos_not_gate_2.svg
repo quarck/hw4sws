@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="255.52344"
+   width="201.72156"
    height="162.00005"
-   viewBox="-10 -817.1 255.52344 162.00004"
+   viewBox="-10 -817.1 201.72156 162.00004"
    version="1.1"
    id="svg2894"
    sodipodi:docname="ch1_cmos_not_gate_2.svg"
@@ -41,9 +41,9 @@
      inkscape:window-height="1001"
      id="namedview2896"
      showgrid="false"
-     inkscape:zoom="0.97678915"
-     inkscape:cx="453.69727"
-     inkscape:cy="-39.999956"
+     inkscape:zoom="2.7627769"
+     inkscape:cx="76.507122"
+     inkscape:cy="16.210629"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -61,7 +61,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_partid="part_import_gge82"
      c_para="package`HDR1X2`nameAlias`Value`BOM_Supplier Part``BOM_Supplier``Contributor`EasyEDA`BOM_Manufacturer Part``spicePre`V`spiceSymbolName`VDC`"
      c_origin="305,-580"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <g
        style="display:none"
        display="none"
@@ -222,7 +222,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="305,-560"
      c_etype="pinpart"
      c_partid="part_netLabel_gnD"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <circle
        style="fill:none;stroke:none;shape-rendering:crispEdges"
        id="circle2729"
@@ -266,7 +266,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_partid="part_import_gge116"
      c_para="package``nameAlias`Model`spicePre`M`spiceSymbolName`MOSFET_NCH_ENHANCEMENT`BOM_Manufacturer Part``"
      c_origin="235,-495"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <g
        style="display:none"
        display="none"
@@ -514,7 +514,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge158"
-       points="243.45,-492.1 239,-495.6 243.45,-499 " />
+       points="243.45,-499 243.45,-492.1 239,-495.6 " />
   </g>
   <g
      c_etype="pinpart"
@@ -523,7 +523,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_partid="part_import_gge162"
      c_para="package``nameAlias`Model`spicePre`M`spiceSymbolName`MOSFET_PCH_ENHANCEMENT`BOM_Manufacturer Part``"
      c_origin="235,-555"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <g
        style="display:none"
        display="none"
@@ -763,7 +763,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
     <polygon
        style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
        id="gge201"
-       points="245,-559 249.45,-555.5 245,-552.1 " />
+       points="245,-552.1 245,-559 249.45,-555.5 " />
   </g>
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -771,28 +771,28 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="250 -515 250 -535"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      id="gge249"
      points="220 -545 205 -545 205 -485 220 -485"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      id="gge250"
      points="160 -485 205 -485"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      id="gge253"
      points="330 -525 250 -525"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <g
      c_rotation="0"
      c_shapetype="group"
@@ -800,7 +800,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="250,-460"
      c_etype="pinpart"
      c_partid="part_netLabel_gnD"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <circle
        style="fill:none;stroke:none;shape-rendering:crispEdges"
        id="circle2865"
@@ -843,21 +843,21 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="250 -460 250 -475"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      id="gge268"
      points="305 -600 305 -605 250 -605 250 -575"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-130.80273,-211.6)" />
+     transform="translate(-152.23157,-211.6)" />
   <g
      c_etype="pinpart"
      c_shapetype="group"
      c_origin="120,-485"
      id="gge270"
      c_partid="part_annotation"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-130.15234,-206.89459)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text2877"
@@ -867,7 +867,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-485"
-       x="120">Input</text>
+       x="120">A</text>
   </g>
   <g
      c_etype="pinpart"
@@ -875,7 +875,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="335,-525"
      id="gge272"
      c_partid="part_annotation"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text2880"
@@ -885,7 +885,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-525"
-       x="335">Output</text>
+       x="335">Q</text>
   </g>
   <g
      c_shapetype="group"
@@ -893,7 +893,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="205,-485"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <circle
        style="fill:none;stroke:none;shape-rendering:crispEdges"
        id="circle2883"
@@ -915,7 +915,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="250,-525"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-130.80273,-211.6)">
+     transform="translate(-152.23157,-211.6)">
     <circle
        style="fill:none;stroke:none;shape-rendering:crispEdges"
        id="circle2888"

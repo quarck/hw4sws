@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="266.17383"
+   width="261.92703"
    height="219.00005"
-   viewBox="-10 -816.4 266.17383 219.00004"
+   viewBox="-10 -816.4 261.92703 219.00004"
    version="1.1"
    id="svg1828"
    sodipodi:docname="ch1_cmos_nand.svg"
@@ -42,8 +42,8 @@
      id="namedview1830"
      showgrid="false"
      inkscape:zoom="1.9554694"
-     inkscape:cx="236.57808"
-     inkscape:cy="74.872805"
+     inkscape:cx="166.51818"
+     inkscape:cy="74.872809"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -63,7 +63,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge97"
      c_partid="part_annotation"
-     transform="translate(-40.152344,-93.9)">
+     transform="translate(-12.026105,-79.069801)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text939"
@@ -73,7 +73,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-630"
-       x="255">Output</text>
+       x="255">Q</text>
   </g>
   <g
      c_etype="pinpart"
@@ -378,7 +378,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      transform="translate(-40.152344,-93.9)" />
   <polygon
-     points="219.45,-675.5 215,-672.1 215,-679 "
+     points="215,-679 219.45,-675.5 215,-672.1 "
      id="gge156"
      locked="0"
      style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -614,7 +614,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      transform="translate(-40.152344,-93.9)" />
   <polygon
-     points="169,-545.6 173.45,-549 173.45,-542.1 "
+     points="173.45,-542.1 169,-545.6 173.45,-549 "
      id="gge199"
      locked="0"
      style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -725,13 +725,13 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinnumber="1"
      font-size="7pt"
-     y="5.8476582"
+     y="5.8476586"
      x="807.90002">1</text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path1104"
-     d="m 9.847656,-803.9 v -10" />
+     d="m 9.8476563,-803.9 v -10" />
   <circle
      style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      id="circle1106"
@@ -744,7 +744,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      inkscape:connector-curvature="0"
      id="path1108"
      display="none"
-     d="m 6.847656,-823.9 3,3 3,-3" />
+     d="m 6.8476562,-823.9 3.0000001,3 2.9999997,-3" />
   <polyline
      points="48 -706 52 -706"
      id="gge223"
@@ -773,13 +773,13 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinnumber="2"
      font-size="7pt"
-     y="5.8476582"
+     y="5.8476586"
      x="779.90002">2</text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path1119"
-     d="m 9.847656,-783.9 v 10" />
+     d="m 9.8476563,-783.9 v 10" />
   <circle
      style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      id="circle1121"
@@ -792,7 +792,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      inkscape:connector-curvature="0"
      id="path1123"
      display="none"
-     d="m 12.847656,-763.9 -3,-3 -3,3" />
+     d="m 12.847656,-763.9 -2.9999997,-3 -3.0000001,3" />
   <polyline
      points="52 -694 48 -694"
      id="gge232"
@@ -1050,7 +1050,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      transform="translate(-40.152344,-93.9)" />
   <polygon
-     points="169,-590.6 173.45,-594 173.45,-587.1 "
+     points="173.45,-587.1 169,-590.6 173.45,-594 "
      id="gge277"
      locked="0"
      style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -1282,7 +1282,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      transform="translate(-40.152344,-93.9)" />
   <polygon
-     points="129.45,-675.5 125,-672.1 125,-679 "
+     points="125,-679 129.45,-675.5 125,-672.1 "
      id="gge323"
      locked="0"
      style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"

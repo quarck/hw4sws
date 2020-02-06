@@ -862,7 +862,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-240"
-       x="790">Output</text>
+       x="790">Q</text>
   </g>
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -965,7 +965,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-485"
-       x="765">Output</text>
+       x="765">Q</text>
   </g>
   <g
      c_etype="pinpart"

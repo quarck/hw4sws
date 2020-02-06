@@ -247,7 +247,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-345"
-       x="300">Output</text>
+       x="300">Q</text>
   </g>
   <g
      c_etype="pinpart"

@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="25.399181mm"
+   width="25.202499mm"
    height="11.729249mm"
    background="#FFFFFF"
    version="1.1"
    id="svg23"
    sodipodi:docname="ch1_gate_and.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   viewBox="0 0 1247.9597 576.30324">
+   viewBox="0 0 1238.296 576.30324">
   <metadata
      id="metadata29">
     <rdf:RDF>
@@ -44,7 +44,7 @@
      showgrid="false"
      inkscape:zoom="11.479693"
      inkscape:cx="35.532916"
-     inkscape:cy="15.854299"
+     inkscape:cy="15.8543"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -163,5 +163,5 @@
        id="tspan399"
        x="1096.0408"
        y="358.87582"
-       style="font-size:190.66665649px;stroke-width:12.99999905">O</tspan></text>
+       style="font-size:190.66665649px;stroke-width:12.99999905">Q</tspan></text>
 </svg>

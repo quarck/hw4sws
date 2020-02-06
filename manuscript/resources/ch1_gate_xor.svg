@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="91.248657"
+   width="91.463501"
    height="42.793213"
    background="#FFFFFF"
    version="1.1"
    id="svg363"
    sodipodi:docname="ch1_gate_xor.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   viewBox="0 0 1186.2325 556.31177">
+   viewBox="0 0 1189.0255 556.31177">
   <metadata
      id="metadata369">
     <rdf:RDF>
@@ -44,7 +44,7 @@
      showgrid="false"
      inkscape:zoom="10.108983"
      inkscape:cx="33.829158"
-     inkscape:cy="11.175269"
+     inkscape:cy="11.175271"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -63,7 +63,7 @@
      rough-pts="738.27856,956.8982 682.84106,1040.3835 612.62164,1109.6582 530.2929,1162.875 438.52777,1198.1859 339.99915,1213.7435 237.37976,1207.7002 276.52106,1125.595 300.55655,1038.6714 308.9917,949.05225 301.33206,858.86066 277.0832,770.21985 235.7507,685.253 340.16782,684.29333 439.55014,704.3246 531.47516,743.4739 613.52,799.8678 683.262,871.6336 "
      id="h_0"
      path-type="area"
-     d="m 832.53562,286.88135 c -94.31096,179.9492 -293.35119,285.7216 -500.8988,250.802 93.05884,-157.9763 98.44934,-357.6024 -1.62906,-522.447204 212.2538,-24.1588996 408.8355,88.865964 502.52786,271.645204" />
+     d="m 832.53562,286.88135 c -94.31096,179.9492 -293.35119,285.7216 -500.8988,250.802 93.05884,-157.9763 98.44934,-357.6024 -1.62906,-522.447208 212.2538,-24.1588992 408.8355,88.865968 502.52786,271.645208" />
   <g
      id="g355"
      type="COMPO"
@@ -163,7 +163,7 @@
        id="tspan399"
        x="1046.7703"
        y="355.47113"
-       style="font-size:190.66665649px;stroke-width:12.99999905">O</tspan></text>
+       style="font-size:190.66665649px;stroke-width:12.99999905">Q</tspan></text>
   <path
      style="fill:none;stroke:#000000;stroke-width:19.00600052;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 832.53562,286.88135 h 161.811"

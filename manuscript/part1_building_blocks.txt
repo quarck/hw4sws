@@ -140,9 +140,9 @@ We already know that *AND* function requires switches to be aligned in sequence 
 {alt: "Naive AND/OR gates implementation - wont work", width: "70%"}
 ![figure 1.10 - Naive AND and OR gates - wont work!](ch1_naive_and_or_gates.svg )
 
-Each gate above has two inputs: A and B and has output O, plus each has some power source. 
+Each gate above has two inputs: A and B and has output Q, and each has a power source. 
 
-Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets try combining two gates together in order to implement function *O=(A AND B) or C* and see what's happens. Circuit on the figure 1.11 attempts to implement such function using our naive gates. 
+Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets try combining two gates together in order to implement function *Q=(A AND B) or C* and see what's happens. Circuit on the figure 1.11 attempts to implement such function using our naive gates. 
 
 {alt: "Naive gate implementations - wont work", width: "70%"}
 ![figure 1.11 - Naive AND + OR gates combined - wont work either!](ch1_naive_gates_circuit.svg)
@@ -158,7 +158,7 @@ To fix this problem we need to ensure that parasitic static charge is removed wh
 
 Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. 
 By carefully picking the resistor value we could get somewhat approximately acceptable gate operation, but inevitable side effect of pulling signal down is that logical HIGH level produced by the gate would drop a little bit.  
-A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *O = NOT (A OR B)* and *NAND* gate function is *O = NOT (A AND B)*".
+A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *Q = NOT (A OR B)* and *NAND* gate function is *Q = NOT (A AND B)*", where Q is the output and A and B are inputs in both cases.
 
 {alt: "nMOS NAND and NOR", width: "70%"}
 ![figure 1.13 - nMOS NAND and NOR gates](ch1_nmos_nand_nor.svg)
@@ -234,27 +234,26 @@ To conclude with CMOS NAND gate, let's bring our transistor as a switch analogy 
 
 ## Logical Gates 
 
-We've just implemented a number of various logic gates using nMOS and CMOS technology. In digital circuits, these logic gates are considered as a standard building blocks, so there is no need to show the internals of the gate when drawing the circuit diagram. 
-Table below shows the list of all common logical gates along with the definition of its function and shows the special symbol used in the circuit to represent such gate. For two-input gates we assume inputs called A and B, and the function or the gate would be denoted as F. 
-
+We've just implemented a number of various logic gates using nMOS and CMOS technology. In digital circuits, these logic gates are considered as a standard building blocks and used in the circuits without specifying the actual implementation.
+Table below shows the list of all common logical gates along with the definition of its function and gate symbol. 
 
 | Gate | Function | Symbol | 
 |------|----------|--------|
-| Buffer | F = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
+| Buffer | Q = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
 |------|----------|--------|
-| NOT | F = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
+| NOT | Q = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
 |------|----------|--------|
-| AND | F = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
+| AND | Q = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
 |------|----------|--------|
-| OR | F = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
+| OR | Q = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
 |------|----------|--------|
-| XOR | F = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
+| XOR | Q = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
 |------|----------|--------|
-| NAND | F = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
+| NAND | Q = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
 |------|----------|--------|
-| NOR |  F = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
+| NOR |  Q = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
 |------|----------|--------|
-| XNOR | F = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+| XNOR | Q = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
 
 You might notice there is no mention of power supply to the gate on its symbol: all gates are assumed to be powered by the common power source, so power connections are never shown when drawing diagram consisting of logical gates. 
 
