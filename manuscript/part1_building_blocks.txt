@@ -228,9 +228,20 @@ To conclude with CMOS NAND gate, let's bring our transistor as a switch analogy 
 {alt: "CMOS NAND equivalent for A=B=HIGH", width: "60%"}
 ![figure 1.19 - CMOS NAND gate for A=B=HIGH](ch1_nand_high_high.svg )
 
+CMOS NOR gate is fairly similar in its structure to CMOS NAND gate, but instead of parallel resistors at the top they are sequential, and instead of sequential resistors at the bottom they are parallel, see figure 1.20. I would leave it as an exercise for the reader to verify that circuit is indeed implements NOR function. 
 
---- Here it is a good time to speak about gate switching and currents --- 
- 
+{alt: "CMOS NAND", width: "80%"}
+![figure 1.20 - CMOS NOR gate](ch1_cmos_nor.svg)
+
+Finally, OR and AND functions are usually implemented, similar to nMOS, as a sequence of NOR + NOT / NAND + NOT gates. For various chip-manufacturing reasons it is the most convenient way. 
+
+So far we've learned that CMOS technology has solved a problem of static power drain that is inherent to pMOS/nMOS technologies. But switching between logical states isn't entirely free for CMOS gates, there are two separate processes contributing into the total power consumption of the gate. 
+
+First process is related to already mentioned parasitic capacitance of the tiny wires connecting outputs of one transistors to inputs of the other. When the level on a particular wire is driven into logical HIGH, it receives a tiny bit of electric charge, and that charge stores tiny bit of energy. When the wire level is switched back into logical LOW, that parasitic electric charge is discharged into the ground. Individual wire's power dissipation is negligible, but for a large chips working at high frequencies, the total becomes fairly significant. 
+
+Second process is very much specific to CMOS technology. It takes time for a MOSFET transistor to switch between ON and OFF states, this time is really tiny but it is not zero. When particular input of CMOS gate flips its value there would be two transistors inside the gate, one switching from ON into OFF and the matching transistor switching from OFF into ON. There would be a moment when one transistor is *already* conducting a tiny bit and the matching transistor is *still* conducting a tiny bit. This conductivity of pair of matching transistors creates an open electric circuit and for a fraction of the second there would be a noticeable current flowing through the couple of transistors. This would last only for a number of nanoseconds (or even less), so the total energy dissipated per transistor is tiny to cause any damage to the transistor, but again when multiplied by the number of transistors in a chip - this type of power consumption can be fairly significant.  
+
+You might wonder, what would happen to a CMOS gate if we apply some voltage from the 'forbidden' range between 0.8V and 2.0V on one of its inputs? Nothing pleasant in fact. At this input voltage, both transistors in the matching nMOS/pMOS pair would have some conductivity, but this time the high current though the transistors would last as long as we keep the input in the forbidden voltage range. Result could be fairly catastrophic as such high current could very easily destroy the transistors and the whole chip. For this reason it is again, very important to ensure all the inputs in the circuit are explicitly driven to some defined value. 
 
 ## Logical Gates 
 
