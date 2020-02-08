@@ -248,23 +248,10 @@ You might wonder, what would happen to a CMOS gate if we apply some voltage from
 We've just implemented a number of various logic gates using nMOS and CMOS technology. In digital circuits, these logic gates are considered as a standard building blocks and used in the circuits without specifying the actual implementation.
 Table below shows the list of all common logical gates along with the definition of its function and gate symbol. 
 
-| Gate | Function | Symbol | 
-|------|----------|--------|
-| Buffer | Q = A | {alt: "Gate Symbol - Buffer", width: "5%"}![](ch1_gate_buffer.svg) |
-|------|----------|--------|
-| NOT | Q = **not** A | {alt: "Gate Symbol - Not", width: "5%"}![](ch1_gate_not.svg) |
-|------|----------|--------|
-| AND | Q = A **and** B | {alt: "Gate Symbol - AND", width: "5%"}![](ch1_gate_and.svg) | 
-|------|----------|--------|
-| OR | Q = A **or** B | {alt: "Gate Symbol - OR", width: "5%"}![](ch1_gate_or.svg) | 
-|------|----------|--------|
-| XOR | Q = A **xor** B | {alt: "Gate Symbol - XOR", width: "5%"}![](ch1_gate_xor.svg) |
-|------|----------|--------|
-| NAND | Q = **not** (A **and** B) | {alt: "Gate Symbol - NAND", width: "5%"}![](ch1_gate_nand.svg) | 
-|------|----------|--------|
-| NOR |  Q = **not** (A **or** B) | {alt: "Gate Symbol - NOR", width: "5%"}![](ch1_gate_nor.svg) | 
-|------|----------|--------|
-| XNOR | Q = **not** (A **xor** B) | {alt: "Gate Symbol - XNOR", width: "5%"}![](ch1_gate_xnor.svg) |
+{alt: "Logical Gates Table", width: "95%"}
+![Logical Gates](ch1_gates_table.svg )
+
+There are two types of symbols in circulation for logical gates: ones standardized by ANSI (American National Standards Institute) and ones standardized by IEC (European's International Electrotechnical Commission). This book would be using ANSI symbols, but it is good to know others do exist. 
 
 You might notice there is no mention of power supply to the gate on its symbol: all gates are assumed to be powered by the common power source, so power connections are never shown when drawing diagram consisting of logical gates. 
 
