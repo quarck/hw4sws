@@ -230,7 +230,7 @@ To conclude with CMOS NAND gate, let's bring our transistor as a switch analogy 
 
 CMOS NOR gate is fairly similar in its structure to CMOS NAND gate, but instead of parallel resistors at the top they are sequential, and instead of sequential resistors at the bottom they are parallel, see figure 1.20. I would leave it as an exercise for the reader to verify that circuit is indeed implements NOR function. 
 
-{alt: "CMOS NAND", width: "80%"}
+{alt: "CMOS NOR", width: "80%"}
 ![figure 1.20 - CMOS NOR gate](ch1_cmos_nor.svg)
 
 Finally, OR and AND functions are usually implemented, similar to nMOS, as a sequence of NOR + NOT / NAND + NOT gates. For various chip-manufacturing reasons it is the most convenient way. 
@@ -251,13 +251,21 @@ Table below shows the list of all common logical gates along with the definition
 {alt: "Logical Gates Table", width: "95%"}
 ![Logical Gates](ch1_gates_table.svg )
 
-There are two types of symbols in circulation for logical gates: ones standardized by ANSI (American National Standards Institute) and ones standardized by IEC (European's International Electrotechnical Commission). This book would be using ANSI symbols, but it is good to know others do exist. 
+There are two types of symbols in circulation for logical gates: ones standardized by ANSI (American National Standards Institute) and ones standardized by IEC (European's International Electrotechnical Commission). In this book we would be using ANSI symbols, but it is good to know others do exist. 
 
 You might notice there is no mention of power supply to the gate on its symbol: all gates are assumed to be powered by the common power source, so power connections are never shown when drawing diagram consisting of logical gates. 
 
 All two-input gates shown in the table above also do exist in a configuration with more than just two inputs. 
 
-It should be noted that there are some special gate types that are not listed in the table above, but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
-
 You might also ask what is the use for *Buffer* gate as it just outputs the same value as it has on the input. In short - it can be useful as a signal repeater. Each gate's output can only drive a number of inputs to other gates and if more is required - it is possible to 'enforce' signal by using one or several buffers. Another use is to get rid of any possible noise after signal is transmitted over the long line, and 'long' sometimes could mean from one side of the big microchip to another side of the same microchip. 
 
+It should be noted that there are some special gate types that are not listed in the table above (like three-state buffers), but these are not very commonly used. The gates listed above are sufficient for building any logical circuit / device, so we are not going to focus on anything outside the gates listed here.  
+
+Speaking of implementation of the gates, we already know how AND, NAND, NOR, AND and OR gates are implemented by nMOS / CMOS technologies. 
+Buffer gate is usually just two sequentially connected NOT gates. XOR and XNOR gates are often implemented as a network of NAND or NOR gates, see figures 1.21 and 1.22 below. 
+
+{alt: "CMOS XOR", width: "70%"}
+![figure 1.21 - XOR gate from NAND gates](ch1_xor_with_nand.svg)
+
+{alt: "CMOS XNOR", width: "80%"}
+![figure 1.22 - XNOR gate from NAND gates](ch1_xnor_with_nand.svg)
