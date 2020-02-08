@@ -8,11 +8,11 @@ We would start from a very brief dive into a theory of electricity. This knowled
 As everybody knows, conventional matter is made of atoms. Atom itself consists of a smaller building blocks: protons, neutrons and electrons. Protons and neutrons are packed into a tiny nucleus in the centre of the atom and electrons are 'orbiting' around it ('orbiting' is a very simplified description of it). 
 Neutrons are electrically neutral while both electrons and protons have an *electric charge*. *Electric charge* is a property of a particle (and matter): particles with electric charge do interact with electric field and particles without electric charge don't. 
 Electric charges of electron and proton are equal by the absolute value and opposite by their signs: protons are positively charged and electrons are negatively charged. 
-An absolute value of a charge of an electron is called the *elementary charge*, it is a smallest possible charge. Electric charge is quantized, thus any charge is a multiple of elementary charge. (To be absolutely correct, elementary particles called *quarks* can have charges of 1/2 or 2/3 of elementary charge, but quarks can only exist in combinations with the total charge that is multiple of elementary charge). 
+An absolute value of a charge of an electron is called the *elementary charge*, it is a smallest possible charge. Electric charge is quantized, thus any charge is a multiple of elementary charge. (To be absolutely correct, elementary particles called *quarks* can have charges of 1/3 or 2/3 of the elementary charge, but quarks can only exist in combinations with the total charge that is multiple of elementary charge). 
 
 ### Electric charge
 If we combine `6.2415090744 × 10^{18}`$ of elementary charges together, we would get a total charge equal to a physical unit called  *Coulomb*. You might wander why such arbitrary number? In earlier days of physics *Coulomb* was defined another way - it was a derived unit. But later this definition was changed to be a defined as a multiple of elementary charges as this is the most reliable possible definition: charge of the electron is a physical constant, thus N times physical constant is also a constant. 
-Every charged particle has an *electric field* around itself, and other charged particles interact with this field. The net effect of this interaction is that particles with the same charge do repeal from each other and particles with the opposite charges do attract. 
+Every charged particle has an *electric field* around itself, and other charged particles interact with this field. The net effect of this interaction is that particles with the same charge do repel from each other and particles with the opposite charges do attract. 
 On the larger scale, physical objects can be charged positively or negatively by removing or adding some electrons from/to the object. Charged physical objects do produce electric field that is a combined field of all the elementary charges it has. 
 
 ### Conducting materials 
@@ -71,7 +71,7 @@ You could think of the "ground" as a implicitly assumed wire that reaches everyw
 
 Most of the electronic circuits and devices would fall into one of two categories: analogue and digital devices. Both do some form of processing of the input signal to produce some output signal. For example an audio amplifier "processes" input weak audio signal by amplifying its value and producing amplified output signal that approximately matches the shape of the input signal. This would be a classical example of analogue device. Analogue devices process signals that could take any (voltage) value within a certain allowed value range, but inadvertently analogue devices are suffering from all sort of noises that are added into the signal as it is being processed.
 
-Digital circuits on the other hand do process signals that could only take a finite pre-defined set of values, and any physical voltage level is is treated as one of the values from the predefined set, usually by picking the nearest match. The most commonly used form is a binary where signal could take only two values, these values usually denoted as logical 0 and logical 1 or LOW and HIGH. 
+Digital circuits on the other hand do process signals that could only take a finite pre-defined set of values, and any physical voltage level is treated as one of the values from the predefined set, usually by picking the nearest match. The most commonly used form is a binary where signal could take only two values, these values usually denoted as logical 0 and logical 1 or LOW and HIGH. 
 
 Important property of digital devices and digital signals is that it is in principle immune to any noise. What is meant by this is that signal can always be decoded, matched against its nearest logical value and encoded fresh for the further transmission. Any previously accumulated noise is gone after such re-encoding. In the real we don't always have enough of such re-encoding as signal is being transmitted and processed, but where it happens system is usually designed to handle such transmission errors, for example in the Ethernet-based networks every now and then some bits of the packet could get transmitted incorrectly, but packet's and data integrity is protected by multiple layers of checksums and any such errors are immediately detected and handled. 
 
@@ -194,7 +194,7 @@ Figure 1.12 below illustrates implementation of *NOT* gate using CMOS technology
 {alt: "CMOS NOT gate", width: "60%"}
 ![figure 1.12 - CMOS NOT](ch1_cmos_not_gate_2.svg)
 
-Functionality of the CMOS NOT gate is fairly straightforward. If the input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the resistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
+Functionality of the CMOS NOT gate is fairly straightforward. If the input is logical LOW, the top pMOS transistor M2 is ON and bottom nMOS transistor M1 is OFF, as result the output is connected to power supply voltage via the transistor M2, the whole circuit becomes an equivalent of figure 1.13 below.
 
 {alt: "CMOS NOT gate operation", width: "50%"}
 ![figure 1.13 - CMOS NOT with input equals to LOW](ch1_cmos_not_input_low.svg)

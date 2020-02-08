@@ -1,15 +1,3 @@
-Michael Ananin, [07.02.20 21:08]
-в целом пока всё понятно
-
-Michael Ananin, [07.02.20 21:09]
-есть пару мест на которых я подзастревал, но это может не показательная выборка :)
-
-Michael Ananin, [07.02.20 21:10]
-несклолько опечаток:
- 1/2 or 2/3 of elementary 
-repeal 
-level is is treated
-voltage via the resistor M2
 
 Michael Ananin, [07.02.20 21:13]
 из мест которые мне тяжело давались:
