@@ -1,0 +1,42 @@
+Michael Ananin, [07.02.20 21:08]
+в целом пока всё понятно
+
+Michael Ananin, [07.02.20 21:09]
+есть пару мест на которых я подзастревал, но это может не показательная выборка :)
+
+Michael Ananin, [07.02.20 21:10]
+несклолько опечаток:
+ 1/2 or 2/3 of elementary 
+repeal 
+level is is treated
+voltage via the resistor M2
+
+Michael Ananin, [07.02.20 21:13]
+из мест которые мне тяжело давались:
+1) "Important property of MOSFET is that Gate itself is electrically insulated" появился вопрос но как же ток если один провод.
+"Very briefly - voltage applied to the Gate" всё ещё не ответило на вопрос. => полез в Апендикс А и интернеты (картинка битая в pdf) изучать => оказалось что там ещё корпус заземлённый! :)
+
+Michael Ananin, [07.02.20 21:19]
+2) "as result output of the AND gate is effectively connected to the voltage source" - тут просто несолько раз перечитывал/смотрел на рисунок
+
+Michael Ananin, [07.02.20 21:26]
+3) "A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to
+“drop signal to the ground” - мне показалось, что тут очень много всего нового и сначала перегрузился, следующий абзац всё расставил на свои места
+
+Michael Ananin, [07.02.20 21:27]
+Сейчас буду с CMOS NAND разбираться! :)
+
+Michael Ananin, [07.02.20 21:27]
+очень увлекательно :)
+
+Michael Ananin, [07.02.20 21:28]
+спасибо!
+
+Michael Ananin, [07.02.20 21:41]
+дочитал
+
+Michael Ananin, [07.02.20 21:41]
+очень круто!
+
+Michael Ananin, [07.02.20 21:41]
+с нетерпением жду продолжения :)
