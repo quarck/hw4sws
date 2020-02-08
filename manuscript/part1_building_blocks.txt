@@ -276,13 +276,13 @@ Structure of all the XOR and XNOR implementations is fairly similar, so let us j
 ![figure 1.23 - XOR from NAND gates](ch1_xor_named_parts.svg)
 
 Gate U1 output would be obviously:
-```$
+```python 
 U1 = not (A and B)
 U1 = not A or not B
 ```
 
 Gate U2 would take signal A and output of gate U1, so result is:
-```$
+```python
 U2 = not (A and (not A or not B))
 U2 = not A or not (not A or not B))
 U2 = not A or (A and B)
@@ -290,21 +290,25 @@ U2 = not A or B = B
 ```
 
 Gate U3 very similarly 
-```$
+```python
 U3 = A or not B
 ```
 it is symmetrical to U2, thus we skip all the equations. 
 
 And finally, output of the whole gate network: 
-```$
+```python
 U4 = not ((not A or B) and (A or not B))
 U4 = not (not A or B) or not (A or not B)
 U4 = (A and not B) or (not A and B)
 ```
 
 So for this whole network: 
-```$
+```python
 Q = (A and not B) or (not A and B)
 ```
+
 This is exactly the logical expression that represents XOR function. 
 
+
+
+TODO: use lower case caps in the text for "NOT" / "AND" / "OR" when it is in the formula. 
