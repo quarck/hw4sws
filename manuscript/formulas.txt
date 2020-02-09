@@ -4,7 +4,7 @@ Below we would be using math notation (where `AB`$ (as well as `A \cdot B`$) mea
 
 Gate U1 output would be obviously:
 ```$ 
-U1 = \bar{AB}
+U1 = \overline{AB}
 ```
 
 Gate U2 would take signal A and output of gate U1, so result is:
