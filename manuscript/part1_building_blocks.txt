@@ -330,3 +330,8 @@ Why is this important? There is a commonly used method of cost reduction for cus
 
 ## Gate Propagation Delays 
 
+**__TBD__**
+
+ 
+{alt: "Buffer propagation delay", width: "80%"}
+![figure 1.25 - Gate propagation delay - Buffer](ch1_gate_times.svg)
