@@ -1,8 +1,12 @@
 {sample: true}
 # Introduction 
 
+## Motivation ...
+
 ## About This Book
 __NOT COMPLEETE__
 
 
-## Motivation ...
+## Syntax used in the book 
+
+**TODO**: tell about python vs math syntax for boolean algebra
