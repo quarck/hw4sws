@@ -8,13 +8,13 @@ U1 = \overline{AB} = \overline{A} + \overline{B}
 ```
 
 Gate U2 would take signal A and output of gate U1, so result is:
-` ``$
-U2 = \bar{A \cdot (\bar{A} + \bar{B})}
-` ``
+```$
+U2 = \overline{A \cdot (\overline{A} + \overline{B})}
+```
 This can be simplified: 
-` ``$
-U2 = \bar{A} + \bar{\bar{A} + \bar{B}} = \bar{A} + AB = \bar{A} + B
-` ``
+```$
+U2 = \overline{A} + \overline{\overline{A} + \overline{B}} = \overline{A} + AB = \overline{A} + B
+```
 
 Gate U3 is symmetrical to U2, thus obviously: 
 ` ``$
