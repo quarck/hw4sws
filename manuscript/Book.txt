@@ -3,6 +3,7 @@ part1_building_blocks.txt
 part2_combination_circuits.txt
 part3_a_bit_of_vhdl.txt
 part4_bistables.txt
+part4a_memories.txt
 part5_sequential_circuits.txt
 part6_some_practice.txt
 part7_more_formal_vhdl.txt

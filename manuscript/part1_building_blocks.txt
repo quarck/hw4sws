@@ -128,7 +128,7 @@ In a digital circuits voltage levels between 0.8V are 2V are not supposed to be 
 
 As we remember from previous chapter, voltage level between 0V and 0.8V represents logical LOW (or zero) in CMOS 3.3v standard, and voltage level between 2V and 3.3V represents logical HIGH (or one). 
 
-Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. When voltage is applied to *Gate*, it charges the *Gate* and that charge sitting on the *Gate* creates en electric field that crosses the transistor body - all the way to the base of transistor. This electric field is what and switches the transistor ON or OFF (thus the name "field effect"). Base of transistor is usually grounded and not displayed as a separate electrode. 
+Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. When voltage is applied to *Gate*, it rapidly charges the *Gate*, the exact amount of charge is in direct proportion with the voltage, and that charge sitting on the *Gate* creates en electric field that passes through the transistor body all the way to the base of transistor. That electric field influences amount of free-roaming conducting particles in the channel and that's how transistor is switched OFF or ON (thus the name "field effect"). The base of transistor is usually grounded and not displayed as a separate electrode. 
 Since MOSFET's *Gate* is electrically insulated, there can be no current between *Gate* and any other electrode of the same transistor, as result it cost nothing in terms of power consumption to hold transistor in particular desired state - that is what makes MOSFETs more power efficient in digital applications compared to BJT-based circuits. The act of switching (between ON/OFF states), on the other hand, consumes some tiny amount of energy as it takes some energy to electrically charge or discharge the *Gate*.
 A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
@@ -245,7 +245,7 @@ Second process is very much specific to CMOS technology. It takes time for a MOS
 
 You might wonder, what would happen to a CMOS gate if we apply some voltage from the 'forbidden' range between 0.8V and 2.0V on one of its inputs? Nothing pleasant in fact. At this input voltage, both transistors in the matching nMOS/pMOS pair would have some conductivity, but this time the high current though the transistors would last as long as we keep the input in the forbidden voltage range. Result could be fairly catastrophic as such high current could very easily destroy the transistors and the whole chip. For this reason it is again, very important to ensure all the inputs in the circuit are explicitly driven to some defined value. 
 
-## Logical Gates 
+## Standard Logical Gates 
 
 We've just implemented a number of various logic gates using nMOS and CMOS technology. In digital circuits, these logic gates are considered as a standard building blocks and used in the circuits without specifying the actual implementation.
 Table below shows the list of all common logical gates along with the definition of its function and gate symbol. 
@@ -277,7 +277,7 @@ Structure of all the XOR and XNOR implementations is fairly similar, so let us j
 {alt: "XOR from NAND", width: "80%"}
 ![figure 1.23 - XOR from NAND gates](ch1_xor_named_parts.svg)
 
-Below we would be using math notation (where `AB`$ as well as `A \cdot B`$ means *A* **and** *B*, and similarly `A+B`$ means *A* **and** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
+Below we would be using math notation (where `AB`$ as well as `A \cdot B`$ means *A* **and** *B*, and similarly `A+B`$ means *A* **or** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
 
 Gate U1 output would be obviously:
 ```$ 
@@ -318,4 +318,15 @@ Q = A \overline{B} + \overline{A} B
 This is exactly the logical expression that represents XOR function. 
 
 
-TODO: use lower case caps in the text for "NOT" / "AND" / "OR" when it is in the formula. 
+## Kingdoms of NAND and NOR 
+
+By looking at the XOR / XNOR gates implementation via NAND / NOR gates reader might have already started suspecting about important property of NAND and NOR gates: it is possible to implement all the other standard gates from purely NAND only gates as well as from purely NOR only gates. That's indeed possible, we've already seen implementations for XOR / XNOR gates, thus figures 1.24 demonstrate the rest of the standard gates implemented in NAND / NOR components. 
+
+{alt: "NAND / NOR based logic", width: "95%"}
+![figure 1.24 - NAND and NOR logic](ch1_nand_nor_constructs.svg)
+
+Why is this important? There is a commonly used method of cost reduction for custom microchip design that utilizes this property of NAND / NOR gates. Idea is to standardize and re-use in large numbers the 'base plate' - a two dimensional array of either NAND or NOR gates on the chip, so  particular custom chip design only needs to implement the interconnects between these gates. 
+
+
+## Gate Propagation Delays 
+
