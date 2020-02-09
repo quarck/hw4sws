@@ -128,9 +128,9 @@ In a digital circuits voltage levels between 0.8V are 2V are not supposed to be 
 
 As we remember from previous chapter, voltage level between 0V and 0.8V represents logical LOW (or zero) in CMOS 3.3v standard, and voltage level between 2V and 3.3V represents logical HIGH (or one). 
 
-Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body, so there is no current between *Gate* and *Source* or between *Gate* and *Drain*, as result it cost nothing in terms of power consumption to hold transistor in particular desired state (but act of switching between OFF and ON states consumes some amount of energy) - that is what makes MOSFETs more power efficient in digital applications compared to BJT-based circuits. 
-
-You might wonder how can gate control the transistor if it is electrically insulated? Very briefly - voltage applied to the *Gate* creates an electric field inside the transistor and that field is what switches transistor ON or OFF (thus the name "field effect"). A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
+Important property of MOSFET is that *Gate* itself is electrically insulated from the rest of the transistor body. When voltage is applied to *Gate*, it charges the *Gate* and that charge sitting on the *Gate* creates en electric field that crosses the transistor body - all the way to the base of transistor. This electric field is what and switches the transistor ON or OFF (thus the name "field effect"). Base of transistor is usually grounded and not displayed as a separate electrode. 
+Since MOSFET's *Gate* is electrically insulated, there can be no current between *Gate* and any other electrode of the same transistor, as result it cost nothing in terms of power consumption to hold transistor in particular desired state - that is what makes MOSFETs more power efficient in digital applications compared to BJT-based circuits. The act of switching (between ON/OFF states), on the other hand, consumes some tiny amount of energy as it takes some energy to electrically charge or discharge the *Gate*.
+A bit more details on what's going on inside the transistor and how it is working is given in the Appendix A. 
 
 
 ## Implementing Logical Functions with Transistors
@@ -159,7 +159,8 @@ To fix this problem we need to ensure that parasitic static charge is removed wh
 
 Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. 
 By carefully picking the resistor value we could get somewhat approximately acceptable gate operation, but inevitable side effect of pulling signal down is that logical HIGH level produced by the gate would drop a little bit.  
-A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *Q = not (A or B)* and *NAND* gate function is *Q = not (A and B)*", where Q is the output and A and B are inputs in both cases.
+A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. What is meant is that transistor when it is in its ON state would connect the gate output the ground level, this connection via transistor would effectively override weak attempts of the pull-up resistor to produce logical HIGH, the final output of the gate would be logical LOW (when it needs to be). But when transistor is OFF - output would be defined by the pull-up resistor, and it would be a logical HIGH.
+Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *Q = not (A or B)* and *NAND* gate function is *Q = not (A and B)*", where Q is the output and A and B are inputs in both cases.
 
 {alt: "nMOS NAND and NOR", width: "70%"}
 ![figure 1.13 - nMOS NAND and NOR gates](ch1_nmos_nand_nor.svg)

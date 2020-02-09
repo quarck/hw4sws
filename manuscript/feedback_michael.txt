@@ -11,20 +11,5 @@ Michael Ananin, [07.02.20 21:26]
 3) "A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to
 “drop signal to the ground” - мне показалось, что тут очень много всего нового и сначала перегрузился, следующий абзац всё расставил на свои места
 
-Michael Ananin, [07.02.20 21:27]
-Сейчас буду с CMOS NAND разбираться! :)
 
-Michael Ananin, [07.02.20 21:27]
-очень увлекательно :)
 
-Michael Ananin, [07.02.20 21:28]
-спасибо!
-
-Michael Ananin, [07.02.20 21:41]
-дочитал
-
-Michael Ananin, [07.02.20 21:41]
-очень круто!
-
-Michael Ananin, [07.02.20 21:41]
-с нетерпением жду продолжения :)
