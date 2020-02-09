@@ -28,12 +28,12 @@ U4 = \overline{ (\overline{A} + B) \cdot (A + \overline{B}) }
 ```$
 U4 = \overline{\overline{A} + B} + \overline{A + \overline{B}}
 ```
-` ``$
-U4 = A\bar{B} + \bar{A}B
-` ``
+```$
+U4 = A \overline{B} + \overline{A} B
+```
 
 So for this whole network: 
 
-` ``$
-Q = A\bar{B} + \bar{A}B
-` ``
+```$
+Q = A \overline{B} + \overline{A} B
+```
