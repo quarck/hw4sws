@@ -276,7 +276,7 @@ Structure of all the XOR and XNOR implementations is fairly similar, so let us j
 {alt: "XOR from NAND", width: "80%"}
 ![figure 1.23 - XOR from NAND gates](ch1_xor_named_parts.svg)
 
-Below we would be using math notation (where `AB`$ (as well as `A \cdot B`$) means *A* **and** *B*, and similarly `A+B`$ means *A* **and** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
+Below we would be using math notation (where `AB`$ as well as `A \cdot B`$ means *A* **and** *B*, and similarly `A+B`$ means *A* **and** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
 
 Gate U1 output would be obviously:
 ```$ 

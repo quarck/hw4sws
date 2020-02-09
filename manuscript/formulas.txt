@@ -3,9 +3,9 @@
 Below we would be using math notation (where `AB`$ (as well as `A \cdot B`$) means *A* **and** *B*, and similarly `A+B`$ means *A* **and** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
 
 Gate U1 output would be obviously:
-` ``$ 
-U1 = \bar{AB} = \bar{A} + \bar{B}
-` ``
+```$ 
+U1 = \bar{AB}
+```
 
 Gate U2 would take signal A and output of gate U1, so result is:
 ` ``$
