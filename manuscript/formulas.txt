@@ -1,0 +1,39 @@
+# Test page 
+
+Below we would be using math notation (where `AB`$ (as well as `A \cdot B`$) means *A* **and** *B*, and similarly `A+B`$ means *A* **and** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
+
+Gate U1 output would be obviously:
+` ``$ 
+U1 = \bar{AB} = \bar{A} + \bar{B}
+` ``
+
+Gate U2 would take signal A and output of gate U1, so result is:
+` ``$
+U2 = \bar{A \cdot (\bar{A} + \bar{B})}
+` ``
+This can be simplified: 
+` ``$
+U2 = \bar{A} + \bar{\bar{A} + \bar{B}} = \bar{A} + AB = \bar{A} + B
+` ``
+
+Gate U3 is symmetrical to U2, thus obviously: 
+` ``$
+U3 = A + \bar{B}
+` ``
+
+And finally, output of the whole gate network: 
+` ``$
+U4 = \bar{(\bar{A} + B) \cdot (A + \bar{B}) }
+` ``
+` ``$
+U4 = \bar{(\bar{A} + B)} + \bar{(A + \bar{B})}
+` ``
+` ``$
+U4 = A\bar{B} + \bar{A}B
+` ``
+
+So for this whole network: 
+
+` ``$
+Q = A\bar{B} + \bar{A}B
+` ``
