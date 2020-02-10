@@ -330,15 +330,15 @@ Why is this important? There is a commonly used method of cost reduction for cus
 
 ## Gate Propagation Delays 
 
-Modern MOSFET transistors are really fast, but still switching between ON and OFF states is not instantaneous. And so, the logic gates that are built of MOSFETs don't react immediately to change of the input signal. 
-Each gate has a measurable *propagation delay*, and transistor switching speed is the largest contributing factor into this delay. 
+Modern transistors are really fast, but still switching between ON and OFF states cannot be instantaneous. And so, the logic gates could never react immediately to change of the input signal. 
+Each gate has a measurable *propagation delay*, and transistor switching speed is the largest contributing factor into that delay. 
 Let say we have a buffer gate with input *A* and output *Q*, and some signal changing between logical HIGH and LOW on the input, then output would be delayed as shown on the figure 1.25. On this figure each signal is shown in its own relative voltage coordinates, thus both lines are only switching between LOW and HIGH, while time coordinate is aligned for both signals. 
 
 {alt: "Buffer propagation delay", width: "80%"}
 ![figure 1.25 - Gate propagation delay - Buffer](ch1_gate_times.svg)
 
 Propagation delay is measured between middle-points of wave-slope where signal is changing between LOW and HIGH, on the figure above t1 and t2 are two of such delays. 
-Change of signal from LOW to HIGH is called *rising edge* in digital circuits design, and similarly change form HIGH to LOW is called *falling edge*. What's important is that propagation delay can be different between rising and falling edges, since MOSFET transistors aren't fully symmetrical in many ways (pMOS and nMOS might have slightly different switching speeds, furthermore within the single transistor it might take different amount of time to switch from ON to OFF compared to opposite direction). 
+Change of signal from LOW to HIGH is called *rising edge* in digital circuits design, and similarly change form HIGH to LOW is called *falling edge*. What's important is that propagation delay can be different between rising and falling edges, since MOSFET transistors aren't fully symmetrical in many ways. The worst case scenario propagation delay is usually used as the propagation delay of the whole gate. 
 
 Propagation delay should be taken into account when digital circuit is designed, as it limits maximum performance of the circuit. 
 
