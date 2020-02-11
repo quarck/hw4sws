@@ -47,7 +47,8 @@ X = (!A && !B && C) || (!A && B && !C) ||
 
 The same can be written using mathematical notation: 
 
-`O_{1} = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$ 			~(2.1)~
+`X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$ 
+**~(2.1)~**
 
 Alternatively we can write the expression based on rows producing 0: 
 
@@ -72,14 +73,8 @@ X = (A || B || C) && (A || !B || !C) &&
 
 Finally, let's write the latter using math notation: 
 
-{caption: "(2.2)"}
-```$
-O_{1} = 
-(A + B + C) 
-(A + \bar{B} + \bar{C})
-(\bar{A} + B + \bar{C})  
-(\bar{A} + \bar{B} + C)
-``` 
+`X = (A + B + C) (A + \bar{B} + \bar{C}) (\bar{A} + B + \bar{C})  (\bar{A} + \bar{B} + C)`$
+**~(2.2)~**
 
 Both 2.1 and 2.2 are equivalent logical expressions that define the output O1. 
 
@@ -104,73 +99,49 @@ Enumerating all the rows producing '1' for Y we get:
 
 Now combining all the minterms: 
 
-{caption: "(2.3)"}
-```$
-Y = 
-\bar{A} B C + 
-A \bar{B} C +
-A B \bar{C} +
-A B C
-```
+`Y = \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C`$
+**~(2.3)~**
+
 
 As reader might have started suspecting, none of expressions 2.1, 2.2, 2.3 is optimal. Let's take expression 2.1 and try using the rules of boolean algebra to simplify it:
 
 The original expression: 
 
-```$
-X = \bar{A} \bar{B} C +
-	\bar{A} B \bar{C} +
-	A \bar{B} \bar{C} + 
-	A B C 
-``` 
+`X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$
 
 grouping similar terms together: 
 
-```$
-X = \bar{A} \bar{B} C +
-	\bar{A} B \bar{C} +
-	A \bar{B} \bar{C} + 
-	A B C 
-``` 
+`X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} +  A B C`$ 
 
-```$
-X = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )
-``` 
+`X = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )`$ 
 
 It is not hard to see that `\bar{B} C + B \bar{C}`$ is in fact XOR, in math symbols written as `B \oplus C`$. 
 And similarly `\bar{B} \bar{C} + B C`$ is in fact XNOR, in math notation written as `\overline{B \oplus C}`$.
 
 Thus, replacing these sub-expressions into XOR/XNOR symbols: 
 
-```$
-X = \bar{A} (B \oplus C) + A (\overline{B \oplus C})
-``` 
+`X = \bar{A} (B \oplus C) + A (\overline{B \oplus C})`$ 
 
 Very similarly, the latter is on its own a XOR between `A`$ and `B \oplus C`$, thus we can finally write: 
 
-{caption: "(2.4)"}
-```$
-X = A \oplus B \oplus C
-``` 
+`X = A \oplus B \oplus C`$ 
+**~(2.4)~**
+
 
 Lets do the same for Y (eq. 2.3): 
 
 The original expression: 
 
-```$
-Y =  \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C
-```
+`Y =  \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C`$
 Grouping: 
 
-```$
-Y =  (\bar{A} + A) B C +  A (\bar{B} C + B \bar{C}) 
-```
+`Y =  (\bar{A} + A) B C +  A (\bar{B} C + B \bar{C})`$
+
 The `\bar{A} + A`$ term is always true, so can be eliminated, and ``$ is again XOR function, thus: 
 
-{caption: "(2.5)"}
-```$
-Y =  B C +  A (B \oplus C) 
-```
+`Y =  B C +  A (B \oplus C)`$
+**~(2.5)~**
+
 
 With the equations 2.4 and 2.5 we have fully defined by the expression the output of the function defined by the table 2.1. 
 
