@@ -48,7 +48,6 @@ X = (!A && !B && C) || (!A && B && !C) ||
 The same can be written using mathematical notation: 
 
 `X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$ 
-**~(2.1)~**
 
 Alternatively we can write the expression based on rows producing 0: 
 
@@ -74,14 +73,14 @@ X = (A || B || C) && (A || !B || !C) &&
 Finally, let's write the latter using math notation: 
 
 `X = (A + B + C) (A + \bar{B} + \bar{C}) (\bar{A} + B + \bar{C})  (\bar{A} + \bar{B} + C)`$
-**~(2.2)~**
 
-Both 2.1 and 2.2 are equivalent logical expressions that define the output O1. 
+Both final expressions are equivalent and define the same output X.
 
-The type of expression we've produced in 2.1 has called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called a *minterm*.
- Similarly the 2.2 type is called *conjunctive normal form* and each individual -and-ed component (`(A + B + C)`$, etc) is called a *maxterm*. 
+The first type of expression `X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$  is called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called a *minterm*.
 
-If we look closely at expressoins 2.1 and 2.2 it is not hard to see how we can directly derive those from the table form of the O1. 
+The second expression `X = (A + B + C) (A + \bar{B} + \bar{C}) (\bar{A} + B + \bar{C})  (\bar{A} + \bar{B} + C)`$) is called *conjunctive normal form* of the function, and each individual -and-ed component (`(A + B + C)`$, etc) is called a *maxterm*. 
+
+If we look closely at these expressions again, it is not hard to see how we can directly derive those from the table form of the X. 
 
 For *disjunctive normal form*, we select all the rows producing value '1', each such row forms individual *minterm*. If there is '0' for against particular input value, it goes with the *not* into minterm, otherwise it goes as it is. Thus, we create as many minterms as there are '1's on the output and finally *OR* all the minterms  to produce the resulting expression. 
 
@@ -100,10 +99,8 @@ Enumerating all the rows producing '1' for Y we get:
 Now combining all the minterms: 
 
 `Y = \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C`$
-**~(2.3)~**
 
-
-As reader might have started suspecting, none of expressions 2.1, 2.2, 2.3 is optimal. Let's take expression 2.1 and try using the rules of boolean algebra to simplify it:
+As reader might have started suspecting, none of expressions we've got so far is optimal. Let's take the first one and try optimizing by applying the rules of boolean algebra to convert the expression into something smaller: 
 
 The original expression: 
 
@@ -125,10 +122,9 @@ Thus, replacing these sub-expressions into XOR/XNOR symbols:
 Very similarly, the latter is on its own a XOR between `A`$ and `B \oplus C`$, thus we can finally write: 
 
 `X = A \oplus B \oplus C`$ 
-**~(2.4)~**
 
 
-Lets do the same for Y (eq. 2.3): 
+Lets do the same for Y: 
 
 The original expression: 
 
@@ -137,13 +133,11 @@ Grouping:
 
 `Y =  (\bar{A} + A) B C +  A (\bar{B} C + B \bar{C})`$
 
-The `\bar{A} + A`$ term is always true, so can be eliminated, and ``$ is again XOR function, thus: 
+The `\bar{A} + A`$ term is always true, so can be eliminated, and `\bar{B} C + B \bar{C}`$ is again a XOR function, thus: 
 
 `Y =  B C +  A (B \oplus C)`$
-**~(2.5)~**
 
-
-With the equations 2.4 and 2.5 we have fully defined by the expression the output of the function defined by the table 2.1. 
+This way, we have fully defined by the expression the output of the function defined by the table 2.1. 
 
 
 ## Karnaugh Map
