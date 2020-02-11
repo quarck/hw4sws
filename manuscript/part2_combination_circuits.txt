@@ -105,8 +105,8 @@ O_{1} =
 ``` 
 
 Both 2.1 and 2.2 are equivalent logical expressions that define the output O1. 
-Type of expression we've produced in 2.1 has called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$ etc) is called *minterm*. 
-Similarly the 2.2 type is called *conjunctive normal form* and each individual -and-ed component (`(A + B + C)`$ etc) is called *maxterm*. 
+Type of expression we've produced in 2.1 has called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called *minterm*. 
+Similarly the 2.2 type is called *conjunctive normal form* and each individual -and-ed component (`(A + B + C)`$, etc) is called *maxterm*. 
 
 If we look closely at expressoins 2.1 and 2.2 it is not hard to see how we can directly derive those from the table form of the O1. 
 
@@ -127,13 +127,13 @@ Enumerating all rows producing '1' we get:
 Now combining all the minterms: 
 
 {caption: "(equation 2.3)"}
-```
+```$
 Q_{2} = 
 \bar{A} B C + 
 A \bar{B} C +
 A B \bar{C} +
 A B C
-```$
+```
 
 And for some better practice, lets now also do the *conjunctive normal form*. 
 Enumerating all rows producing '0' we get: 
