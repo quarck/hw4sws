@@ -7,6 +7,8 @@
 __NOT COMPLEETE__
 
 
-## Syntax used in the book 
+## Python, Math, VHDL syntax used in this book 
 
 **TODO**: tell about python vs math syntax for boolean algebra
+
+## Boolean Algebra - Quick Refresh 
