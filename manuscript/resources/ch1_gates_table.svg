@@ -5826,7 +5826,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6754"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = not A</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = !A</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -5860,7 +5860,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6760"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A and B</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A &amp;&amp; B</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -5894,7 +5894,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6766"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A or B</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A || B</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -5928,7 +5928,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6772"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A xor B</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = A ^^ B</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -5962,7 +5962,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6778"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = not (A and B)</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = !(A &amp;&amp; B)</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -5996,7 +5996,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6784"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = not (A or B)</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = !(A || B)</text>
     </g>
     <g
        c_partid="part_annotation"
@@ -6030,7 +6030,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
          dominant-baseline=""
          type="comment"
          id="text6790"
-         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = not (A xor B)</text>
+         style="font-size:18.66666603px;font-family:Verdana;text-anchor:start;fill:#000000">Q = !(A ^^ B)</text>
     </g>
     <g
        c_partid="part_annotation"

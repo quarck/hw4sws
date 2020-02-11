@@ -89,13 +89,13 @@ Doctors in particular want to install a light outside the room indicating that X
 
 So whoever is operating the X-Ray machine has to use switch S1 to turn the remote light L1 on or off. What we did is a basic information transmission device that can transmit one bit of information at a time. 
 
-The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signaling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of *L1* to be equal to *S1* **or** *S2*. We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
+The other day hospital buys a second X-Ray machine and installs it in a adjacent room, so both rooms still share the same main entrance. They contact you again and ask you to modify signaling system in a way that it should allow two independent controls (S1 and S2) and warning light (L1) must be turned on if any of the machines in operation. In other words we want value of *L1* to be equal to *S1 || S2*, where '||' means logical **OR**. We can achieve this functionality by simply placing two switches in parallel, as show on the figure 1.6 below. 
 {alt: "Basic 'OR' logic", width: "90%"}
 ![figure 1.6 - basic OR logic](ch1_primitive_or_logic.svg)
 
 Easy and elegant! If any/both of the switches S1 or S2 is on, then current would flow through the circuit and the warning light would be turned on. 
 
-As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signaling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation. Thus, we would have again indicator switches S1 and S2 and output *L1* should be equal to *S1* **and** *S2* - i.e. light should only be on if both operator set it into on. 
+As you are now an experienced contractor, you got another request from another hospital for a similar system. But this time they want a signaling system for an X-Ray room with slightly different setup. In this hospital they have one machine in a room with one main operator and one safety operator who has only a "kill switch" to shutdown the whole system in case of various unexpected situations. But they want second operator also to be able to turn the warning light off after kill switch invocation. Thus, we would have again indicator switches S1 and S2 and output *L1* should be equal to *S1 && S2*, where '&&' means logical **AND**, i.e. light should only be on if both operator set it into on. 
 This functionality also can be achieved easily by using the circuit on the figure 1.7. 
 {alt: "Basic 'AND' logic", width: "90%"}
 ![figure 1.7 - basic AND logic](ch1_primitive_and_logic.svg)
@@ -143,7 +143,7 @@ We already know that *AND* function requires switches to be aligned in sequence 
 
 Each gate above has two inputs: A and B and has output Q, and each has a power source. 
 
-Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets try combining two gates together in order to implement function *Q=(A and B) or C* and see what's happens. Circuit on the figure 1.11 attempts to implement such function using our naive gates. 
+Unfortunately this circuit is not going to work as we expect. To understand what's wrong with this circuit lets try combining two gates together in order to implement function *Q=(A && B) || C* and see what's happens. Circuit on the figure 1.11 attempts to implement such function using our naive gates. 
 
 {alt: "Naive gate implementations - wont work", width: "70%"}
 ![figure 1.11 - Naive AND + OR gates combined - wont work either!](ch1_naive_gates_circuit.svg)
@@ -277,7 +277,7 @@ Structure of all the XOR and XNOR implementations is fairly similar, so let us j
 {alt: "XOR from NAND", width: "80%"}
 ![figure 1.23 - XOR from NAND gates](ch1_xor_named_parts.svg)
 
-Below we would be using math notation (where `AB`$ as well as `A \cdot B`$ means *A* **and** *B*, and similarly `A+B`$ means *A* **or** *B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
+Below we would be using math notation (where `AB`$ as well as `A \cdot B`$ means *A && B*, and similarly `A+B`$ means *A || B*, and bar above the symbol means **not**; in this notation **and** is assumed to have higher priority over **or**)
 
 Gate U1 output would be obviously:
 ```$ 

@@ -6,9 +6,15 @@
 ## About This Book
 __NOT COMPLEETE__
 
+## C-Style, Math, VHDL syntax used in this book 
 
-## Python, Math, VHDL syntax used in this book 
+**TODO**: tell about C-Style vs math syntax for boolean algebra
 
-**TODO**: tell about python vs math syntax for boolean algebra
+* || - or
+* && - and
+* !  - not
+* ^^ - xor 
 
 ## Boolean Algebra - Quick Refresh 
+
+**TO BE DONE YET**

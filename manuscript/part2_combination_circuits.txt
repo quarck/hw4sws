@@ -13,14 +13,15 @@ From this perspective combination circuits are similar to pure functions of func
 
 Combination Circuit could be considered as a black-box with N inputs and M outputs. Let's denote by the letter *F* the function of the black box that defines relationship between inputs and outputs. 
 
-Such function *F* can be fully defined by the table that lists all possible combinations of the input signals and provides expected output signals for a given set of inputs. An example of such table is given on the table 2.1 below. Here we have three input signals: *A*, *B*, and *C*, and two output signals - *O1* and *O2*, in the table we use 0 for logical LOW and 1 for logical HIGH signal values. 
+Such function *F* can be fully defined by the table that lists all possible combinations of the input signals and provides expected output signals for a given set of inputs. An example of such table is given on the table 2.1 below. Here we have three input signals: *A*, *B*, and *C*, and two output signals - *X* and *Y*, in the table we use 0 for logical LOW and 1 for logical HIGH signal values. 
 
-{width: "80%"}![table 2.1 - example function defined by the table](ch2_tab_log_func.svg)
+{width: "80%"}![Table 2.1 - example function defined by the table](ch2_tab_log_func.svg)
 
 Another possible way of defining function *F* is by providing a logical expression(s) for the output value(s). 
 
 In fact, any function provided in table form can be re-written as a logical expression as well, lets see how this can be done. 
-Let's take our function defined by the table 2.1 and focus on output *O1* first. This output takes logical HIGH or true in logical terms when: 
+Let's take our function defined by the table 2.1 and focus on output *X* first. 
+This output takes logical HIGH or true in logical terms when: 
 * A=0, B=0, C=1 (2nd row)
 * A=0, B=1, C=0 (3rd row)
 * A=1, B=0, C=0 (5th row)
@@ -28,24 +29,25 @@ Let's take our function defined by the table 2.1 and focus on output *O1* first.
 
 All the other rows produce logical LOW or false (or '0').
  
-So if were writing a program, let say in python, we would write the following expression obviously for the O1 value: 
-```python
-O1 = 1 \
-	if ((A==0 and B==0 and C==1) or (A==0 and B==1 and C==0) or 
-	    (A==1 and B==0 and C==0) or (A==1 and B==1 and C==1)) \
-	else 0
+So if were writing a C-like program, we would write something like:
+```C
+X = ( (A==0 && B==0 && C==1) || 
+	  (A==0 && B==1 && C==0) || 
+	  (A==1 && B==0 && C==0) || 
+	  (A==1 && B==1 && C==1) )
+	? 1 : 0;
 ``` 
 
-and since A, B and C are themselves logical values, as well as the output, we can simply write: 
+or better, since A, B and C are logical values, we can simply write: 
 
-```python
-O1 = (not A and not B and C) or (not A and B and not C) or \
-     (A and not B and not C) or (A and B and C)
+```C
+X = (!A && !B && C) || (!A && B && !C) ||
+	(A && !B && !C) || (A && B && C);
 ``` 
 
 The same can be written using mathematical notation: 
 
-{caption: "(equation 2.1)"}
+{caption: "(2.1)"}
 ```$
 O_{1} = \bar{A} \bar{B} C +
 	\bar{A} B \bar{C} +
@@ -55,36 +57,28 @@ O_{1} = \bar{A} \bar{B} C +
 
 Alternatively we can write the expression based on rows producing 0: 
 
-```python
-O1 = 0 \
-	if ((A==0 and B==0 and C==0) or (A==0 and B==1 and C==1) or 
-	    (A==1 and B==0 and C==1) or (A==1 and B==1 and C==0)) \
-	else 1
+```C
+X = !( (!A && !B && !C) || (!A && B && C) || 
+	   (A && !B && C) || (A && B && !C) )
 ``` 
 
-Again, simplifying based on the fact that A, B, C are boolean values: 
+If we move logical NOT one level in into the braces: 
 
-```python
-O1 = not ((not A and not B and not C) or (not A and B and C) or \
-          (A and not B and C) or (A and B and not C))
+```C
+X = !(!A && !B && !C) && !(!A && B && C) && 
+	   !(A && !B && C) && !(A && B && !C)
 ``` 
 
-Let's move 'not's all the way into the brackets, in two steps: 
+The finally, latter can be written as: 
 
-```python
-O1 = not (not A and not B and not C) and not (not A and B and C) and \
-     not (A and not B and C) and not (A and B and not C)
-``` 
-and then 
-
-```python
-O1 = (A or B or C) and (A or not B or not C) and \
-	 (not A or B or not C) and (not A or not B or C)
+```C
+X = (A || B || C) && (A || !B || !C) && 
+	   (!A || B || !C) && (!A || !B || C)
 ``` 
 
 Finally, let's write the latter using math notation: 
 
-{caption: "(equation 2.2)"}
+{caption: "(2.2)"}
 ```$
 O_{1} = 
 (A + B + C) 
@@ -94,8 +88,9 @@ O_{1} =
 ``` 
 
 Both 2.1 and 2.2 are equivalent logical expressions that define the output O1. 
-Type of expression we've produced in 2.1 has called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called *minterm*. 
-Similarly the 2.2 type is called *conjunctive normal form* and each individual -and-ed component (`(A + B + C)`$, etc) is called *maxterm*. 
+
+The type of expression we've produced in 2.1 has called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called a *minterm*.
+ Similarly the 2.2 type is called *conjunctive normal form* and each individual -and-ed component (`(A + B + C)`$, etc) is called a *maxterm*. 
 
 If we look closely at expressoins 2.1 and 2.2 it is not hard to see how we can directly derive those from the table form of the O1. 
 
@@ -103,42 +98,33 @@ For *disjunctive normal form*, we select all the rows producing value '1', each 
 
 For *conjunctive normal form* we select all the rows producing value '0', each row forms individual *maxterm*. If there is '1' against particular input value, it goes with the *not* into a maxterm, otherwise it goes as it is. Again, we create as many maxterms as there are '0's in the output, and finally *AND* all the maxterms to produce the resulting expression. 
 
-Depending on the particular function it might be easier to use either *disjunctive* or *conjunctive* normal forms: if function produces only a few '0's and all the outputs in the table are '1's, the *conjunctive* form would result in much shorter expression, and similarly if it produces only a few '1's, the *disjunctive* would be better. 
+Depending on the particular function it might be easier to use either *disjunctive* or *conjunctive* normal forms: for example if function produces only a few '0's and all the outputs in the table are '1's, the *conjunctive* form would result in much shorter expression. 
 
-Lets now apply this knowledge and produce expression for *O2* directly. 
-First let's do the *disjunctive normal form*. 
-Enumerating all rows producing '1' we get: 
-* A=0, B=1, C=1, resulting minterm is `\bar{A} B C`$
-* A=1, B=0, C=1, resulting minterm is `A \bar{B} C`$
-* A=1, B=1, C=0, resulting minterm is `A B \bar{C}`$
-* A=1, B=1, C=1, resulting minterm is `A B C`$
+Lets practice and use *disjunctive normal form* to produce the expression for *Y* directly. 
+
+Enumerating all the rows producing '1' for Y we get: 
+* A=0, B=1, C=1, so the minterm is `\bar{A} B C`$
+* A=1, B=0, C=1, so the minterm is `A \bar{B} C`$
+* A=1, B=1, C=0, so the minterm is `A B \bar{C}`$
+* A=1, B=1, C=1, so the minterm is `A B C`$
 
 Now combining all the minterms: 
 
-{caption: "(equation 2.3)"}
+{caption: "(2.3)"}
 ```$
-Q_{2} = 
+Y = 
 \bar{A} B C + 
 A \bar{B} C +
 A B \bar{C} +
 A B C
 ```
 
-And for some better practice, lets now also do the *conjunctive normal form*. 
-Enumerating all rows producing '0' we get: 
-
-
-
-cont here ...............
-
-
-As reader might have started suspecting, neither 2.1 nor 2.2 is an optimal expression for O1. 
-We can use the rules of boolean algebra to simplify the logical expression, so let's for example take 2.1 and try simplifying it. 
+As reader might have started suspecting, none of expressions 2.1, 2.2, 2.3 is optimal. Let's take expression 2.1 and try using the rules of boolean algebra to simplify it:
 
 The original expression: 
 
 ```$
-O_{1} = \bar{A} \bar{B} C +
+X = \bar{A} \bar{B} C +
 	\bar{A} B \bar{C} +
 	A \bar{B} \bar{C} + 
 	A B C 
@@ -147,14 +133,14 @@ O_{1} = \bar{A} \bar{B} C +
 grouping similar terms together: 
 
 ```$
-O_{1} = \bar{A} \bar{B} C +
+X = \bar{A} \bar{B} C +
 	\bar{A} B \bar{C} +
 	A \bar{B} \bar{C} + 
 	A B C 
 ``` 
 
 ```$
-O_{1} = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )
+X = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )
 ``` 
 
 It is not hard to see that `\bar{B} C + B \bar{C}`$ is in fact XOR, in math symbols written as `B \oplus C`$. 
@@ -163,19 +149,43 @@ And similarly `\bar{B} \bar{C} + B C`$ is in fact XNOR, in math notation written
 Thus, replacing these sub-expressions into XOR/XNOR symbols: 
 
 ```$
-O_{1} = \bar{A} (B \oplus C) + A (\overline{B \oplus C})
+X = \bar{A} (B \oplus C) + A (\overline{B \oplus C})
 ``` 
 
 Very similarly, the latter is on its own a XOR between `A`$ and `B \oplus C`$, thus we can finally write: 
 
-{caption: "(equation 2.3)"}
+{caption: "(2.4)"}
 ```$
-O_{1} = A \oplus B \oplus C
+X = A \oplus B \oplus C
 ``` 
 
-If we try simplifying expression 2.2, we should eventually get to the same equation 2.3. 
+Lets do the same for Y (eq. 2.3): 
 
-##
+The original expression: 
+
+```$
+Y =  \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C
+```
+Grouping: 
+
+```$
+Y =  (\bar{A} + A) B C +  A (\bar{B} C + B \bar{C}) 
+```
+The `\bar{A} + A`$ term is always true, so can be eliminated, and ``$ is again XOR function, thus: 
+
+{caption: "(2.5)"}
+```$
+Y =  B C +  A (B \oplus C) 
+```
+
+With the equations 2.4 and 2.5 we have fully defined by the expression the output of the function defined by the table 2.1. 
+
+
+## Karnaugh Map
+
+
+## Example Implementation 
+
 
 
 ## Examples of Combination Circuits 
