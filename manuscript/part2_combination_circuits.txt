@@ -1,2 +1,59 @@
 {sample: true}
-# Combination Circuits 
+# Chapter Two - Combination Circuits 
+
+## Pure Functions of Hardware World 
+
+First class of digital devices and circuits we are going to examine is called *combination circuits*. 
+
+Combination circuit is a circuit number of input signals, number of output signals, and the main characteristic of the combination circuit is that its outputs are only depend on the current values of input signals and nothing else. 
+
+From this perspective combination circuits are similar to pure functions of functional programming world. 
+
+## Definition by The Table 
+
+Combination Circuit could be considered as a black-box with N inputs and M outputs. Let's denote by the letter *F* the function of the black box that defines relationship between inputs and outputs. 
+
+Such function *F* can be fully defined by the table that lists all possible combinations of the input signals and provides expected output signals for a given set of inputs. An example of such table is given on the table 2.1 below. Here we have three input signals: *A*, *B*, and *C*, and two output signals - *O1* and *O2*, in the table we use 0 for logical LOW and 1 for logical HIGH signal values. 
+
+{width: "80%"}![table 2.1 - example function defined by the table](ch2_tab_log_func.svg)
+
+Another possible way of defining function *F* is by providing a logical expression(s) for the output value(s). 
+
+In fact, any function provided in table form can be re-written as a logical expression as well, lets see how this can be done. 
+Let's take our function defined by the table 2.1 and focus on output *O1* first. This output takes logical HIGH or true in logical terms when: 
+ * A=0, B=0, C=1 (2nd row)
+ * A=0, B=1, C=0 (3rd row)
+ * A=1, B=0, C=0 (5th row)
+ 
+So if were writing a program, we would have obviously written something like (here syntax is using python style for logic operations):
+```python
+O1 = (A==0 and B==0 and C==1) \
+	or (A==0 and B==1 and C==0) \
+	or (A==1 and B==0 and C==0)
+``` 
+
+and since A, B and C are themselves logical values, we can write: 
+
+```python
+O1 = (not A and not B and C) \
+	or (not A and B and not C) \
+	or (A and not B and not C)
+``` 
+
+The same can be written using mathematical notation: 
+
+```$
+O_{1} = \overline{A} \overline{B} C +
+	\overline{A} B \overline{C} +
+	A \overline{B} \overline{C}
+``` 
+
+
+
+## Examples of Combination Circuits 
+
+### MUX 
+
+### 4-1 MUX 
+
+### Demux 
