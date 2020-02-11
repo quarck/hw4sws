@@ -21,9 +21,9 @@ Another possible way of defining function *F* is by providing a logical expressi
 
 In fact, any function provided in table form can be re-written as a logical expression as well, lets see how this can be done. 
 Let's take our function defined by the table 2.1 and focus on output *O1* first. This output takes logical HIGH or true in logical terms when: 
- * A=0, B=0, C=1 (2nd row)
- * A=0, B=1, C=0 (3rd row)
- * A=1, B=0, C=0 (5th row)
+* A=0, B=0, C=1 (2nd row)
+* A=0, B=1, C=0 (3rd row)
+* A=1, B=0, C=0 (5th row)
  
 So if were writing a program, we would have obviously written something like (here syntax is using python style for logic operations):
 ```python
@@ -43,9 +43,9 @@ O1 = (not A and not B and C) \
 The same can be written using mathematical notation: 
 
 ```$
-O_{1} = \overline{A} \overline{B} C +
-	\overline{A} B \overline{C} +
-	A \overline{B} \overline{C}
+O_{1} = \bar{A} \bar{B} C +
+	\bar{A} B \bar{C} +
+	A \bar{B} \bar{C}
 ``` 
 
 
