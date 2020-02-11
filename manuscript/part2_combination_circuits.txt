@@ -15,6 +15,17 @@ Combination Circuit could be considered as a black-box with N inputs and M outpu
 
 Such function *F* can be fully defined by the table that lists all possible combinations of the input signals and provides expected output signals for a given set of inputs. An example of such table is given on the table 2.1 below. Here we have three input signals: *A*, *B*, and *C*, and two output signals - *O1* and *O2*, in the table we use 0 for logical LOW and 1 for logical HIGH signal values. 
 
+| A | B | C | O1 | O2 | 
+|---|---|---| ---| ---|
+| 0 | 0 | 0 | 0  | 0  |
+| 0 | 0 | 1 | 1  | 0  |
+| 0 | 1 | 0 | 1  | 0  |
+| 0 | 1 | 1 | 0  | 1  |
+| 1 | 0 | 0 | 1  | 0  |
+| 1 | 0 | 1 | 0  | 1  |
+| 1 | 1 | 0 | 0  | 1  |
+| 1 | 1 | 1 | 1  | 0  |
+
 {width: "80%"}![table 2.1 - example function defined by the table](ch2_tab_log_func.svg)
 
 Another possible way of defining function *F* is by providing a logical expression(s) for the output value(s). 
@@ -24,12 +35,14 @@ Let's take our function defined by the table 2.1 and focus on output *O1* first.
 * A=0, B=0, C=1 (2nd row)
 * A=0, B=1, C=0 (3rd row)
 * A=1, B=0, C=0 (5th row)
+* A=1, B=1, C=1 (8th row)
  
 So if were writing a program, we would have obviously written something like (here syntax is using python style for logic operations):
 ```python
 O1 = (A==0 and B==0 and C==1) \
 	or (A==0 and B==1 and C==0) \
-	or (A==1 and B==0 and C==0)
+	or (A==1 and B==0 and C==0) \ 
+	or (A==1 and B==1 and C==1)
 ``` 
 
 and since A, B and C are themselves logical values, we can write: 
@@ -38,6 +51,7 @@ and since A, B and C are themselves logical values, we can write:
 O1 = (not A and not B and C) \
 	or (not A and B and not C) \
 	or (A and not B and not C)
+	or (A and B and C)
 ``` 
 
 The same can be written using mathematical notation: 
@@ -45,8 +59,40 @@ The same can be written using mathematical notation:
 ```$
 O_{1} = \bar{A} \bar{B} C +
 	\bar{A} B \bar{C} +
-	A \bar{B} \bar{C}
+	A \bar{B} \bar{C} + 
+	A B C 
 ``` 
+
+And that is the logical expression for output O1. If we do the same for O2 we would fully define functionality of this combination circuit using expression form. 
+But the expression we've got for O1 is far from optimal and we can simplify it a bit by the way of applying boolean algebra expression transformation rules: 
+
+```$
+O_{1} = \bar{A} \bar{B} C +
+	\bar{A} B \bar{C} +
+	A \bar{B} \bar{C} + 
+	A B C 
+``` 
+
+```$
+O_{1} = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )
+``` 
+
+It is not hard to see that `\bar{B} C + B \bar{C}`$ is in fact XOR, in math written as `B \oplus C`$. 
+And similarly `\bar{B} \bar{C} + B C`$ is in fact XNOR, in math notation written as `\overline{B \oplus C}`$.
+
+Thus, replacing these sub-expressions into XOR/XNOR symbols: 
+
+```$
+O_{1} = \bar{A} (B \oplus + C) + A (\overline{B \oplus C})
+``` 
+
+Very similarly, the latter is on its own a XOR between `A`$ and `B \oplus C`$, thus we can finally write: 
+
+```$
+O_{1} = A \oplus B \oplus C
+``` 
+
+This is certainly much nicer and concise expression. 
 
 
 
