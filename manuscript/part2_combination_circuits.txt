@@ -15,17 +15,6 @@ Combination Circuit could be considered as a black-box with N inputs and M outpu
 
 Such function *F* can be fully defined by the table that lists all possible combinations of the input signals and provides expected output signals for a given set of inputs. An example of such table is given on the table 2.1 below. Here we have three input signals: *A*, *B*, and *C*, and two output signals - *O1* and *O2*, in the table we use 0 for logical LOW and 1 for logical HIGH signal values. 
 
-| A | B | C | O1 | O2 | 
-|---|---|---| ---| ---|
-| 0 | 0 | 0 | 0  | 0  |
-| 0 | 0 | 1 | 1  | 0  |
-| 0 | 1 | 0 | 1  | 0  |
-| 0 | 1 | 1 | 0  | 1  |
-| 1 | 0 | 0 | 1  | 0  |
-| 1 | 0 | 1 | 0  | 1  |
-| 1 | 1 | 0 | 0  | 1  |
-| 1 | 1 | 1 | 1  | 1  |
-
 {width: "80%"}![table 2.1 - example function defined by the table](ch2_tab_log_func.svg)
 
 Another possible way of defining function *F* is by providing a logical expression(s) for the output value(s). 
