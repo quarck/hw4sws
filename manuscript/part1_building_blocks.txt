@@ -160,7 +160,7 @@ To fix this problem we need to ensure that parasitic static charge is removed wh
 Resistor is a simple electric device made of material that has high electric resistance (in Ohms), in all aspects it acts just like a regular wire but with some high resistance value. 
 By carefully picking the resistor value we could get somewhat approximately acceptable gate operation, but inevitable side effect of pulling signal down is that logical HIGH level produced by the gate would drop a little bit.  
 A better approach is to use a pull-up resistor that pulls signal up and use MOSFET transistors to "drop signal to the ground" when gate needs to produce logical LOW. What is meant is that transistor when it is in its ON state would connect the gate output the ground level, this connection via transistor would effectively override weak attempts of the pull-up resistor to produce logical HIGH, the final output of the gate would be logical LOW (when it needs to be). But when transistor is OFF - output would be defined by the pull-up resistor, and it would be a logical HIGH.
-Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *Q = not (A or B)* and *NAND* gate function is *Q = not (A and B)*", where Q is the output and A and B are inputs in both cases.
+Figure 1.13 below shows implementation of *NOR* and *NAND* gates implemented using this principle. *NOR* gate function is *Q = !(A || B)* and *NAND* gate function is *Q = !(A && B)*", where Q is the output and A and B are inputs in both cases.
 
 {alt: "nMOS NAND and NOR", width: "70%"}
 ![figure 1.13 - nMOS NAND and NOR gates](ch1_nmos_nand_nor.svg)
