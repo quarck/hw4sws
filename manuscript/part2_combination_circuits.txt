@@ -107,6 +107,7 @@ O1 = (A or B or C) \
 
 Finally, let's write the latter using math notation: 
 
+{caption: "equation 2.2"}
 ```$
 O_{1} = 
 (A + B + C) 
