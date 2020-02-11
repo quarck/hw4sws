@@ -65,7 +65,6 @@ O_{1} = \bar{A} \bar{B} C +
 	\bar{A} B \bar{C} +
 	A \bar{B} \bar{C} + 
 	A B C 
-	& \quad \text{ (2.1) }
 ``` 
 
 Alternatively we can write the expression based on rows producing 0: 
@@ -114,7 +113,7 @@ O_{1} =
 (A + \bar{B} + \bar{C})
 (\bar{A} + B + \bar{C})  
 (\bar{A} + \bar{B} + C)
-	& \quad \text{ (2.2) }
+
 ``` 
 
 Both 2.1 and 2.2 are equal logical expressions that equally define the output O1. 
