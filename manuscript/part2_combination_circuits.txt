@@ -138,6 +138,11 @@ A B C
 And for some better practice, lets now also do the *conjunctive normal form*. 
 Enumerating all rows producing '0' we get: 
 
+
+
+cont here ...............
+
+
 As reader might have started suspecting, neither 2.1 nor 2.2 is an optimal expression for O1. 
 We can use the rules of boolean algebra to simplify the logical expression, so let's for example take 2.1 and try simplifying it. 
 
