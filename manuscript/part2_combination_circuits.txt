@@ -9,7 +9,7 @@ Combination circuit is a circuit number of input signals, number of output signa
 
 From this perspective combination circuits are similar to pure functions of functional programming world. 
 
-## Definition by The Table 
+## Ways To Define Combination Circuit
 
 Combination Circuit could be considered as a black-box with N inputs and M outputs. Let's denote by the letter *F* the function of the black box that defines relationship between inputs and outputs. 
 
@@ -24,11 +24,11 @@ Let's take our function defined by the table 2.1 and focus on output *X* first. 
 
 ```C
 X = ( (A==0 && B==0 && C==1) || 
-	  (A==0 && B==1 && C==0) || 
-	  (A==1 && B==0 && C==0) || 
-	  (A==1 && B==1 && C==1) )
-	? 1 : 0;
-``` 
+      (A==0 && B==1 && C==0) || 
+      (A==1 && B==0 && C==0) || 
+      (A==1 && B==1 && C==1) )
+    ? 1 : 0;
+```
 
 In a condition we test to see if combination of inputs matches one of the rows producing X=1 (rows 2, 3, 5, 8), and if so - we output 1, otherwise we output 0. 
 
@@ -36,7 +36,7 @@ But since A, B, C and output are boolean / logical values, we can simply write:
 
 ```C
 X = (!A && !B && C) || (!A && B && !C) ||
-	(A && !B && !C) || (A && B && C);
+    (A && !B && !C) || (A && B && C);
 ``` 
 
 We've got a boolean logic expression for output X, the same can be written in math notation: 
@@ -49,14 +49,14 @@ Alternatively we can write the condition that tests for rows producing '0' and m
 
 ```C
 X = !(A==0 && B==0 && C==0) && !(A==0 && B==1 && C==1) && 
-	!(A==1 && B==0 && C==1) && !(A==1 && B==1 && C==0)
+    !(A==1 && B==0 && C==1) && !(A==1 && B==1 && C==0)
 ``` 
 
 The latter can simplified to: 
 
 ```C
 X = (A || B || C) && (A || !B || !C) && 
-	(!A || B || !C) && (!A || !B || C)
+    (!A || B || !C) && (!A || !B || C)
 ``` 
 
 Or, equally, using math notation: 
@@ -146,7 +146,37 @@ Y =  B C +  A (B \oplus C)
 This way, we have fully defined by the expression the output of the function defined by the table 2.1. 
 
 
-## Karnaugh Map
+## Implementation Using Logic Gates 
+
+Let us once again focus our attention on the combination circuit defined by the table 2.1, for which we've produced simplified logical expressions for outputs X and Y, and see how we can implement in a physical circuit using logic gates. 
+
+Once again, expressions we've got for X and Y are: 
+
+```$
+\begin{align*}
+X &= A \oplus B \oplus C  \\
+Y &= B C +  A (B \oplus C)
+\end{align*}
+```
+
+We would be operating with elementary base consisting of logic gates with only two inputs, so we can group operations in the expressions as follows using brackets to indicate the order of evaluation that would be directly mapped into the gate network: 
+
+```$
+\begin{align*}
+X &= A \oplus (B \oplus C)  \\
+Y &= (B C) +  (A (B \oplus C))
+\end{align*}
+```
+
+The term `B \oplus C` is present in both expressions, thus we can re-use it to reduce number of gates. The resulting circuit for outputs X and Y is shown on the figure 2.2 below: 
+
+{width: "90%"}![Figure 2.2 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
+
+
+
+
+
+## Karnaugh Maps
 
 
 ## Example Implementation 
