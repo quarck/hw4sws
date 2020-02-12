@@ -1,0 +1,14 @@
+
+```$
+\begin{align}
+ f(x) &= x^4 + 7x^3 + 2x^2 \nonumber \\
+      &\qquad {} + 10x + 12
+\end{align}
+```
+
+```$
+\begin{align*}
+ f(x)  &= a x^2+b x +c   &   g(x)  &= d x^3 \\
+ f'(x) &= 2 a x +b       &   g'(x) &= 3 d x^2
+\end{align*}
+```
