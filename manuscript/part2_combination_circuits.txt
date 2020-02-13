@@ -163,23 +163,23 @@ This very first circuit - let us build it slowly step by step, just to make it e
 
 First step is a circuit for sub-expression `A \oplus B`$, it is just a simple single XOR gate, figure 2.2: 
 
-{width: "90%"}![Figure 2.2 - A xor B](ch2_a_xor_b.svg)
+{width: "70%"}![Figure 2.2 - A xor B](ch2_a_xor_b.svg)
 
 Then we add a second XOR gate to produce `X = A \oplus B \oplus C`$, we just chain another XOR gate, figure 2.3: 
 
-{width: "90%"}![Figure 2.3 - A xor B xor C](ch2_a_xor_b_xor_c.svg)
+{width: "70%"}![Figure 2.3 - A xor B xor C](ch2_a_xor_b_xor_c.svg)
 
 And that's the gate network for output X already. Now we implement network for Y. The `A \oplus B`$ term is also required for Y, so we can re-use it and go directly into implementing `(A \oplus B) C`$, figure 2.4: 
 
-{width: "90%"}![Figure 2.4 - A xor B xor C | (A xor B) and C](ch2_a_xor_b_xor_c___a_xor_b_and_c.svg)
+{width: "70%"}![Figure 2.4 - A xor B xor C | (A xor B) and C](ch2_a_xor_b_xor_c___a_xor_b_and_c.svg)
 
 Now we add a parallel `A B`$ term, figure 2.5:  
 
-{width: "90%"}![Figure 2.5 - A xor B xor C | (A xor B) and C] | A and B](ch2_a_xor_b_xor_c___a_xor_b_and_c__a_and_b.svg)
+{width: "70%"}![Figure 2.5 - A xor B xor C | (A xor B) and C] | A and B](ch2_a_xor_b_xor_c___a_xor_b_and_c__a_and_b.svg)
 
 Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for output Y, figure 2.6: 
 
-{width: "90%"}![Figure 2.6 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
+{width: "70%"}![Figure 2.6 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
 
 And that is the gate network that would produce the exact output as was defined by the table 2.1. 
 
