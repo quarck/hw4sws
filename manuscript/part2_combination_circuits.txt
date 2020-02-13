@@ -134,13 +134,13 @@ Y =  \bar{A} B C +  A \bar{B} C + A B \bar{C} + A B C
 Grouping: 
 
 ```$
-Y =  (\bar{A} + A) B C +  A (\bar{B} C + B \bar{C})
+Y =  (\bar{A} B + A \bar{B}) C + A B ( \bar{C} + C )
 ```
 
-The `\bar{A} + A`$ term is always true, so can be eliminated, and `\bar{B} C + B \bar{C}`$ is again a XOR function, thus: 
+The `\bar{C} + C`$ term is always true, so can be eliminated, and `\bar{A} B + A \bar{B}`$ is again a XOR function, thus: 
 
 ```$
-Y =  B C +  A (B \oplus C)
+Y =  (A \oplus B) C + A B
 ```
 
 This way, we have fully defined by the expression the output of the function defined by the table 2.1. 
@@ -155,23 +155,36 @@ Once again, expressions we've got for X and Y are:
 ```$
 \begin{align*}
 X &= A \oplus B \oplus C  \\
-Y &= B C +  A (B \oplus C)
+Y &= (A \oplus B) C + A B
 \end{align*}
 ```
 
-We would be operating with elementary base consisting of logic gates with only two inputs, so we can group operations in the expressions as follows using brackets to indicate the order of evaluation that would be directly mapped into the gate network: 
+This very first circuit - let us build it slowly step by step, just to make it easier to read. We would be operating with elementary base consisting of logic gates with only two inputs.
 
-```$
-\begin{align*}
-X &= A \oplus (B \oplus C)  \\
-Y &= (B C) +  (A (B \oplus C))
-\end{align*}
-```
+First step is a circuit for sub-expression `A \oplus B`$, it is just a simple single XOR gate, figure 2.2: 
 
-The term `B \oplus C` is present in both expressions, thus we can re-use it to reduce number of gates. The resulting circuit for outputs X and Y is shown on the figure 2.2 below: 
+{width: "90%"}![Figure 2.2 - A xor B](ch2_a_xor_b.svg)
 
-{width: "90%"}![Figure 2.2 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
+Then we add a second XOR gate to produce `X = A \oplus B \oplus C`$, we just chain another XOR gate, figure 2.3: 
 
+{width: "90%"}![Figure 2.3 - A xor B xor C](ch2_a_xor_b_xor_c.svg)
+
+And that's the gate network for output X already. Now we implement network for Y. The `A \oplus B`$ term is also required for Y, so we can re-use it and go directly into implementing `(A \oplus B) C`$, figure 2.4: 
+
+{width: "90%"}![Figure 2.4 - A xor B xor C | (A xor B) and C](ch2_a_xor_b_xor_c___a_xor_b_and_c.svg)
+
+Now we add a parallel `A B`$ term, figure 2.5:  
+
+{width: "90%"}![Figure 2.5 - A xor B xor C | (A xor B) and C] | A and B](ch2_a_xor_b_xor_c___a_xor_b_and_c__a_and_b.svg)
+
+Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for output Y, figure 2.6: 
+
+{width: "90%"}![Figure 2.6 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
+
+And that is the gate network that would produce the exact output as was defined by the table 2.1. 
+
+
+## One Bit Full Adder 
 
 
 
