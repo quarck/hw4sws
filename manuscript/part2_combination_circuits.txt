@@ -182,11 +182,20 @@ Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for
 {width: "70%"}![Figure 2.6 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
 
 And that is the gate network that would produce the exact output as was defined by the table 2.1. 
+The resulting implementation takes only 5 gates, that is way less than if we were to implement the original DNF or CNF based form. 
 
 
 ## One Bit Full Adder 
 
+The combination circuit defined by the table 2.1, the one we've just implemented in logical gates, is in fact a very important one. It has its own name - **one bit full adder**. We only need to rename input *C* into *C~in~*, X to *S*, and Y into *C~out~*, we would get it's canonical form, see table 2.2 below: 
 
+{width: "80%"}![Table 2.2 - example function defined by the table](ch2_tab_adder_func.svg)
+
+What this device does is a sum of two single-bit inputs *A* and *B* and a carry-in flag *C~in~* from the previous digit, producing the sum *S* and the carry out flag for the current digit - *C~out~*. 
+
+By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.7. We would get back to a one-bit adder later in this chapter.
+
+{width: "90%"}![Figure 2.7 - 4-bit adder](ch2_4_bit_adder.svg)
 
 
 ## Karnaugh Maps
