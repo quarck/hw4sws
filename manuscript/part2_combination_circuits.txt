@@ -187,17 +187,17 @@ The resulting implementation takes only 5 gates, that is way less than if we wer
 
 ## One Bit Full Adder 
 
-The combination circuit defined by the table 2.1 is in fact an important base component, it has its own name - **full adder**. To get its canonical form we only need to rename input *C* into *C~in~* - for 'carry in', *X* into *S* - for 'Sum', and *Y* into *C~out~* - for 'carry out'. See table 2.2 and figure 2.7.
+The combination circuit defined by the table 2.1 is in fact an important base component, it has its own name - **full adder**. To get its canonical form we only need to rename input *C* into *C~in~* - for 'carry in', *X* into *S* - for 'Sum', and *Y* into *C~out~ * - for 'carry out'. See table 2.2 and figure 2.7.
 
 {width: "80%"}![Table 2.2 - example function defined by the table](ch2_tab_adder_func.svg)
 
 {width: "70%"}![Figure 2.7 - Full Adder](ch2_adder.svg)
 
-Full adder computes arithmetic sum of three individual bits - *A*, *B*, *C~in~* and produces two-bit output where most significant bit is *C~out~* and least significant bit is *S*. The *C~in~* input is necessary for chaining multiple full adders into wider (N-bit) adders - we would see how very soon. 
+Full adder computes arithmetic sum of three individual bits - *A*, *B*, *C~in~* and produces two-bit output where most significant bit is *C~out~ * and least significant bit is *S*. The *C~in~* input is necessary for chaining multiple full adders into wider (N-bit) adders - we would see how very soon. 
 
 In the circuit diagrams, full adder is usually displayed as a rectangle with inputs on the left and outputs on the right, each input / output has a corresponding label inside the rectangle, see figure 2.8.
 
-{width: "50%"}![Figure 2.8 - Full Adder](ch2_adder_symbol.svg)
+{width: "65%"}![Figure 2.8 - Full Adder](ch2_adder_symbol.svg)
 
 Component similar to a full adder, but  without *C~in~* input is called *half adder*: it has inputs *A* and *B*, and produces the same *S* and *C~out~*. By combining two half adders with *OR* gate, we could build a full adder, as shown on the figure 2.9. 
 
@@ -216,20 +216,16 @@ By chaining multiple single-bit full adders we could create a circuit that produ
 
 {width: "90%"}![Figure 2.XX - 4-bit adder](ch2_4_bit_adder.svg)
 
-The circuit on the figure 2.XX demonstrates how complex component are usually displayed on the circuits - as a rectangles with multiple lines coming in/out of them. All the component inputs are usually on the left side, and all the outputs are on the right, and inside the rectangle each particular input has a label indicating what kind of input or output is it.
-
-tbd
+**tbd**
 
 ## Carry Lookahead Adder 
 
-## Example Implementation 
+**tbd**
 
+## MUX 
 
+	4-1 MUX 
 
-## Examples of Combination Circuits 
+## Demux 
 
-### MUX 
-
-### 4-1 MUX 
-
-### Demux 
+## Something else?? 
