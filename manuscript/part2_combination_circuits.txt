@@ -193,12 +193,25 @@ The combination circuit defined by the table 2.1, the one we've just implemented
 
 What this device does is a sum of two single-bit inputs *A* and *B* and a carry-in flag *C~in~* from the previous digit, producing the sum *S* and the carry out flag for the current digit - *C~out~*. 
 
-By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.7. We would get back to a one-bit adder later in this chapter.
+Reader might wonder why this device is called *full* adder instead of just adder. This is because there is another type of adder exists - a half adder. 
+Half adder takes only two inputs A and B and produces sum and carry out flags. By combining two half adders with *OR* gate, we could build a full adder, as shown on the figure 2.7. 
 
-{width: "90%"}![Figure 2.7 - 4-bit adder](ch2_4_bit_adder.svg)
+{width: "70%"}![Figure 2.7 - two half adders](ch2_half_adders.svg)
 
+As an optional exercise, try to build the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation.
 
 ## Karnaugh Maps
+
+
+## Ripple Carry Adder 
+
+By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.**XX**. We would get back to a one-bit adder later in this chapter.
+
+{width: "90%"}![Figure 2.XX - 4-bit adder](ch2_4_bit_adder.svg)
+
+The circuit on the figure 2.XX demonstrates how complex component are usually displayed on the circuits - as a rectangles with multiple lines coming in/out of them. All the component inputs are usually on the left side, and all the outputs are on the right, and inside the rectangle each particular input has a label indicating what kind of input or output is it.
+
+tbd
 
 
 ## Example Implementation 
