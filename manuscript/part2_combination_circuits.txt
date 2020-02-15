@@ -213,6 +213,7 @@ The circuit on the figure 2.XX demonstrates how complex component are usually di
 
 tbd
 
+## Carry Lookahead Adder 
 
 ## Example Implementation 
 
