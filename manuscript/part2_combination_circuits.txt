@@ -184,6 +184,13 @@ Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for
 And that is the gate network that would produce the exact output as was defined by the table 2.1. 
 The resulting implementation takes only 5 gates, that is way less than if we were to implement the original DNF or CNF based form. 
 
+**TODO**: 
+ch2_adder_symbol.svg
+
+**TODO**: 
+ch2_adder.svg
+
+
 
 ## One Bit Full Adder 
 
