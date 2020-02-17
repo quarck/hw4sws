@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="306.17383"
-   height="219.00005"
-   viewBox="-10 -816.4 306.17383 219.00004"
+   width="315.34961"
+   height="236.53723"
+   viewBox="-10 -816.4 315.34961 236.53723"
    version="1.1"
    id="svg13941"
-   sodipodi:docname="ch1_nand_low_high.svg"
+   sodipodi:docname="ch1_nand_high_low.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata13947">
@@ -42,9 +42,9 @@
      id="namedview13943"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="2.7654514"
-     inkscape:cx="13.606696"
-     inkscape:cy="162.27226"
+     inkscape:zoom="3.1296216"
+     inkscape:cx="130.71102"
+     inkscape:cy="147.65143"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -64,7 +64,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1592"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-439.80392,-358.67468)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13595"
@@ -83,7 +83,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1594"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-439.44231,-360.4827)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13598"
@@ -102,7 +102,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1596"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-435.82627,-364.82196)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13601"
@@ -121,7 +121,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1598"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-436.91108,-361.92912)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13604"
@@ -140,7 +140,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="630 -410 630 -435 540 -435"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -148,7 +148,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="460 -395 460 -390"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -156,7 +156,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="525 -380 510 -380 510 -250"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -164,7 +164,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="540 -370 590 -370"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -172,7 +172,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -325 590 -335 590 -370 630 -370"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -180,7 +180,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="575 -250 570 -250 550 -250 460 -250"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_etype="pinpart"
      c_shapetype="group"
@@ -188,7 +188,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1606"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13613"
@@ -207,14 +207,14 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="460 -435 540 -435 540 -410"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_partid="part_annotation"
      id="gge1611"
      display="none"
      c_shapetype="group"
      style="display:none"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        c_note="note_name"
        x="471.70312"
@@ -227,8 +227,8 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        style="font-size:9.33333302px;font-family:Arial;text-anchor:start;fill:#000000">1</text>
   </g>
   <circle
-     cx="49.84766"
-     cy="-793.90002"
+     cx="49.847652"
+     cy="-778.37561"
      id="gge1615"
      locked="0"
      r="10"
@@ -240,8 +240,8 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinname="1"
      font-size="7pt"
-     y="49.84766"
-     x="801.90002">1</text>
+     y="49.847652"
+     x="786.37561">1</text>
   <text
      style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
      id="text13626"
@@ -249,38 +249,38 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinnumber="1"
      font-size="7pt"
-     y="45.84766"
-     x="807.90002">1</text>
+     y="45.847652"
+     x="792.37561">1</text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path13630"
-     d="m 49.84766,-803.9 v -10" />
+     d="m 49.847652,-788.37554 v -10" />
   <circle
      style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      id="circle13632"
      display="none"
      r="3"
-     cy="-826.90002"
-     cx="49.84766" />
+     cy="-811.37561"
+     cx="49.847652" />
   <path
      style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path13634"
      display="none"
-     d="m 46.84766,-823.9 3,3 3,-3" />
+     d="m 46.847652,-808.37554 3,3 3,-3" />
   <polyline
      points="458 -421 462 -421"
      id="gge1623"
      locked="0"
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="460 -423 460 -419"
      id="gge1624"
      locked="0"
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <text
      style="font-size:9.33333302px;font-family:Verdana;text-anchor:start;display:none;fill:#000000"
      id="text13639"
@@ -288,8 +288,8 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinname="2"
      font-size="7pt"
-     y="49.84766"
-     x="787.90002">2</text>
+     y="49.847652"
+     x="772.37561">2</text>
   <text
      style="font-size:9.33333302px;font-family:Verdana;text-anchor:end;display:none;fill:#000000"
      id="text13641"
@@ -297,37 +297,37 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      display="none"
      c_pinnumber="2"
      font-size="7pt"
-     y="45.84766"
-     x="779.90002">2</text>
+     y="45.847652"
+     x="764.37561">2</text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path13645"
-     d="m 49.84766,-783.9 v 10" />
+     d="m 49.847652,-768.37554 v 10" />
   <circle
      style="display:none;fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      id="circle13647"
      display="none"
      r="3"
-     cy="-760.90002"
-     cx="49.84766" />
+     cy="-745.37561"
+     cx="49.847652" />
   <path
      style="display:none;fill:none;stroke:#000000;stroke-width:1;stroke-linejoin:round;shape-rendering:crispEdges"
      inkscape:connector-curvature="0"
      id="path13649"
      display="none"
-     d="m 52.84766,-763.9 -3,-3 -3,3" />
+     d="m 52.847652,-748.37554 -3,-3 -3,3" />
   <polyline
      points="462 -409 458 -409"
      id="gge1632"
      locked="0"
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_partid="part_annotation"
      id="gge1635"
      c_shapetype="group"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        x="447"
        y="-364"
@@ -343,35 +343,35 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="451 -380 469 -380"
      id="gge1638"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="454 -378 466 -378"
      id="gge1639"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="457 -376 463 -376"
      id="gge1640"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="459 -374 461 -374"
      id="gge1641"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -379,12 +379,12 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="615 -380 610 -380 590 -380 560 -380 560 -295 460 -295"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_partid="part_annotation"
      id="gge1645"
      c_shapetype="group"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        x="577"
        y="-209"
@@ -400,35 +400,35 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="581 -225 599 -225"
      id="gge1648"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="584 -223 596 -223"
      id="gge1649"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="587 -221 593 -221"
      id="gge1650"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      points="589 -219 591 -219"
      id="gge1651"
      locked="0"
      fill="transparent"
      style="stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_etype="pinpart"
      c_shapetype="group"
@@ -436,7 +436,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1652"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13677"
@@ -455,7 +455,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      locked="0"
      id="gge1654"
      c_partid="part_annotation"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <text
        style="font-size:12px;font-family:Verdana;text-anchor:start;fill:#000000"
        id="text13680"
@@ -465,7 +465,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        font-weight=""
        font-size="9pt"
        y="-345"
-       x="665">Q</text>
+       x="665">Q=HIGH</text>
   </g>
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -474,7 +474,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -315 590 -295"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -482,7 +482,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -242.5 590 -247.5"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -490,14 +490,14 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -277.5 590 -290"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      r="2.5"
      c_shapetype="line"
      locked="0"
      id="gge1659"
-     cy="-628.90002"
+     cy="-613.37561"
      cx="179.84766" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
@@ -505,7 +505,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_shapetype="line"
      locked="0"
      id="gge1660"
-     cy="-653.90002"
+     cy="-638.37561"
      cx="179.84766" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
@@ -513,7 +513,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_shapetype="line"
      locked="0"
      id="gge1661"
-     cy="-696.40002"
+     cy="-680.87561"
      cx="179.84766" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
@@ -521,7 +521,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_shapetype="line"
      locked="0"
      id="gge1662"
-     cy="-671.40002"
+     cy="-655.87561"
      cx="179.84766" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -530,7 +530,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -320 590 -325"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -538,7 +538,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="540 -400 540 -380"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -546,7 +546,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="590 -235 590 -242"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -554,7 +554,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="660 -350 590 -350"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -562,21 +562,21 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="575 -295 570 -295 560 -295"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      c_shapetype="line"
      locked="0"
      id="gge1668"
      points="590 -275 600 -255"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      r="2.5"
      c_shapetype="line"
      locked="0"
      id="gge1669"
-     cy="-781.40002"
+     cy="-765.87561"
      cx="129.84766" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
@@ -584,7 +584,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_shapetype="line"
      locked="0"
      id="gge1670"
-     cy="-756.40002"
+     cy="-740.87561"
      cx="129.84766" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -593,7 +593,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="540 -405 540 -410"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -601,21 +601,21 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="540 -370 540 -375"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      c_shapetype="line"
      locked="0"
      id="gge1673"
      points="630 -400 640 -380"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
      r="2.5"
      c_shapetype="line"
      locked="0"
      id="gge1674"
-     cy="-781.40002"
+     cy="-765.87561"
      cx="219.84766" />
   <circle
      style="fill:none;stroke:#000000;stroke-width:1;shape-rendering:crispEdges"
@@ -623,7 +623,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_shapetype="line"
      locked="0"
      id="gge1675"
-     cy="-756.40002"
+     cy="-740.87561"
      cx="219.84766" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
@@ -632,7 +632,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="630 -405 630 -410"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <polyline
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;shape-rendering:crispEdges"
      locked="0"
@@ -640,7 +640,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      points="630 -370 630 -375"
      c_shapetype="line"
      c_etype="wire"
-     transform="translate(-410.15234,-378.9)" />
+     transform="translate(-410.15234,-363.37554)" />
   <g
      c_shapetype="group"
      locked="0"
@@ -648,7 +648,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="540,-435"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <circle
        style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
        id="circle13915"
@@ -671,7 +671,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="590,-370"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <circle
        style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
        id="circle13920"
@@ -694,7 +694,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="510,-250"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <circle
        style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
        id="circle13925"
@@ -717,7 +717,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="590,-350"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <circle
        style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
        id="circle13930"
@@ -740,7 +740,7 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
      c_origin="560,-295"
      c_etype="pinpart"
      c_partid="part_junction"
-     transform="translate(-410.15234,-378.9)">
+     transform="translate(-410.15234,-363.37554)">
     <circle
        style="fill:#4f4f4f;stroke:none;shape-rendering:crispEdges"
        id="circle13935"
@@ -756,4 +756,31 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        cy="-295"
        cx="560" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:21.33333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="47.951065"
+     y="-807.49377"
+     id="text1972"><tspan
+       sodipodi:role="line"
+       id="tspan1970"
+       x="47.951065"
+       y="-807.49377"
+       style="font-size:12px">3.3v - HIGH</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:21.33333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="197.73915"
+     y="-580.04443"
+     id="text1980"><tspan
+       sodipodi:role="line"
+       id="tspan1978"
+       x="197.73915"
+       y="-580.04443"
+       style="font-size:12px">0v - LOW</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 2.5;stroke-dashoffset:0;stroke-opacity:1;shape-rendering:crispEdges"
+     d="m 251.69298,-718.21816 h -63.58597 c 0,0 -14.0592,0.95859 -14.37873,-3.83433 -0.31953,-4.79291 -4.79291,-7.0296 -7.66866,-7.0296 -2.87575,0 -24.28409,0 -24.28409,0 0,0 -3.83432,0 -3.83432,-11.50299 0,-11.50299 0,-54.00014 0,-54.00014"
+     id="path6103"
+     inkscape:connector-curvature="0" />
 </svg>
