@@ -11,3 +11,4 @@ part8_fpgas.txt
 part9_simple_cpu.txt
 partA_simple_cpu_testing.txt
 z_appendix_a_mosfet_transistor_operation.txt
+z_appendix_b_standard_components.txt

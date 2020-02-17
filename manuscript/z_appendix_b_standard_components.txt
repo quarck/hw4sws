@@ -1,0 +1,20 @@
+# Appendix B - Standart Components and Their Circuits 
+
+## Half Adder 
+
+**TBD...**
+
+## Full Adder
+
+**TBD...**
+
+## Multiplexer 
+
+**TBD** 
+
+## Demultiplexer 
+
+**TBD...*
+
+## TBD...
+

@@ -203,7 +203,7 @@ Component similar to a full adder, but  without *C~in~* input is called *half ad
 
 {width: "70%"}![Figure 2.9 - two half adders](ch2_half_adders.svg)
 
-As an optional exercise, try building the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation.
+As an optional exercise, try building the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation. (See the appendix B for the half-adder circuit implementation).
 
 
 ## Karnaugh Maps
