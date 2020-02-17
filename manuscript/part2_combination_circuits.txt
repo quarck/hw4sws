@@ -208,6 +208,50 @@ As an optional exercise, try building the table that would define functionality 
 
 ## Karnaugh Maps
 
+In the previous section we did a laborious manual work in order to simplify functions presented in their disjunctive normal forms into something smaller. 
+Luckily there is simpler method exists. Method was introduced by Maurice Karnaugh and named after him - *Karnaugh Map*. The method utilizes our natural ability to recognize graphical patterns in the tables, avoiding working with the boolean algebra expressions. It works well for up to functions of up to four arguments, and with some tricks can be used for functions of five arguments.
+The formal description of this method can be a bit confusing and boring, it is much easier to demonstrate it by the example. Let's start with the function of three arguments *A*, *B* and *C*, defined by the table 2.3 below, output of the function is denoted as *Y*. 
+
+{width: "80%"}![Table 2.3](ch2_tab_three_args_karnaugh_maps.svg)
+
+For three-input function with start with the empty two-dimensional table as on the figure 2.10. 
+
+{width: "65%"}![Figure 2.10 - Empty three variable Karnaugh map](ch2_empty_three_variable_kmap.svg)
+
+Vertical index of this table would match variable *A*, and horizontal index would consist of pair of values *B,C* - e.g. indexes are *00*, *01*, *11*, *10*, where first digit in each pair corresponds to the value of *B* and second corresponds to the value of *C*. Reader might have noticed an irregularity in that index sequence: indexes are ordered in such a way that every adjacent indexes are only different by a single bit. Such sequence has a special name - *gray code*, it has many different uses in the digital circuits design. 
+Back to to our two-dimensional table, we fill it with the values from the original table 2.3, by placing corresponding 0 / 1 values in the matching cells, as on the figure 2.11: 
+
+{width: "65%"}![Figure 2.11 - Karnaugh map example](ch2_example_three_variable_kmap.svg)
+
+Next step, need to include each '1' present in the table into one or multiple groups, where each of the groups would produce a term in the resulting boolean expression. Adjacent '1's should be combined into bigger groups in order to eliminate some of the components, and table should be considered as wrapping around the edges, so for our example function we would have groups as shown on figure 2.12. 
+
+{width: "65%"}![Figure 2.12 - Karnaugh map example](ch2_example_three_variable_kmap_with_groups.svg)
+
+There are two groups here: top one combines cells A=0,BC=00 with A=0,BC=10. The variable that is present in both '0' and '1' in the group is eliminated, in this case it is 'B', and the remaining are written based on disjunctive form rules, e.g. A and C should be taken as negatives, thus the first term would be `\bar{A} \bar{C}`$. 
+Second group consists of cells A=1,BC=01 and A=1,BC=11. In this case we again have variable B appearing with both 0' and '1' values, thus it is again being eliminated and resulting term is `A C`$. Now we just combine all the terms into the resulting expression: 
+
+```$
+Y = \bar{A} \bar{C} + A C
+```
+
+Karnaugh maps would not help in recognizing *XOR*/*XNOR* expressions, but this step we can do manually, thus: 
+
+```$
+Y = \overline{A \oplus C}
+```
+
+Let us take at few more examples of various possible groups in Karnaugh maps with the resulting terms they produce. See figures 2.13 - xxx below. 
+
+
+
+Karnaugh map of a function of fur arguments is similar to three argument one, but instead of single-argument vertical index we now have composite indexes on both axis, both using gray code. So let say our inputs are A, B, C, D. Vertical index would take pair of A,B and horizontal index takes C,D. 
+Let's take another example function, given by the table 2.4. 
+
+For that function we build map as follows: 
+
+
+
+
 __TODO__
 
 ## Ripple Carry Adder 
