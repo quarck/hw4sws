@@ -30,16 +30,16 @@ X = ( (A==0 && B==0 && C==1) ||
     ? 1 : 0;
 ```
 
-In a condition we test to see if combination of inputs matches one of the rows producing X=1 (rows 2, 3, 5, 8), and if so - we output 1, otherwise we output 0. 
+In a condition we test to see if combination of inputs matches one of the rows producing *X=1* (rows 2, 3, 5, 8), and if so - we output 1, otherwise we output 0. 
 
-But since A, B, C and output are boolean / logical values, we can simply write: 
+But since *A*, *B*, *C* and output are boolean / logical values, we can simply write: 
 
 ```C
 X = (!A && !B && C) || (!A && B && !C) ||
     (A && !B && !C) || (A && B && C);
 ``` 
 
-We've got a boolean logic expression for output X, the same can be written in math notation: 
+We've got a boolean logic expression for output *X*, the same can be written in math notation: 
 
 ```$
 X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C
@@ -65,13 +65,13 @@ Or, equally, using math notation:
 X = (A + B + C) (A + \bar{B} + \bar{C}) (\bar{A} + B + \bar{C})  (\bar{A} + \bar{B} + C)
 ```
 
-Both final expressions are equivalent and define the same output X.
+Both final expressions are equivalent and define the same output *X*.
 
 The first type of expression `X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} + A B C`$  is called *disjunctive normal form* of the function and each of individual -or-ed components (`\bar{A} \bar{B} C`$, etc) is called a *minterm*.
 
 The second expression `X = (A + B + C) (A + \bar{B} + \bar{C}) (\bar{A} + B + \bar{C})  (\bar{A} + \bar{B} + C)`$) is called *conjunctive normal form* of the function, and each individual -and-ed component (`(A + B + C)`$, etc) is called a *maxterm*. 
 
-If we look closely at these expressions again, it is not hard to see how we can directly derive those from the table form of the X. 
+If we look closely at these expressions again, it is not hard to see how we can directly derive those from the table form of the *X*. 
 
 For *disjunctive normal form*, we select all the rows producing value '1', each such row forms individual *minterm*. If there is '0' for against particular input value, it goes with the *not* into minterm, otherwise it goes as it is. Thus, we create as many minterms as there are '1's on the output and finally *OR* all the minterms  to produce the resulting expression. 
 
@@ -107,8 +107,8 @@ X = \bar{A} \bar{B} C + \bar{A} B \bar{C} + A \bar{B} \bar{C} +  A B C
 X = \bar{A} (\bar{B} C + B \bar{C}) + A ( \bar{B} \bar{C} + B C )
 ```
 
-It is not hard to see that `\bar{B} C + B \bar{C}`$ is in fact XOR, in math symbols written as `B \oplus C`$. 
-And similarly `\bar{B} \bar{C} + B C`$ is in fact XNOR, in math notation written as `\overline{B \oplus C}`$.
+It is not hard to see that `\bar{B} C + B \bar{C}`$ is in fact *XOR*, in math symbols written as `B \oplus C`$. 
+And similarly `\bar{B} \bar{C} + B C`$ is in fact *XNOR*, in math notation written as `\overline{B \oplus C}`$.
 
 Thus, replacing these sub-expressions into XOR/XNOR symbols: 
 
@@ -116,14 +116,14 @@ Thus, replacing these sub-expressions into XOR/XNOR symbols:
 X = \bar{A} (B \oplus C) + A (\overline{B \oplus C})
 ```
 
-Very similarly, the latter is on its own a XOR between `A`$ and `B \oplus C`$, thus we can finally write: 
+Very similarly, the latter is on its own a *XOR* between `A`$ and `B \oplus C`$, thus we can finally write: 
 
 ```$
 X = A \oplus B \oplus C
 ```
 
 
-Lets do the same for Y: 
+Lets do the same for *Y*: 
 
 The original expression: 
 
@@ -137,7 +137,7 @@ Grouping:
 Y =  (\bar{A} B + A \bar{B}) C + A B ( \bar{C} + C )
 ```
 
-The `\bar{C} + C`$ term is always true, so can be eliminated, and `\bar{A} B + A \bar{B}`$ is again a XOR function, thus: 
+The `\bar{C} + C`$ term is always true, so can be eliminated, and `\bar{A} B + A \bar{B}`$ is again a *XOR* function, thus: 
 
 ```$
 Y =  (A \oplus B) C + A B
@@ -148,9 +148,9 @@ This way, we have fully defined by the expression the output of the function def
 
 ## Implementation Using Logic Gates 
 
-Let us once again focus our attention on the combination circuit defined by the table 2.1, for which we've produced simplified logical expressions for outputs X and Y, and see how we can implement in a physical circuit using logic gates. 
+Let us once again focus our attention on the combination circuit defined by the table 2.1, for which we've produced simplified logical expressions for outputs *X* and *Y*, and see how we can implement in a physical circuit using logic gates. 
 
-Once again, expressions we've got for X and Y are: 
+Once again, expressions we've got for *X* and *Y* are: 
 
 ```$
 \begin{align*}
@@ -161,15 +161,15 @@ Y &= (A \oplus B) C + A B
 
 This very first circuit - let us build it slowly step by step, just to make it easier to read. We would be operating with elementary base consisting of logic gates with only two inputs.
 
-First step is a circuit for sub-expression `A \oplus B`$, it is just a simple single XOR gate, figure 2.2: 
+First step is a circuit for sub-expression `A \oplus B`$, it is just a simple single *XOR* gate, figure 2.2: 
 
 {width: "70%"}![Figure 2.2 - A xor B](ch2_a_xor_b.svg)
 
-Then we add a second XOR gate to produce `X = A \oplus B \oplus C`$, we just chain another XOR gate, figure 2.3: 
+Then we add a second *XOR* gate to produce `X = A \oplus B \oplus C`$, we just chain another *XOR* gate, figure 2.3: 
 
 {width: "70%"}![Figure 2.3 - A xor B xor C](ch2_a_xor_b_xor_c.svg)
 
-And that's the gate network for output X already. Now we implement network for Y. The `A \oplus B`$ term is also required for Y, so we can re-use it and go directly into implementing `(A \oplus B) C`$, figure 2.4: 
+And that's the gate network for output *X* already. Now we implement network for *Y*. The `A \oplus B`$ term is also required for *Y* so we can re-use it and go directly into implementing `(A \oplus B) C`$, figure 2.4: 
 
 {width: "70%"}![Figure 2.4 - A xor B xor C | (A xor B) and C](ch2_a_xor_b_xor_c___a_xor_b_and_c.svg)
 
@@ -177,38 +177,38 @@ Now we add a parallel `A B`$ term, figure 2.5:
 
 {width: "70%"}![Figure 2.5 - A xor B xor C | (A xor B) and C] | A and B](ch2_a_xor_b_xor_c___a_xor_b_and_c__a_and_b.svg)
 
-Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for output Y, figure 2.6: 
+Finally we combine `(A \oplus B) C`$ with `A B`$ to produce the full circuit for output *Y*, figure 2.6: 
 
 {width: "70%"}![Figure 2.6 - Logic gate implementation of table 2.1](ch2_anon_adder.svg)
 
 And that is the gate network that would produce the exact output as was defined by the table 2.1. 
-The resulting implementation takes only 5 gates, that is way less than if we were to implement the original DNF or CNF based form. 
-
-**TODO**: 
-ch2_adder_symbol.svg
-
-**TODO**: 
-ch2_adder.svg
-
+The resulting implementation takes only 5 gates, that is way less than if we were to implement the original *DNF* or *CNF* based form. 
 
 
 ## One Bit Full Adder 
 
-The combination circuit defined by the table 2.1, the one we've just implemented in logical gates, is in fact a very important one. It has its own name - **one bit full adder**. We only need to rename input *C* into *C~in~*, X to *S*, and Y into *C~out~*, we would get it's canonical form, see table 2.2 below: 
+The combination circuit defined by the table 2.1 is in fact an important base component, it has its own name - **full adder**. To get its canonical form we only need to rename input *C* into *C~in~* - for 'carry in', *X* into *S* - for 'Sum', and *Y* into *C~out~ * - for 'carry out'. See table 2.2 and figure 2.7.
 
 {width: "80%"}![Table 2.2 - example function defined by the table](ch2_tab_adder_func.svg)
 
-What this device does is a sum of two single-bit inputs *A* and *B* and a carry-in flag *C~in~* from the previous digit, producing the sum *S* and the carry out flag for the current digit - *C~out~*. 
+{width: "70%"}![Figure 2.7 - Full Adder](ch2_adder.svg)
 
-Reader might wonder why this device is called *full* adder instead of just adder. This is because there is another type of adder exists - a half adder. 
-Half adder takes only two inputs A and B and produces sum and carry out flags. By combining two half adders with *OR* gate, we could build a full adder, as shown on the figure 2.7. 
+Full adder computes arithmetic sum of three individual bits - *A*, *B*, *C~in~* and produces two-bit output where most significant bit is *C~out~ * and least significant bit is *S*. The *C~in~* input is necessary for chaining multiple full adders into wider (N-bit) adders - we would see how very soon. 
 
-{width: "70%"}![Figure 2.7 - two half adders](ch2_half_adders.svg)
+In the circuit diagrams, full adder is usually displayed as a rectangle with inputs on the left and outputs on the right, each input / output has a corresponding label inside the rectangle, see figure 2.8.
 
-As an optional exercise, try to build the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation.
+{width: "65%"}![Figure 2.8 - Full Adder](ch2_adder_symbol.svg)
+
+Component similar to a full adder, but  without *C~in~* input is called *half adder*: it has inputs *A* and *B*, and produces the same *S* and *C~out~*. By combining two half adders with *OR* gate, we could build a full adder, as shown on the figure 2.9. 
+
+{width: "70%"}![Figure 2.9 - two half adders](ch2_half_adders.svg)
+
+As an optional exercise, try building the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation.
+
 
 ## Karnaugh Maps
 
+__TODO__
 
 ## Ripple Carry Adder 
 
@@ -216,20 +216,16 @@ By chaining multiple single-bit full adders we could create a circuit that produ
 
 {width: "90%"}![Figure 2.XX - 4-bit adder](ch2_4_bit_adder.svg)
 
-The circuit on the figure 2.XX demonstrates how complex component are usually displayed on the circuits - as a rectangles with multiple lines coming in/out of them. All the component inputs are usually on the left side, and all the outputs are on the right, and inside the rectangle each particular input has a label indicating what kind of input or output is it.
-
-tbd
+**tbd**
 
 ## Carry Lookahead Adder 
 
-## Example Implementation 
+**tbd**
 
+## MUX 
 
+	4-1 MUX 
 
-## Examples of Combination Circuits 
+## Demux 
 
-### MUX 
-
-### 4-1 MUX 
-
-### Demux 
+## Something else?? 
