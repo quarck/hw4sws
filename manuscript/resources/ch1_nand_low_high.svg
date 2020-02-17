@@ -42,7 +42,7 @@
      id="namedview11170"
      showgrid="false"
      inkscape:zoom="2.7654513"
-     inkscape:cx="149.16316"
+     inkscape:cx="84.255129"
      inkscape:cy="140.48224"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
@@ -778,8 +778,8 @@ rect, circle, ellipse, polyline, line, polygon, path {shape-rendering:crispEdges
        y="-579.77283"
        style="font-size:12px">0v - LOW</tspan></text>
   <path
-     style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 2.5;stroke-dashoffset:0;stroke-opacity:1;shape-rendering:crispEdges"
-     d="m 249.99373,-718.56861 h -50.26305 c 0,0 -13.79394,0.92476 -13.79394,-3.69607 0,-4.62083 0,-4.98244 0,-4.98244 0,0 -0.30864,-2.35043 4.57303,-2.53123 4.88166,-0.1808 27.84355,0 27.84355,0 0,0 7.23209,-0.1808 7.23209,-3.43524 0,-3.25445 0,-63.46162 0,-63.46162"
-     id="path5441"
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;shape-rendering:crispEdges;stroke-miterlimit:4;stroke-dasharray:4,2;stroke-dashoffset:0"
+     d="m 248.18571,-705.06797 h -51.70947 c 0,0 -11.93295,-1.44642 -11.57134,-13.01777 0.3616,-11.57134 27.48195,-9.76332 27.48195,-9.76332 0,0 16.27221,2.16963 16.27221,-16.99542 0,-19.16504 0,-36.52207 0,-36.52207 0,0 1.08481,-9.76332 -19.52665,-9.76332 -20.61147,0 -151.150739,0 -151.150739,0"
+     id="path9089"
      inkscape:connector-curvature="0" />
 </svg>
