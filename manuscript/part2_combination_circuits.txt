@@ -243,6 +243,9 @@ Y = \overline{A \oplus C}
 Let us take at few more examples of various possible groups in Karnaugh maps with the resulting terms they produce. See figures 2.13 - xxx below. 
 
 
+{width: "65%"}![Figure 2.13 - Karnaugh map group example](ch2_example_3v_kmap_0.svg)
+
+
 
 Karnaugh map of a function of fur arguments is similar to three argument one, but instead of single-argument vertical index we now have composite indexes on both axis, both using gray code. So let say our inputs are A, B, C, D. Vertical index would take pair of A,B and horizontal index takes C,D. 
 Let's take another example function, given by the table 2.4. 
