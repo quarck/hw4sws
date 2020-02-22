@@ -335,6 +335,9 @@ Let's take another example function, given by the table 2.4.
 
 For that function we build map as follows: 
 
+{width: "65%"}![Figure 2.xx - empty four variable Karnaugh map](ch2_empty_four_var_kmap.svg)
+
+
 
 ** __TODO__**
 
