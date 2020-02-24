@@ -211,31 +211,47 @@ As an optional exercise, try building the table that would define functionality 
 In the previous section we did a laborious manual work in order to simplify functions presented in their disjunctive normal forms into something smaller. 
 Luckily there is simpler method exists. Method was introduced by Maurice Karnaugh and named after him - *Karnaugh Map*. The method utilizes our natural ability to recognize graphical patterns in the tables, avoiding working with the boolean algebra expressions. It works well for up to functions of up to four arguments, and with some tricks can be used for functions of five arguments.
 
-Fluency with Karnaugh maps is not really necessary for comprehension of the further chapters of this book, but some familiarity is necessary to understand some important aspects, so we would take some break from circuits and would spend some time with Karnaugh maps in this chapter now. 
-
-The formal description of this method can be a bit complicated (and boring), it is much easier to demonstrate the method by the example. Let's start with the function of three arguments *A*, *B* and *C*, defined by the table 2.3 below, output of the function is denoted as *Y*. 
+Fluency with Karnaugh maps is not necessary in order to proceed further with this book, but some familiarity would be useful, so we would take some break from circuits and would spend some time with Karnaugh maps in this chapter now.
+The formal description of this method can be a bit complicated and boring, it is much easier to demonstrate the method by the example. Let's start with the function `Y`$ of three arguments *A*, *B* and *C*, defined by the table 2.3 below. 
 
 {width: "80%"}![Table 2.3](ch2_tab_three_args_karnaugh_maps.svg)
 
-For three-input function with start with the empty two-dimensional table formatted as on the figure 2.10. 
+As a first step we arrange function outputs into a two-dimensional form as shown on the figure 2.10 below. 
 
-{width: "65%"}![Figure 2.10 - Empty three variable Karnaugh map](ch2_empty_three_variable_kmap.svg)
+{width: "70%"}![Figure 2.10 - Three variable Karnaugh map](ch2_kmap_of_three_var_expl.svg)
 
-Vertical index of this table would match variable *A*, and horizontal index would consist of pair of values *B,C* - e.g. indexes are *00*, *01*, *11*, *10*, where first digit in each pair corresponds to the value of *B* and second corresponds to the value of *C*. Reader might have noticed an irregularity in that index sequence: indexes are ordered in such a way that every adjacent indexes are only different by a single bit. Such sequence has a special name - *gray code*, it has many different uses in the digital circuits design. 
-Back to to our two-dimensional table, we fill it with the values from the original table 2.3, by placing corresponding 0 / 1 values in the matching cells, as on the figure 2.11: 
+This is not a standard representation of a Karnaugh map, but it gives better visibility of what's going on here. Rows of the table are indexed by the input *A* only, and columns are indexed by a 'composite index' consisting of pair of variables *B* and *C*. The order column of indexes is important, reader might have noticed some irregularity in the row indexes - after *B=0,C=1* programmers would probably expect *B=1,C=0* as it matches the next number in binary form, but here we have *B=1,C=1*. This type of arrangement ensures that any two adjacent columns are only different by a single variable in the 'composite index'. 
+Usually Karnaugh map is represented in a slightly less wordy and more compact form, as shown on the figure 2.11 - this is the same map in a different shape. 
 
 {width: "65%"}![Figure 2.11 - Karnaugh map example](ch2_example_three_variable_kmap.svg)
 
-On the next step we should include each '1' from the map into one or multiple groups (but at least one). Groups are formed from adjacent '1's that should form a rectangle with each side being a power of two  - 1x1 is also allowed for group consisting of one element. The map should be considered as wrapping around the edges. There should be no '0's inside the group. Our goal is to find the least amount of largest size groups that cover all '1's. Each group would produce a single term in the resulting expression, and the larger group is - smaller would be the term. 
-For our example function we would get two groups as shown on figure 2.12. 
+So we just call column index as *BC*, and for example the rightmost column's *10* means *B=1* and *C=0*, and so on. 
+
+On the next step we should find and group all '1's in the table, for our example function we would get grouping as on the figure 2.12. 
 
 {width: "65%"}![Figure 2.12 - Karnaugh map example](ch2_example_three_variable_kmap_with_groups.svg)
 
-First group consisting of cells for *A,B,C=0,0,0* and *A,B,C=0,1,0*. If we were to write disjunctive normal form, these two cells would result in terms `\bar{A} \bar{B} \bar{C}`$ and `\bar{A} B \bar{C}`$, it is clear that *and* operation between these two terms can be simplified to just `\bar{A} \bar{C}`$, and that's the idea how Karnaugh map works. But instead of looking at the logical expressions we only need to check - which of the indexes is present in all possible combinations in the group, and the corresponding argument is eliminated from the resulting term. In this case it is B - it is present as '0' in the leftmost cell, and as '1' in the rightmost, while all the other indexes are equal (*A=0, C=0*). 
+Groups are rectangles consisting of only '1's, both height and width of each group must be only of value 1, 2 or 4. 
+If we find a 3x2 rectangle it should be split into two overlapping 2x2 groups (we would see an example soon, don't worry if this sounds confusing). 
+Every '1' in the table should be included into at least one group (stand-alone '1's would form individual 1x1 groups). 
+The map should be considered as wrapping around the edges, like in the top row of our example on figure 2.12.
+ 
+Each group would produce a single term in the resulting boolean expression, and the larger group is - smaller would be the term. 
 
-Second group is formed from cells for *A,B,C=1,0,1* and *A,B,C=1,1,1*. And again, B is present in both values '0' (left) and '1' (right) here, thus it is eliminated, the resulting term is `A C`$. 
+In our example on figure 2.12, first group consists of cells identified by indexes *A,B,C=0,0,0* and *A,B,C=0,1,0*. 
+If we write a disjunctive normal form based on these two terms, we would get `\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C}`$. The `\bar{A} \bar{C}`$ component is the same for both terms, so if we group and simplify - we could eliminate *B* from the expression, thus: 
 
-Combining two terms (one per group) we could write the result: 
+```$
+\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C} = \bar{A} ( \bar{B} + B) \bar{C} = \bar{A} \bar{C}
+```
+
+And that's the main principle how Karnaugh map works - we have arranged arguments of the function in such a way, that if there are any two two adjacent '1's there is a pair of terms that is only different by a single elemennt that can be eliminated. So, rather than working with expressions each time we only look at the indexes: 
+*A,**B**,C = 0,**0**,0* combined with *A,**B**,C = 0,**1**,0* gives us a single term - *A,C = 0,0*, and then we use standard disjunctive normal form rules for reduced set of arguments, thus resulting minter is just `\bar{A} \bar{C}`$. 
+If we were to have a larger group (4x1 or 2x2 for instance), then every element that is present in both '0' and '1' forms is eliminated - we would see an example soon. 
+
+Back to our function, the second group is formed from cells for *A,**B**,C=1,**0**,1* and *A,**B**,C=1,**1**,1*. Again, B is present as both '0' and '1' and thus being eliminated, the resulting term is `A C`$. 
+
+Final step is to combine all the minterms into a resulting expression: 
 
 ```$
 Y = \bar{A} \bar{C} + A C
@@ -247,7 +263,7 @@ The latter one can be written as a *XNOR* between *A*, *C* as we already know:
 Y = \overline{A \oplus C}
 ```
 
-Karnaugh map would no help us in recognizing *XOR*/*XNOR* gates where they could be used to simplify the expression. This is not a huge concern since, as we know, *XOR*/*XNOR* gates are themselves composite gates consisting of multiple simpler gates (*NAND/NOR* or other types). Thus, substitution to *XOR*/*XNOR* only serves as a convenience for human beings working with the boolean expressions, and not changing the actual 'under the hood' implementation. 
+Karnaugh map would no help us in recognizing *XOR*/*XNOR* gates where they could be used to simplify the expression. This is not a huge concern: *XOR*/*XNOR* gates are composite gates consisting of multiple simpler gates (*NAND/NOR* or other types). Thus, substitution to *XOR*/*XNOR* only serves as a convenience for human beings working with the boolean expressions, and not producing more optimal (consisting of less primitive gates) 'under the hood' implementation. 
 
 
 ### Karnaugh maps - more examples 
