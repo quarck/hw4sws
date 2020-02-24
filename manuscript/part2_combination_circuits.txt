@@ -278,6 +278,8 @@ Figure 2.13 above shows an example of a single vertical group, for that group in
 Y = \bar{B} C
 ```
 
+We go further and add more '1's: 
+
 {width: "65%"}![Figure 2.14 - Karnaugh map example](ch2_example_vert_horiz_overlap_groups.svg)
 
 Figure 2.14 demonstrates 'inconvenient' allocation of triangle-shaped form of '1's. They could be grouped into two groups as shown on the picture. Vertical one has index *A* present as both '0' and '1', producing term `\bar{B} C`$ and horizontal group having *B* present in both cells, while *A=1*, and *C=1*, thus term for the second group is `A C`$. Combining together: 
