@@ -212,7 +212,8 @@ In the previous section we did a laborious manual work in order to simplify func
 Luckily there is simpler method exists. Method was introduced by Maurice Karnaugh and named after him - *Karnaugh Map*. The method utilizes our natural ability to recognize graphical patterns in the tables, avoiding working with the boolean algebra expressions. It works well for up to functions of up to four arguments, and with some tricks can be used for functions of five arguments.
 
 Fluency with Karnaugh maps is not necessary in order to proceed further with this book, but some familiarity would be useful, so we would take some break from circuits and would spend some time with Karnaugh maps in this chapter now.
-The formal description of this method can be a bit complicated and boring, it is much easier to demonstrate the method by the example. Let's start with the function `Y`$ of three arguments *A*, *B* and *C*, defined by the table 2.3 below. 
+The formal description of this method can be a bit boring, it is much easier to demonstrate the method by the example. Practically it only makes sense to use Karnaugh maps for functions of three and more arguments, for two-argument function it is easy to optimize it away manually. 
+So let's start with the example function defined by the table 2.3 below, arguments are *A*, *B* and *C* and the output is *Y*.
 
 {width: "80%"}![Table 2.3](ch2_tab_three_args_karnaugh_maps.svg)
 
@@ -220,140 +221,105 @@ As a first step we arrange function outputs into a two-dimensional form as shown
 
 {width: "70%"}![Figure 2.10 - Three variable Karnaugh map](ch2_kmap_of_three_var_expl.svg)
 
-This is not a standard representation of a Karnaugh map, but it gives better visibility of what's going on here. Rows of the table are indexed by the input *A* only, and columns are indexed by a 'composite index' consisting of pair of variables *B* and *C*. The order column of indexes is important, reader might have noticed some irregularity in the row indexes - after *B=0,C=1* programmers would probably expect *B=1,C=0* as it matches the next number in binary form, but here we have *B=1,C=1*. This type of arrangement ensures that any two adjacent columns are only different by a single variable in the 'composite index'. 
-Usually Karnaugh map is represented in a slightly less wordy and more compact form, as shown on the figure 2.11 - this is the same map in a different shape. 
+This is not a standard representation of a Karnaugh map, but it gives better visibility of the two-dimensional layout. Rows of the table are indexed by the argument *A* of the function, and columns are indexed by a 'composite index' consisting of pair of arguments *B* and *C*. 
+The order of indexes is important: it is arranged in such a way that any adjacent columns (or rows) are only different by a single argument value: 
+* the first and second columns are only different by the value of *C*
+* the second and third columns are only different by the value of *B* 
+* the third and fourth columns are only different by the value of *C* 
+* the fourth and first columns should be also considered as adjacent and are only different by the value of *B*
+
+Usually Karnaugh map is represented in a bit more compact form as shown on the figure 2.11. 
 
 {width: "65%"}![Figure 2.11 - Karnaugh map example](ch2_example_three_variable_kmap.svg)
 
-So we just call column index as *BC*, and for example the rightmost column's *10* means *B=1* and *C=0*, and so on. 
-
-On the next step we should find and group all '1's in the table, for our example function we would get grouping as on the figure 2.12. 
+The main idea of the Karnaugh map, is that after we fill the table as shown on figure 2.11, we visually search for 'groups' of values 1-es in the table. Let's first see what groups our example function would produce and then we would talk about them in detail. For our example function we would have two groups, shown by dashed ellipses on the figure 2.12. 
 
 {width: "65%"}![Figure 2.12 - Karnaugh map example](ch2_example_three_variable_kmap_with_groups.svg)
 
-Groups are rectangles consisting of only '1's, both height and width of each group must be only of value 1, 2 or 4. 
-If we find a 3x2 rectangle it should be split into two overlapping 2x2 groups (we would see an example soon, don't worry if this sounds confusing). 
-Every '1' in the table should be included into at least one group (stand-alone '1's would form individual 1x1 groups). 
-The map should be considered as wrapping around the edges, like in the top row of our example on figure 2.12.
- 
-Each group would produce a single term in the resulting boolean expression, and the larger group is - smaller would be the term. 
+The bottom group is obvious - two 1s sitting next to each other, the top one might be a bit more confusing: Karnaugh map should be considered as looping around the edges like in a pacman game, so top leftmost cell and top rightmost cells are in fact neighbors and should be grouped together. 
+In general, each group we create should have both width and height to be only of value of 1, 2, or 4. If we find a 3x2 rectangle of 1s, it should be split into two overlapping 2x2 groups (we would see example below). 
 
-In our example on figure 2.12, first group consists of cells identified by indexes *A,B,C=0,0,0* and *A,B,C=0,1,0*. 
-If we write a disjunctive normal form based on these two terms, we would get `\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C}`$. The `\bar{A} \bar{C}`$ component is the same for both terms, so if we group and simplify - we could eliminate *B* from the expression, thus: 
+It is important to include every 1 into at least one group. Stand-alone 1s should be included into individual 1x1 groups. Our goal is to make groups as big as possible, and make as few of them as possible. In result, each group would produce a single minterm in the resulting boolean expression, and the larger group is - smaller would be the term. 
 
+Lets dig a bit into details of mechanics under the hood of Karnaugh maps. The top group on figure 2.12 consists of two cells, first cell maps to *A,B,C* of values *0,0,0*, and the second corresponds to *A,B,C=0,1,0*.
+
+If we write a disjunctive normal form based on just these two cells, we would get an expression:
+
+```$
+\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C}
+```
+The `\bar{A} \bar{C}`$ component is the same for both minterms, so it can be simplified as follows: 
 ```$
 \bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C} = \bar{A} ( \bar{B} + B) \bar{C} = \bar{A} \bar{C}
 ```
 
-And that's the main principle how Karnaugh map works - we have arranged arguments of the function in such a way, that if there are any two two adjacent '1's there is a pair of terms that is only different by a single elemennt that can be eliminated. So, rather than working with expressions each time we only look at the indexes: 
-*A,**B**,C = 0,**0**,0* combined with *A,**B**,C = 0,**1**,0* gives us a single term - *A,C = 0,0*, and then we use standard disjunctive normal form rules for reduced set of arguments, thus resulting minter is just `\bar{A} \bar{C}`$. 
-If we were to have a larger group (4x1 or 2x2 for instance), then every element that is present in both '0' and '1' forms is eliminated - we would see an example soon. 
-
-Back to our function, the second group is formed from cells for *A,**B**,C=1,**0**,1* and *A,**B**,C=1,**1**,1*. Again, B is present as both '0' and '1' and thus being eliminated, the resulting term is `A C`$. 
-
-Final step is to combine all the minterms into a resulting expression: 
+And that's the main principle: any two adjacent 1s in the Karnaugh map would produce minterms that are only different by a single argument and that argument can be eliminated. Furthermore, we don't have to do boolean expressions by hand: next time when we see pair of adjacent 1s, we simply eliminate the only argument that is changing between the cells. So for the bottom group, left cell maps to *A,B,C* values of *1,**0**,1*  the right maps to *1,**1**,1*, - they are only different by value B, and that B is eliminated, resulting minterm based on remaining non-changing arguments: `A B`$. 
+And then we just combine all the minterms we got into one final expression for the output variable: 
 
 ```$
 Y = \bar{A} \bar{C} + A C
 ```
 
-The latter one can be written as a *XNOR* between *A*, *C* as we already know: 
+What if we got bigger group? Imagine we have another function *Z*, that produces Karnaugh map as shown on the figure 2.13. 
+
+{width: "65%"}![Figure 2.13 - Karnaugh map example](ch2_example_vert_long_horiz_groups.svg)
+
+Here we have a 'tiny' vertical group of two elements and the large horizontal one. We know how to handle groups of two elements, so the vertical group would produce term `\bar{B} C` (argument *A* is the only changing in this group and it is eliminated). 
+For the 'large' horizontal group we would once again look into the under-the-hood mechanics, so if we write the disjunctive normal form expression based on the bottom row of 1s we would get: 
 
 ```$
-Y = \overline{A \oplus C}
+A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
 ```
 
-Karnaugh map would no help us in recognizing *XOR*/*XNOR* gates where they could be used to simplify the expression. This is not a huge concern: *XOR*/*XNOR* gates are composite gates consisting of multiple simpler gates (*NAND/NOR* or other types). Thus, substitution to *XOR*/*XNOR* only serves as a convenience for human beings working with the boolean expressions, and not producing more optimal (consisting of less primitive gates) 'under the hood' implementation. 
-
-
-### Karnaugh maps - more examples 
-
-Let us take a few more examples of other functions to see various possible groups that could be made in each case. In order to save space and reader's time, we would skip the table form and would go directly into Karnaugh map of each function. So let's go. 
-
-{width: "65%"}![Figure 2.13 - Karnaugh map example](ch2_example_vert_single_group.svg)
-
-Figure 2.13 above shows an example of a single vertical group, for that group index *A* is present in both '0' and '1' values, and index *BC* has value '01', thus *A* is eliminated, and result would consist of a single term: 
+Only *A* is common in every term, but the rest can be optimized away: 
 
 ```$
-Y = \bar{B} C
+A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}\\
+\begin{align*}
+&= A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})\\
+&= A (\bar{B} (\bar{C} + \C) + B (C + \bar{C}))\\
+&= A (\bar{B} + B)\\
+&= A
+\end{align*}
 ```
 
-We go further and add more '1's: 
+Intuitively we already knew that: in the larger groups we only keep arguments that don't change, everything else is eliminated. (*But it is important to remember that groups must be of a correct size - you can't eliminate elements in a 2x3 (or similar) group as there would be no matching pairs for every term*). 
 
-{width: "65%"}![Figure 2.14 - Karnaugh map example](ch2_example_vert_horiz_overlap_groups.svg)
-
-Figure 2.14 demonstrates 'inconvenient' allocation of triangle-shaped form of '1's. They could be grouped into two groups as shown on the picture. Vertical one has index *A* present as both '0' and '1', producing term `\bar{B} C`$ and horizontal group having *B* present in both cells, while *A=1*, and *C=1*, thus term for the second group is `A C`$. Combining together: 
+So for this second function we got two minterms, the resulting expression is as follows: 
 
 ```$
-Y = \bar{B} C + A C
+Z = A + \bar{B} C
 ```
 
-Latter expression requires at least two *AND* operations and one *OR*, we could manually convert it into:
+As we've talked about it already, lets see an example of inconvenient-sized 'groups'. Let's take a look at another function *R*, that produces Karnaugh map as shown on the figure 2.14. 
+
+{width: "65%"}![Figure 2.14 - Karnaugh map example](ch2_example_all_bug_single_zero.svg)
+
+Here we have to create three separate groups to cover all 1s by the correctly-sized groups, as shown on the figure. Instead of 3x2 group we create two 2x2 groups. We could have created a combination of 2x2 and 1x2 groups instead, but remember - our goal is to make groups as large as possible, thus eliminating more arguments from minterms. Same can be said about the bottom leftmost element - we could have placed it into a stand-alone 1x1 group, but that group would have all the *A, B, C* arguments in the produced minterm, while the big 4x1 group would eliminate *B* and *C. 
+For the three groups we have on figure 2.14, we produce minterms: 
+* `C`$
+* `B`$
+* `A`$
+
+And the resulting expression is exceptionally elegant: 
 
 ```$
-Y = (\bar{B} + A ) C
-```
-
-This would require one *AND* and one *OR*. (But both cases would still need another *NOT* to invert *B*). 
-
-Our next example, figure 2.15.
-
-{width: "65%"}![Figure 2.15 - Karnaugh map example](ch2_example_vert_horiz_horiz_overlap_groups.svg)
-
-On the figure 2.15 we have a horizontal span of three '1's, but unfortunately they can't be converted into a single group as its length is not a power of two. So we end up with three groups as shown on the picture. First two terms are the same as for the previous function, and the last term would eliminate *C*', keeping A (=1) and B(=1), thus third term is `A B`$, and resulting expression is: 
-
-```$
-Y = \bar{B} C + A C + A B
-```
-
-We keep moving on and adding '1's into the bottom row, figure 2.16: 
-
-{width: "65%"}![Figure 2.16 - Karnaugh map example](ch2_example_vert_long_horiz_groups.svg)
-
-On the figure 2.16 we can finally combine the whole bottom row into one big group, and this time the whole pair *BC* can be eliminated as this pair is present in all its combinations: 00, 01, 11, 10. Resulting term for the second group is just `A`$. The first group is the same as the first group for the previous expression, so result is: 
-
-```$
-Y = A + \bar{B} C
-```
-
-One step further, another '1' slipped into the table, figure 2.17: 
-
-{width: "65%"}![Figure 2.17 - Karnaugh map example](ch2_example_vertbig_long_horiz_groups.svg)
-
-On the figure 2.17 we have two groups again, one bulky 2x2 group and one horizontal consisting of the whole bottom row. The bulky one eliminates *A* (it has both '0' and '1') and B (again, present as both '0' and '1'), thus the term would be just `C`$, and the other term is the same as before - `A`$. Result is simple: 
-
-```$
-Y = A + C 
-```
-
-Continuing the trend, we add another '1', figure 2.18: 
-
-{width: "65%"}![Figure 2.18 - Karnaugh map example](ch2_example_all_bug_single_zero.svg)
-
-Same as with some previous functions, on the figure 2.18 we could get multiple different group arrangements, but our goal is to maximize group sizes while reducing total number of groups. We cant get less than three groups here, so we span each group to the max size possible, resulting groups produce terms `A`$, `B`$ and `C`$, and the full expression is: 
-
-```$
-Y = A + B + C
-```
-
-Finally, pushing it to the limits, we fill the whole table with '1's, figure 2.19. 
-
-{width: "65%"}![Figure 2.19 - Karnaugh map example](ch2_example_all_ones.svg)
-
-In this table everything is just one large group, all the arguments are eliminated, result is just constant: 
-
-```$
-Y = 1
+R = A + B + C
 ```
 
 ### Karnaugh maps - functions of four arguments 
  
-Karnaugh map of a function of four arguments is similar to three argument one, but instead of single-argument vertical index we now have composite indexes on both axis, both using gray code. So let say our inputs are A, B, C, D. Vertical index would take pair of A,B and horizontal index takes C,D. 
-Let's take another example function, given by the table 2.4. 
+Karnaugh map of a function of four arguments is fairly similar to the map of three arguments, but this time vertical index is also a 'composite' of two arguments, so the whole map for the function of four arguments looks like two maps of function of three arguments stacked one on top of another. An empty 'template' map for the function of four arguments *A, B, C, D* is shown on the figure 2.15: 
 
-For that function we build map as follows: 
+{width: "65%"}![Figure 2.15 - empty four variable Karnaugh map](ch2_empty_four_var_kmap.svg)
 
-{width: "65%"}![Figure 2.xx - empty four variable Karnaugh map](ch2_empty_four_var_kmap.svg)
+So let say we have a function defined by the table 2.4, argumnets are *A, B, C, D* and output is *Q*. 
+
+{width: "80%"}![Table 2.4](ch2_tab_four_args_karnaugh_maps.svg)
+
+For that function we fill the Karnaugh map as follows, figure 2.16: 
+
+{width: "65%"}![Figure 2.16 - Karnaugh map example](ch2_four_var_kmap_ex1.svg)
 
 
 
