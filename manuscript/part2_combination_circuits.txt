@@ -250,7 +250,7 @@ If we write a disjunctive normal form based on just these two cells, we would ge
 ```
 The `\bar{A} \bar{C}`$ component is the same for both minterms, so it can be simplified as follows: 
 ```$
-\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C} = \bar{A} ( \bar{B} + B) \bar{C} = \bar{A} \bar{C}
+\bar{A} \bar{B} \bar{C} + \bar{A} B \bar{C} = \bar{A} ( \bar{B} + B ) \bar{C} = \bar{A} \bar{C}
 ```
 
 And that's the main principle: any two adjacent 1s in the Karnaugh map would produce minterms that are only different by a single argument and that argument can be eliminated. Furthermore, we don't have to do boolean expressions by hand: next time when we see pair of adjacent 1s, we simply eliminate the only argument that is changing between the cells. So for the bottom group, left cell maps to *A,B,C* values of *1,**0**,1*  the right maps to *1,**1**,1*, - they are only different by value B, and that B is eliminated, resulting minterm based on remaining non-changing arguments: `A B`$. 
@@ -274,10 +274,18 @@ A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
 Only *A* is common in every term, but the rest can be optimized away: 
 
 ```$
-A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}\\
-= A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})\\
-= A (\bar{B} (\bar{C} + \C) + B (C + \bar{C}))\\
-= A (\bar{B} + B)\\
+A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
+```
+```$
+= A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})
+```
+```$
+= A (\bar{B} (\bar{C} + \C) + B (C + \bar{C}))
+```
+```$
+= A (\bar{B} + B)
+```
+```$
 = A
 ```
 
