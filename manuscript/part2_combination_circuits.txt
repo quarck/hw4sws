@@ -267,11 +267,11 @@ What if we got bigger group? Imagine we have another function *Z*, that produces
 Here we have a 'tiny' vertical group of two elements and the large horizontal one. We know how to handle groups of two elements, so the vertical group would produce term `\bar{B} C` (argument *A* is the only changing in this group and it is eliminated). 
 For the 'large' horizontal group we would once again look into the under-the-hood mechanics, so if we write the disjunctive normal form expression based on the bottom row of 1s we would get: 
 
-` ` `$
+```$
 A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
-` ` `
+```
 
-Only *A* is common in every term, but the rest can be optimized away: 
+Only *A* is common in every term, the rest can be optimized away: 
 
 ` ` `$
 A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
