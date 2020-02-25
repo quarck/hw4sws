@@ -275,12 +275,10 @@ Only *A* is common in every term, but the rest can be optimized away:
 
 ```$
 A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}\\
-\begin{align*}
-&= A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})\\
-&= A (\bar{B} (\bar{C} + \C) + B (C + \bar{C}))\\
-&= A (\bar{B} + B)\\
-&= A
-\end{align*}
+= A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})\\
+= A (\bar{B} (\bar{C} + \C) + B (C + \bar{C}))\\
+= A (\bar{B} + B)\\
+= A
 ```
 
 Intuitively we already knew that: in the larger groups we only keep arguments that don't change, everything else is eliminated. (*But it is important to remember that groups must be of a correct size - you can't eliminate elements in a 2x3 (or similar) group as there would be no matching pairs for every term*). 
