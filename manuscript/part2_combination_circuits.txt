@@ -296,12 +296,7 @@ As we've talked about it already, lets see an example of inconvenient-sized 'gro
 {width: "65%"}![Figure 2.14 - Karnaugh map example](ch2_example_all_bug_single_zero.svg)
 
 Here we have to create three separate groups to cover all 1s by the correctly-sized groups, as shown on the figure. Instead of 3x2 group we create two 2x2 groups. We could have created a combination of 2x2 and 1x2 groups instead, but remember - our goal is to make groups as large as possible, thus eliminating more arguments from minterms. Same can be said about the bottom leftmost element - we could have placed it into a stand-alone 1x1 group, but that group would have all the *A, B, C* arguments in the produced minterm, while the big 4x1 group would eliminate *B* and *C. 
-For the three groups we have on figure 2.14, we produce minterms: 
-* `C`$
-* `B`$
-* `A`$
-
-And the resulting expression is exceptionally elegant: 
+For the three groups we have on figure 2.14, we produce minterms: *A*, *B*, *C*, and the resulting expression is exceptionally elegant: 
 
 ```$
 R = A + B + C
@@ -321,7 +316,20 @@ For that function we fill the Karnaugh map as follows, figure 2.16:
 
 {width: "65%"}![Figure 2.16 - Karnaugh map example](ch2_four_var_kmap_ex1.svg)
 
+Then, similar way we group '1's, figure 2.17:
 
+{width: "65%"}![Figure 2.17 - Karnaugh map example](ch2_four_var_kmap_ex1_grouped.svg)
+
+Here there are three groups, one is a very special one consisting of all the corner cells - we should remember that Karnaugh map loops aroudn in all directions, so top leftmost, top rightmost, bottom leftmost and bottom rightmost cells are all should be considered as adjacent, and since in this table there are '1's in each of them - they form a 2x2 group. The other two groups are straightforward, so get the following three minterms: 
+
+* First group - corner elements: *A* and *C* are eliminated, term is `\bar{B} \bar{D}`$ 
+* Small vertical group: *A* is eliminated, term is `B C D`$ 
+* Small horizontal group: *C* is eliminated, term is `\bar{A} B D`$
+
+Combining everything together we get: 
+```$
+Q = \bar{B} \bar{D} + B C D + \bar{A} B D
+```
 
 ** __TODO__**
 
