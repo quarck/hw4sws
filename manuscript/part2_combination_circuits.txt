@@ -274,7 +274,9 @@ A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
 Only *A* is common in every term, but the rest can be optimized away: 
 
 ```$
-A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}\\
+A \bar{B} \bar{C} + A \bar{B} \C + A B C + A B \bar{C}
+```
+```$
 = A (\bar{B} \bar{C} + \bar{B} \C + B C + B \bar{C})
 ```
 ```$
