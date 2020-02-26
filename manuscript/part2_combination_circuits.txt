@@ -331,7 +331,9 @@ Combining everything together we get:
 Q = \bar{B} \bar{D} + B C D + \bar{A} B D
 ```
 
-** __TODO__**
+Imagine the amount of work would be required if we were to write the full disjunctive normal form for the function *Q* and then try optimizing it by hand - you'd be lucky if you don't make a mistake while working with such monstrous boolean expressions. 
+
+
 
 ## Ripple Carry Adder 
 
