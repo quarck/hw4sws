@@ -205,7 +205,6 @@ Component similar to a full adder, but  without *C~in~* input is called *half ad
 
 As an optional exercise, try building the table that would define functionality of the half-adder, then produce the logical expressions for the outputs and the circuit implementation, then finally compare the resulting circuit for the half adder vs full adder implementation. (See the appendix B for the half-adder circuit implementation).
 
-
 ## Karnaugh Maps
 
 In the previous section we did a laborious manual work in order to simplify functions presented in their disjunctive normal forms into something smaller. 
@@ -304,7 +303,7 @@ R = A + B + C
 
 ### Karnaugh maps - functions of four arguments 
  
-Karnaugh map of a function of four arguments is fairly similar to the map of three arguments, but this time vertical index is also a 'composite' of two arguments, so the whole map for the function of four arguments looks like two maps of function of three arguments stacked one on top of another. An empty 'template' map for the function of four arguments *A, B, C, D* is shown on the figure 2.15: 
+Karnaugh map of a function of four arguments is fairly similar to the map of three arguments, but this time vertical index is also a 'composite' of two arguments arranged in the same way as horizontal index, so the whole map for the function of four arguments looks like two maps of function of three arguments stacked one on top of another. An empty 'template' map for the function of four arguments *A, B, C, D* is shown on the figure 2.15: 
 
 {width: "65%"}![Figure 2.15 - empty four variable Karnaugh map](ch2_empty_four_var_kmap.svg)
 
@@ -332,10 +331,29 @@ Q = \bar{B} \bar{D} + B C D + \bar{A} B D
 ```
 
 Imagine the amount of work would be required if we were to write the full disjunctive normal form for the function *Q* and then try optimizing it by hand - you'd be lucky if you don't make a mistake while working with such monstrous boolean expressions. 
+In this book we would use Karnaugh maps every now and then, when we would need to convert a table representation of the function into its optimized expression form, and then into the gate network for the expression. 
+
+
+## Combination Circuit - Propagation Delays 
+
+So far we have learned that combination circuits can be built from elementary gates like NAND, NOR, OR, etc. This is not the only option in fact - we would learn about alternatives in the chapter about FPGAs, but for now lets assume all our combination circuits are implemented as gate networks built in a way similar to how we implemented one bit full adder recently.  
+Regardless of the actual implementation, any change of the input value of the combination circuit would not immediately change circuit's outputs - there would be a propagation delay through the device. This delay is mostly (but not entirely) defined by the longest path though the gate network in term of sum of individual gate's delays. 
+
+The circuit propagation delay is an important aspect that defines performance of the whole device, and it is often required to build a network that fits particular timing constrains. On a lower level, in to reduce the propagation delay the gate network should be built 'as flat as possible'. Lets consider the example simple function defined by the expression: 
+
+```$
+Q = A + B  + C  + D  + E
+```
+
+This function can be implemented in a multiple ways, see figure 2.18. 
+
+{width: "65%"}![Figure 2.18 - OR or OR?](ch2_or_or_or_or.svg)
 
 
 
 ## Ripple Carry Adder 
+
+Lets now get back to the full adder we've just built before we did our detour to Karnaugh maps. 
 
 By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.**XX**. We would get back to a one-bit adder later in this chapter.
 
