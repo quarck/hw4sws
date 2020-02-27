@@ -1,4 +1,4 @@
-# Appendix B - Standart Components and Their Circuits 
+# Appendix B - Standard Components and Their Circuits 
 
 ## Half Adder 
 

@@ -334,7 +334,6 @@ Q = \bar{B} \bar{D} + B C D + \bar{A} B D
 Imagine the amount of work would be required if we were to write the full disjunctive normal form for the function *Q* and then try optimizing it by hand - you'd be lucky if you don't make a mistake while working with such monstrous boolean expressions. 
 
 
-
 ## Ripple Carry Adder 
 
 By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.**XX**. We would get back to a one-bit adder later in this chapter.
