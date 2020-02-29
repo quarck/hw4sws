@@ -349,18 +349,34 @@ This function can be implemented in a multiple ways, see figure 2.18.
 
 {width: "65%"}![Figure 2.18 - OR or OR?](ch2_or_or_or_or.svg)
 
+Both implementations on figure 2.18 would require the same amount of *OR* gates, but the maximum depth of the network is different between these two implementations. The top implementation has mas depth of 4 gates - from inputs A and B into output signal has to travel through four *OR* gates. The bottom implementation on figure 2.18 on the other hand has only maximum of three gates on the way of any signal from any of the inputs. Both networks are implementing the same functionality, but the bottom one is obviously going to be faster in operation. 
+
+Depending on a particular function we are trying to implement, having less gates on the way of the signal might in some cases require significantly more components, thus particular implementation has to be chosen with constraints and requirements of a particular device in mind. 
 
 ## Ripple Carry Adder 
 
 Lets now get back to the full adder we've just built before we did our detour to Karnaugh maps. 
 
-By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.**XX**. We would get back to a one-bit adder later in this chapter.
+By chaining multiple single-bit full adders we could create a circuit that produces addition of two numbers of any number of binary digits, like the 4-bit adder producing 5-bit result shown on figure 2.19. 
 
-{width: "90%"}![Figure 2.XX - 4-bit adder](ch2_4_bit_adder.svg)
+{width: "90%"}![Figure 2.19 - 4-bit adder](ch2_4_bit_adder.svg)
 
-**tbd**
+The 5th output bit of the network is the carry-out signal of the last full adder in the chain. 
 
-## Carry Lookahead Adder 
+This type of adder is called *Ripple Carry Adder*. 
+Let's also reference each individual full adders as *FA0*, *FA1*, *FA2*, *FA3* where the first is the adder for the pair of the least significant bits and the last is the adder for the pair of most significant bits. 
+Each individual full adder would have propagation delay, lets denote it as *T~fa~*. That, once again, means that if we change any of the inputs - we have to wait for at least *T~fa~* to ensure we've read the correct value from the output. 
+Lets now see what would be happening in the *ripple carry adder* if we try to add '1111' to '0001': 
+
+* At start all individual full adders have '0' on the *C_in* input as no other adder has produced the carry out bit of value 1 yet. *FA0* has inputs *A=1*, *B=1*, *C_in=0*, all the other adders have *A=1*, *B=0*, *C_in=0*. 
+* We wait for *T~fa~*, and now each of the adders has produced its outputs. *FA0* produced *S=0* and *C_out=1*, while all the other adders produced *S=1* and *C_out=0*. This effectively changes inputs to *FA1*, and now we have to wait until *FA1* recalculates its outputs. 
+* After another *T~fa~* output *FA0* doesn't changes, outputs of *FA2* and *FA3* don't change, but *FA1* does and now it produces *S=0*, *C_out=1*. This now changes inputs to *FA2* and we again have to wait... 
+
+No need to continue as reader have certainly understood the idea: the carry out flag is traveling like a ripple, and thus the name *ripple carry adder*. 
+
+With ripple carry adder to ensure we've got a valid output we have to wait for *T~fa~* times number of bits to ensure output is correct. For 32 or even worse - 64 bits adders this would be a very long wait, and luckily ripple carry is not the only type of adder we could build. 
+
+## Carry Look-ahead Adder 
 
 **tbd**
 
