@@ -1,6 +1,9 @@
 {sample: true}
 # Chapter One - Building Blocks 
 
+## TODO: FINFET 
+
+
 ## A very brief introduction into electricity 
 
 We would start from a very brief dive into a theory of electricity. This knowledge would be beneficial for better understanding of the further material. 
